@@ -42,7 +42,7 @@ export default function Header() {
       <div className="container-main">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5" aria-label="Verastro Infra Projects — Home">
+          <Link href="/" className="flex items-center gap-2.5" aria-label="VERASTRO INFRA — Home">
             <Image
               src="https://verastrotechnologies.com/wp-content/uploads/2022/08/cropped-Verastrotechnologies_symbol-removebg-preview.png"
               alt="Verastro logo"
@@ -51,10 +51,10 @@ export default function Header() {
               className="object-contain"
               unoptimized
             />
-            <div className="leading-tight">
-              <div className="text-white font-semibold text-sm leading-none">Verastro</div>
-              <div className="text-xs leading-none" style={{ color: 'var(--color-teal-light)' }}>
-                Infra Projects
+            <div className="leading-tight flex flex-col justify-center">
+              <div className="flex items-center gap-1.5">
+                <span className="font-extrabold text-[1.1rem] tracking-[0.15em] text-white uppercase drop-shadow-md">VERASTRO</span>
+                <span className="font-semibold text-[1.1rem] tracking-[0.1em] uppercase" style={{ color: 'var(--color-teal-light)' }}>INFRA</span>
               </div>
             </div>
           </Link>

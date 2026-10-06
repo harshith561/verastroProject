@@ -255,7 +255,7 @@ export default function ContactForm() {
             disabled={status === 'loading' || status === 'success'}
           />
           <span className="text-xs text-gray-500">
-            I consent to Verastro Infra Projects using this information to respond to my inquiry. I have read the Privacy Policy.
+            I consent to VERASTRO INFRA using this information to respond to my inquiry. I have read the Privacy Policy.
           </span>
         </label>
         {errors.consent && <p className="form-error mt-1">{errors.consent.message}</p>}

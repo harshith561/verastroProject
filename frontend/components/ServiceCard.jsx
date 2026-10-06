@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function ServiceCard({ service, showLink = true }) {
   return (
-    <div className="card card-hover flex flex-col h-full">
+    <div data-aos="fade-up" className="card card-hover flex flex-col h-full">
       <div className="mb-3">
         <span
           className="inline-block text-xs font-semibold tracking-widest uppercase px-2 py-1 rounded"

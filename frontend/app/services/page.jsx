@@ -7,7 +7,7 @@ import CTASection from '@/components/CTASection';
 export const metadata = {
   title: 'Our Services | Site Development & Engineering',
   description:
-    'Explore Verastro Infra Projects services: land development, site grading, drainage, subdivision layout, infrastructure development, and property investment consulting across FL, TX, DE, and AR.',
+    'Explore VERASTRO INFRA services: land development, site grading, drainage, subdivision layout, infrastructure development, and property investment consulting across FL, TX, DE, and AR.',
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Our Services | Site Development & Engineering',
@@ -73,7 +73,7 @@ export default function ServicesPage() {
           className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24"
           style={{ backgroundColor: 'var(--color-navy)' }}
         >
-          <div className="max-w-xl w-full">
+          <div data-aos="fade-right" className="max-w-xl w-full">
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: 'var(--color-teal)' }}>
               What We Do
             </p>
@@ -102,7 +102,7 @@ export default function ServicesPage() {
       {/* Main Services Grid */}
       <section className="section-padding bg-white" aria-labelledby="main-services-heading">
         <div className="container-main">
-          <div className="mb-12">
+          <div data-aos="fade-up" className="mb-12">
             <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
               FROM PLANNING TO PROJECT SUPPORT
             </p>
@@ -113,7 +113,7 @@ export default function ServicesPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {servicesList.map((service, index) => (
-              <div key={index} className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
+              <div key={index} data-aos="fade-up" data-aos-delay={index * 80} className="bg-white border border-gray-100 p-8 shadow-sm hover:shadow-md transition-shadow">
                 <div className="w-8 h-1 mb-6" style={{ backgroundColor: 'var(--color-teal)' }} />
                 <h3 className="text-lg font-bold mb-3" style={{ color: 'var(--color-navy)' }}>
                   {service.title}
@@ -139,7 +139,7 @@ export default function ServicesPage() {
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image Left */}
-            <div className="relative w-full h-[400px]">
+            <div data-aos="fade-right" className="relative w-full h-[400px]">
               <Image
                 src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=75"
                 alt="Landscaped walkway"
@@ -150,7 +150,7 @@ export default function ServicesPage() {
             </div>
             
             {/* List Right */}
-            <div>
+            <div data-aos="fade-left">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
                 LANDSCAPING &amp; FIELD COORDINATION
               </p>
@@ -179,7 +179,7 @@ export default function ServicesPage() {
 
       <CTASection 
         heading="Tell us what your project needs."
-        subtext="Share your requirements with the Verastro Infra Projects team."
+        subtext="Share your requirements with the VERASTRO INFRA team."
         ctaLabel="Request a Consultation"
       />
     </PageLayout>

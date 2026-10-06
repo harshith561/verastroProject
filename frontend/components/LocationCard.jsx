@@ -2,7 +2,7 @@ import { MapPin, Building2 } from 'lucide-react';
 
 export default function LocationCard({ location }) {
   return (
-    <div className="card flex flex-col gap-2">
+    <div data-aos="fade-up" className="card flex flex-col gap-2">
       <div className="flex items-start gap-2">
         <MapPin size={16} className="mt-0.5 flex-shrink-0" style={{ color: 'var(--color-teal)' }} />
         <div>

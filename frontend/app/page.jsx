@@ -10,20 +10,20 @@ import { mainServices, siteWorkServices } from '@/data/services';
 import { locations } from '@/data/locations';
 
 export const metadata = {
-  title: 'Engineering & Site Development Solutions | Verastro Infra',
+  title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
   description:
-    'Verastro Infra Projects delivers professional engineering, land development, site grading, drainage, and outdoor infrastructure solutions across Florida, Texas, Delaware, and Arkansas. A division of Verastro Inc.',
+    'VERASTRO INFRA delivers professional engineering, land development, site grading, drainage, and outdoor infrastructure solutions across Florida, Texas, Delaware, and Arkansas. A division of Verastro Inc.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Engineering & Site Development Solutions | Verastro Infra Projects',
+    title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
     description:
       'Professional engineering, site development, grading, and infrastructure solutions. A division of Verastro Inc., operating across FL, TX, DE, and AR.',
     url: '/',
   },
   twitter: {
-    title: 'Engineering & Site Development Solutions | Verastro Infra',
+    title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
     description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
   }
 };
@@ -52,9 +52,9 @@ export default function HomePage() {
         </div>
 
         <div className="relative container-main py-16 md:py-20">
-          <div className="max-w-2xl">
+          <div data-aos="fade-up" className="max-w-2xl">
             <p className="section-label mb-4">
-              Verastro Infra Projects — A Division of Verastro Inc.
+              VERASTRO INFRA — A Division of Verastro Inc.
             </p>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
               Engineering Better Infrastructure.{' '}
@@ -83,15 +83,15 @@ export default function HomePage() {
       <section className="section-padding bg-white" aria-labelledby="intro-heading">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
+            <div data-aos="fade-right">
               <p className="section-label">Practical Expertise &amp; Clear Communication</p>
               <h2 id="intro-heading" className="section-title">
                 Your Local Partner for Smart, Scalable Site Solutions
               </h2>
             </div>
-            <div className="space-y-4 text-gray-600">
+            <div data-aos="fade-left" className="space-y-4 text-gray-600">
               <p className="text-sm leading-relaxed">
-                Verastro Infra Projects is a locally operated division of Verastro Inc. Our engineering
+                VERASTRO INFRA is a locally operated division of Verastro Inc. Our engineering
                 and field teams evaluate site conditions and project requirements to provide
                 data-driven recommendations, clear communication, and transparent pricing.
               </p>
@@ -235,7 +235,7 @@ export default function HomePage() {
             <div>
               <p className="section-label">Property &amp; Infrastructure</p>
               <h2 id="investments-heading" className="text-2xl md:text-3xl font-semibold text-white mb-4">
-                Build, Develop, and Grow — With Verastro Infra Projects
+                Build, Develop, and Grow — With VERASTRO INFRA
               </h2>
               <Link href="/investments" className="btn-primary" id="home-investments-link">
                 Explore Investments <ArrowRight size={16} />

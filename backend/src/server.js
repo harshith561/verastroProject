@@ -47,7 +47,7 @@ app.post('/api/contact', upload.single('projectFile'), async (req, res) => {
     `;
 
     const mailOptions = {
-      from: `"Verastro Infra Projects" <${process.env.SMTP_FROM}>`,
+      from: `"VERASTRO INFRA" <${process.env.SMTP_FROM}>`,
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
       subject: `Contact Form: ${name} - ${service}`,
@@ -87,7 +87,7 @@ app.post('/api/careers', upload.single('resume'), async (req, res) => {
     `;
 
     const mailOptions = {
-      from: `"Verastro Infra Projects" <${process.env.SMTP_FROM}>`,
+      from: `"VERASTRO INFRA" <${process.env.SMTP_FROM}>`,
       to: process.env.CAREERS_EMAIL,
       replyTo: email,
       subject: `Career Application: ${name} - ${position}`,

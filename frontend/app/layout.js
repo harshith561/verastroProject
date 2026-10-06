@@ -16,11 +16,11 @@ const manrope = Manrope({
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com'),
   title: {
-    default: 'Verastro Infra Projects | Engineering & Site Development',
-    template: '%s | Verastro Infra Projects',
+    default: 'VERASTRO INFRA | Engineering & Site Development',
+    template: '%s | VERASTRO INFRA',
   },
   description:
-    'Verastro Infra Projects is a division of Verastro Inc., delivering professional engineering, site development, grading, drainage, and outdoor infrastructure solutions across Florida, Texas, Delaware, and Arkansas.',
+    'VERASTRO INFRA is a division of Verastro Inc., delivering professional engineering, site development, grading, drainage, and outdoor infrastructure solutions across Florida, Texas, Delaware, and Arkansas.',
   keywords: [
     'site development',
     'civil engineering',
@@ -35,20 +35,20 @@ export const metadata = {
     'Arkansas',
     'Delaware',
   ],
-  authors: [{ name: 'Verastro Infra Projects' }],
-  creator: 'Verastro Infra Projects',
+  authors: [{ name: 'VERASTRO INFRA' }],
+  creator: 'VERASTRO INFRA',
   publisher: 'Verastro Inc.',
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'Verastro Infra Projects',
-    title: 'Verastro Infra Projects | Engineering & Site Development',
+    siteName: 'VERASTRO INFRA',
+    title: 'VERASTRO INFRA | Engineering & Site Development',
     description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
     url: '/',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Verastro Infra Projects | Engineering & Site Development',
+    title: 'VERASTRO INFRA | Engineering & Site Development',
     description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
   },
   robots: {
@@ -64,10 +64,15 @@ export const metadata = {
   },
 };
 
+import AosInit from '@/components/AosInit';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <AosInit />
+        {children}
+      </body>
     </html>
   );
 }

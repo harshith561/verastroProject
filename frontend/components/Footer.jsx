@@ -12,7 +12,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4" aria-label="Verastro Infra Projects">
+            <Link href="/" className="flex items-center gap-2.5 mb-4" aria-label="VERASTRO INFRA">
               <Image
                 src="https://verastrotechnologies.com/wp-content/uploads/2022/08/cropped-Verastrotechnologies_symbol-removebg-preview.png"
                 alt="Verastro logo"
@@ -21,10 +21,10 @@ export default function Footer() {
                 className="object-contain"
                 unoptimized
               />
-              <div>
-                <div className="text-white font-semibold text-sm leading-none">Verastro</div>
-                <div className="text-xs leading-none mt-0.5" style={{ color: 'var(--color-teal-light)' }}>
-                  Infra Projects
+              <div className="leading-tight flex flex-col justify-center">
+                <div className="flex items-center gap-1.5">
+                  <span className="font-extrabold text-[1.1rem] tracking-[0.15em] text-white uppercase drop-shadow-md">VERASTRO</span>
+                  <span className="font-semibold text-[1.1rem] tracking-[0.1em] uppercase" style={{ color: 'var(--color-teal-light)' }}>INFRA</span>
                 </div>
               </div>
             </Link>
@@ -108,7 +108,7 @@ export default function Footer() {
           className="mt-10 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500"
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
-          <p>&copy; {year} Verastro Infra Projects, a division of Verastro Inc. All rights reserved.</p>
+          <p>&copy; {year} VERASTRO INFRA, a division of Verastro Inc. All rights reserved.</p>
           <div className="flex gap-4">
             <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
             <Link href="/terms-of-use" className="hover:text-gray-300 transition-colors">Terms of Use</Link>

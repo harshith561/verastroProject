@@ -47,7 +47,7 @@ export const mainServices = [
     shortDescription:
       'Site selection, feasibility, and development-oriented investment support.',
     description:
-      'Verastro Infra Projects provides site selection and feasibility support to investors and developers. We evaluate properties from an engineering and development standpoint, helping clients make informed decisions.',
+      'VERASTRO INFRA provides site selection and feasibility support to investors and developers. We evaluate properties from an engineering and development standpoint, helping clients make informed decisions.',
     features: [
       'Site selection and evaluation',
       'Development feasibility analysis',

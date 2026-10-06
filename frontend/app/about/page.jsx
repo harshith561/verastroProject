@@ -8,18 +8,18 @@ import { siteWorkServices } from '@/data/services';
 import { faqItems } from '@/data/faq';
 
 export const metadata = {
-  title: 'About Us | Verastro Infra Projects',
+  title: 'About Us | VERASTRO INFRA',
   description:
-    'Learn about Verastro Infra Projects, a division of Verastro Inc. We deliver professional engineering, landscaping, site development, grading, and outdoor infrastructure across FL, TX, DE, and AR.',
+    'Learn about VERASTRO INFRA, a division of Verastro Inc. We deliver professional engineering, landscaping, site development, grading, and outdoor infrastructure across FL, TX, DE, and AR.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About Verastro Infra Projects',
+    title: 'About VERASTRO INFRA',
     description:
       'A division of Verastro Inc. — professional engineering, site development, and outdoor infrastructure across FL, TX, DE, and AR.',
     url: '/about',
   },
   twitter: {
-    title: 'About Us | Verastro Infra Projects',
+    title: 'About Us | VERASTRO INFRA',
     description: 'A division of Verastro Inc. delivering professional engineering and site development.',
   }
 };
@@ -74,16 +74,16 @@ export default function AboutPage() {
           />
         </div>
         <div className="relative container-main grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-          <div>
+          <div data-aos="fade-right">
             <p className="section-label">About Us</p>
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
-              About Verastro Infra Projects
+              About VERASTRO INFRA
             </h1>
             <p className="text-gray-300 text-sm leading-relaxed">
               A Division of Verastro Inc. — Building Outdoor Excellence Across Florida, Texas &amp; Arkansas
             </p>
           </div>
-          <div className="hidden lg:block">
+          <div data-aos="fade-left" className="hidden lg:block">
             <Image
               src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&fit=crop&q=75"
               alt="Engineers on a site development project"
@@ -100,15 +100,15 @@ export default function AboutPage() {
       <section className="section-padding bg-white" aria-labelledby="about-intro-heading">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
+            <div data-aos="fade-right">
               <p className="section-label">Engineering Precision &amp; Outdoor Purpose</p>
               <h2 id="about-intro-heading" className="section-title">
                 Practical solutions for land and outdoor infrastructure.
               </h2>
             </div>
-            <div className="space-y-4 text-sm text-gray-600">
+            <div data-aos="fade-left" className="space-y-4 text-sm text-gray-600">
               <p className="leading-relaxed">
-                Verastro Infra Projects brings together professional engineering, creative landscaping,
+                VERASTRO INFRA brings together professional engineering, creative landscaping,
                 and site development. Our work includes grading, drainage, sod, turf, pavers,
                 hardscape, and outdoor infrastructure.
               </p>
@@ -130,7 +130,7 @@ export default function AboutPage() {
       >
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded-lg overflow-hidden">
+            <div data-aos="fade-right" className="relative rounded-lg overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=75"
                 alt="Professionally landscaped community pathway with pavers"
@@ -140,7 +140,7 @@ export default function AboutPage() {
                 unoptimized
               />
             </div>
-            <div>
+            <div data-aos="fade-left">
               <p className="section-label">Our Core Services</p>
               <h2 id="core-services-heading" className="section-title">
                 From ground preparation to finishing.
@@ -165,7 +165,7 @@ export default function AboutPage() {
       <section className="section-padding bg-white" aria-labelledby="why-choose-heading">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
+            <div data-aos="fade-right">
               <p className="section-label">Why Choose Us</p>
               <h2 id="why-choose-heading" className="section-title">
                 A clear, accountable approach.
@@ -174,7 +174,7 @@ export default function AboutPage() {
                 Practical principles for how we plan, coordinate, and deliver site solutions.
               </p>
             </div>
-            <div className="flex flex-col gap-6">
+            <div data-aos="fade-left" className="flex flex-col gap-6">
               {whyChooseUs.map((item) => (
                 <div key={item.title} className="flex gap-4">
                   <CheckCircle
@@ -203,9 +203,9 @@ export default function AboutPage() {
         aria-label="Testimonial"
       >
         <div className="container-main max-w-2xl mx-auto text-center">
-          <blockquote>
+          <blockquote data-aos="zoom-in">
             <p className="text-base text-gray-700 leading-relaxed italic mb-5">
-              &ldquo;Verastro Infra Projects transformed our community grounds beautifully — the grading,
+              &ldquo;VERASTRO INFRA transformed our community grounds beautifully — the grading,
               sod, and paver work were completed on schedule and with great attention to detail. The team
               was responsive, organized, and professional throughout.&rdquo;
             </p>
@@ -223,13 +223,13 @@ export default function AboutPage() {
       <section className="section-padding bg-white" aria-labelledby="faq-heading">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div>
+            <div data-aos="fade-right">
               <p className="section-label">Frequently Asked Questions</p>
               <h2 id="faq-heading" className="section-title">
                 A few things to know.
               </h2>
             </div>
-            <FAQ items={faqItems} />
+            <div data-aos="fade-left"><FAQ items={faqItems} /></div>
           </div>
         </div>
       </section>

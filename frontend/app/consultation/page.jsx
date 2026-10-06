@@ -3,16 +3,16 @@ import ContactForm from '@/components/ContactForm';
 import { locations } from '@/data/locations';
 
 export const metadata = {
-  title: 'Request a Consultation | Verastro Infra Projects',
+  title: 'Request a Consultation | VERASTRO INFRA',
   description: 'Request a consultation for engineering, site development, or investment consulting. Our team responds within 24 business hours.',
   alternates: { canonical: '/consultation' },
   openGraph: {
-    title: 'Request a Consultation | Verastro Infra Projects',
+    title: 'Request a Consultation | VERASTRO INFRA',
     description: 'Share your site details and project requirements for engineering and site development solutions.',
     url: '/consultation',
   },
   twitter: {
-    title: 'Request a Consultation | Verastro Infra Projects',
+    title: 'Request a Consultation | VERASTRO INFRA',
     description: 'Request a consultation for engineering and site development.',
   }
 };
@@ -26,7 +26,7 @@ export default function ConsultationPage() {
         style={{ backgroundColor: 'var(--color-navy)' }}
         aria-label="Consultation page header"
       >
-        <div className="container-main">
+        <div data-aos="fade-up" className="container-main">
           <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: 'var(--color-teal)' }}>
             CONSULTATION
           </p>
@@ -42,7 +42,7 @@ export default function ConsultationPage() {
         <div className="container-main grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           
           {/* Left Column */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
+          <div data-aos="fade-right" className="lg:col-span-5 order-2 lg:order-1">
             <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
               TALK TO OUR TEAM
             </p>
@@ -62,7 +62,7 @@ export default function ConsultationPage() {
           </div>
 
           {/* Right Column (Form) */}
-          <div className="lg:col-span-7 order-1 lg:order-2">
+          <div data-aos="fade-left" className="lg:col-span-7 order-1 lg:order-2">
             <div className="bg-white border border-gray-100 shadow-sm p-6 md:p-8">
               <h2 className="text-lg font-bold mb-6" style={{ color: 'var(--color-navy)' }}>
                 Project inquiry
@@ -77,7 +77,7 @@ export default function ConsultationPage() {
       {/* Offices Section */}
       <section className="section-padding" style={{ backgroundColor: 'var(--color-warm-white)' }}>
         <div className="container-main">
-          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
+          <p data-aos="fade-up" className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
             OUR OFFICES
           </p>
           <h2 className="text-2xl md:text-3xl font-bold mb-12" style={{ color: 'var(--color-navy)' }}>
@@ -86,7 +86,7 @@ export default function ConsultationPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {locations.map((loc) => (
-              <div key={loc.id} className="border-t border-gray-200 pt-4">
+              <div key={loc.id} data-aos="fade-up" data-aos-delay={100} className="border-t border-gray-200 pt-4">
                 <h3 className="text-base font-bold mb-1" style={{ color: 'var(--color-navy)' }}>
                   {loc.state}
                 </h3>

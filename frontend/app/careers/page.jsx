@@ -5,17 +5,17 @@ import { jobListings } from '@/data/jobs';
 import { MapPin, Briefcase, Building } from 'lucide-react';
 
 export const metadata = {
-  title: 'Careers | Join Verastro Infra Projects',
+  title: 'Careers | Join VERASTRO INFRA',
   description:
-    'Join Verastro Infra Projects. We are hiring civil engineers, heavy equipment operators, surveyors, and project managers in FL, TX, DE, and AR.',
+    'Join VERASTRO INFRA. We are hiring civil engineers, heavy equipment operators, surveyors, and project managers in FL, TX, DE, and AR.',
   alternates: { canonical: '/careers' },
   openGraph: {
-    title: 'Careers | Verastro Infra Projects',
+    title: 'Careers | VERASTRO INFRA',
     description: 'Build your career in civil engineering, site development, and infrastructure.',
     url: '/careers',
   },
   twitter: {
-    title: 'Careers | Join Verastro Infra Projects',
+    title: 'Careers | Join VERASTRO INFRA',
     description: 'We are hiring civil engineers, heavy equipment operators, surveyors, and project managers.',
   }
 };
@@ -40,7 +40,7 @@ export default function CareersPage() {
             unoptimized
           />
         </div>
-        <div className="relative container-main">
+        <div data-aos="fade-up" className="relative container-main">
           <p className="section-label">Join Our Team</p>
           <h1 className="text-3xl md:text-4xl font-bold text-white mb-4 max-w-2xl">Careers</h1>
           <p className="text-gray-300 text-sm max-w-xl leading-relaxed">
@@ -57,7 +57,7 @@ export default function CareersPage() {
             <h2 id="open-positions-heading" className="section-title mb-8">Open Positions</h2>
             <div className="flex flex-col gap-6">
               {jobListings.map((job) => (
-                <div key={job.id} className="card">
+                <div data-aos="fade-up" key={job.id} className="card">
                   <div className="flex flex-wrap items-center justify-between gap-4 mb-3">
                     <h3 className="text-lg font-semibold" style={{ color: 'var(--color-navy)' }}>
                       {job.title}
@@ -110,7 +110,7 @@ export default function CareersPage() {
           </div>
 
           {/* Application Form Column */}
-          <div className="lg:col-span-5">
+          <div data-aos="fade-left" className="lg:col-span-5">
             <div className="sticky top-24 card border-t-4" style={{ borderTopColor: 'var(--color-teal)' }}>
               <h2 className="text-xl font-semibold mb-2" style={{ color: 'var(--color-navy)' }}>Apply Now</h2>
               <p className="text-sm text-gray-600 mb-6">

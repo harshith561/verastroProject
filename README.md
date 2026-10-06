@@ -1,6 +1,6 @@
-# Verastro Infra Projects — Website
+# VERASTRO INFRA — Website
 
-A complete, production-ready website for **Verastro Infra Projects**, a division of Verastro Inc.
+A complete, production-ready website for **VERASTRO INFRA**, a division of Verastro Inc.
 
 ## Project Structure
 
@@ -76,7 +76,7 @@ npm run dev
 | Route | Description |
 |-------|-------------|
 | `/` | Home |
-| `/about` | About Verastro Infra Projects |
+| `/about` | About VERASTRO INFRA |
 | `/services` | All Services |
 | `/engineering` | Engineering capabilities |
 | `/investments` | Investment opportunities |
@@ -87,7 +87,7 @@ npm run dev
 
 ## Company
 
-**Verastro Infra Projects** is a division of Verastro Inc., focused on engineering, site development, landscaping, grading, drainage, and outdoor infrastructure.
+**VERASTRO INFRA** is a division of Verastro Inc., focused on engineering, site development, landscaping, grading, drainage, and outdoor infrastructure.
 
 📍 Delaware · Florida · Texas · Arkansas  
 📞 (904) 302-9170  

@@ -3,17 +3,17 @@ import PageLayout from '@/components/PageLayout';
 import CTASection from '@/components/CTASection';
 
 export const metadata = {
-  title: 'Property & Infrastructure Investments | Verastro Infra',
+  title: 'Property & Infrastructure Investments | VERASTRO INFRA',
   description:
     'Property and infrastructure investment consulting. We provide site selection and development feasibility support for investors and developers across FL, TX, DE, and AR.',
   alternates: { canonical: '/investments' },
   openGraph: {
-    title: 'Property & Infrastructure Investments | Verastro Infra Projects',
+    title: 'Property & Infrastructure Investments | VERASTRO INFRA',
     description: 'Infrastructure and property investment consulting across FL, TX, DE, and AR.',
     url: '/investments',
   },
   twitter: {
-    title: 'Property & Infrastructure Investments | Verastro Infra',
+    title: 'Property & Infrastructure Investments | VERASTRO INFRA',
     description: 'Infrastructure and property investment consulting and feasibility support.',
   }
 };
@@ -49,7 +49,7 @@ export default function InvestmentsPage() {
           className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24"
           style={{ backgroundColor: 'var(--color-navy)' }}
         >
-          <div className="max-w-xl w-full">
+          <div data-aos="fade-right" className="max-w-xl w-full">
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: 'var(--color-teal)' }}>
               INVESTMENTS
             </p>
@@ -79,7 +79,7 @@ export default function InvestmentsPage() {
       <section className="section-padding bg-white">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-            <div>
+            <div data-aos="fade-right">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
                 BUILD, DEVELOP, AND GROW
               </p>
@@ -87,7 +87,7 @@ export default function InvestmentsPage() {
                 Start with the property. Plan for the project.
               </h2>
             </div>
-            <div>
+            <div data-aos="fade-left">
               <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 font-medium">
                 We blend engineering expertise, landscape craftsmanship, and smart development planning to turn spaces into long-term assets.
               </p>
@@ -108,7 +108,7 @@ export default function InvestmentsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {investmentTypes.map((type, index) => (
-              <div key={index} className="bg-white p-8 shadow-sm">
+              <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-white p-8 shadow-sm">
                 <div className="w-8 h-1 mb-6" style={{ backgroundColor: 'var(--color-teal)' }} />
                 <h3 className="text-lg font-bold mb-4" style={{ color: 'var(--color-navy)' }}>
                   {type.title}
@@ -128,7 +128,7 @@ export default function InvestmentsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-12">
             
             {/* Left Col */}
-            <div>
+            <div data-aos="fade-right">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
                 INVESTOR CONSULTATION
               </p>
@@ -153,7 +153,7 @@ export default function InvestmentsPage() {
             </div>
 
             {/* Right Col */}
-            <div>
+            <div data-aos="fade-left">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
                 EB-5 - INFORMATIONAL GUIDANCE ONLY
               </p>
@@ -161,7 +161,7 @@ export default function InvestmentsPage() {
                 Understand the information. Consult qualified advisors.
               </h2>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                Verastro Infra Projects provides informational guidance on real-estate investment and EB-5-compliant opportunities. Such information is educational only and does not constitute financial, legal, or immigration advice.
+                VERASTRO INFRA provides informational guidance on real-estate investment and EB-5-compliant opportunities. Such information is educational only and does not constitute financial, legal, or immigration advice.
               </p>
               <p className="text-sm text-gray-600 leading-relaxed">
                 Users should consult qualified advisors before making investment or visa-related decisions. We make no representations regarding profitability, approval timelines, or outcomes.
@@ -171,10 +171,10 @@ export default function InvestmentsPage() {
           </div>
 
           {/* Important Information Banner */}
-          <div className="bg-gray-50 border border-gray-200 p-6">
+          <div data-aos="zoom-in" className="bg-gray-50 border border-gray-200 p-6">
             <h4 className="text-xs font-bold tracking-widest uppercase text-gray-800 mb-2">IMPORTANT INFORMATION</h4>
             <p className="text-sm text-gray-600">
-              Nothing on this Site constitutes a binding offer, guarantee, or professional advice. Formal terms are defined only in executed written agreements between you and Verastro Infra Projects.
+              Nothing on this Site constitutes a binding offer, guarantee, or professional advice. Formal terms are defined only in executed written agreements between you and VERASTRO INFRA.
             </p>
           </div>
         </div>
@@ -182,7 +182,7 @@ export default function InvestmentsPage() {
 
       <CTASection 
         heading="Discuss your property and development goals."
-        subtext="Share your requirements with the Verastro Infra Projects team."
+        subtext="Share your requirements with the VERASTRO INFRA team."
         ctaLabel="Talk to Our Team"
       />
     </PageLayout>

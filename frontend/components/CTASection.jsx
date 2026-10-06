@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 
 export default function CTASection({
   heading = "Let's discuss your site and project needs.",
-  subtext = 'Share your requirements with the Verastro Infra Projects team.',
+  subtext = 'Share your requirements with the VERASTRO INFRA team.',
   ctaLabel = 'Request a Consultation',
   ctaHref = '/consultation',
   id = 'cta-section',
@@ -15,7 +15,7 @@ export default function CTASection({
       aria-labelledby={id}
     >
       <div className="container-main">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <div data-aos="zoom-in" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <h2
               id={id}

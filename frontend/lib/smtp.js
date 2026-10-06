@@ -43,13 +43,13 @@ export async function sendContactEmail(data) {
       </p>
       <hr style="margin-top: 30px; border: none; border-top: 1px solid #e5e7eb;" />
       <p style="color: #6b7280; font-size: 12px;">
-        This message was sent via the Verastro Infra Projects contact form at verastroinfra.com
+        This message was sent via the VERASTRO INFRA contact form at verastroinfra.com
       </p>
     </div>
   `;
 
   await transporter.sendMail({
-    from: `"Verastro Infra Projects" <${process.env.SMTP_FROM}>`,
+    from: `"VERASTRO INFRA" <${process.env.SMTP_FROM}>`,
     to: process.env.CONTACT_EMAIL,
     replyTo: email,
     subject: `Contact Form: ${name} — ${service}`,
@@ -84,13 +84,13 @@ export async function sendConsultationEmail(data) {
       </p>
       <hr style="margin-top: 30px; border: none; border-top: 1px solid #e5e7eb;" />
       <p style="color: #6b7280; font-size: 12px;">
-        This message was sent via the Verastro Infra Projects consultation form at verastroinfra.com
+        This message was sent via the VERASTRO INFRA consultation form at verastroinfra.com
       </p>
     </div>
   `;
 
   await transporter.sendMail({
-    from: `"Verastro Infra Projects" <${process.env.SMTP_FROM}>`,
+    from: `"VERASTRO INFRA" <${process.env.SMTP_FROM}>`,
     to: process.env.CONTACT_EMAIL,
     replyTo: email,
     subject: `Consultation Request: ${name} — ${service}`,
@@ -126,13 +126,13 @@ export async function sendCareerEmail(data, resumeFile) {
       }
       <hr style="margin-top: 30px; border: none; border-top: 1px solid #e5e7eb;" />
       <p style="color: #6b7280; font-size: 12px;">
-        This application was submitted via the Verastro Infra Projects careers page at verastroinfra.com
+        This application was submitted via the VERASTRO INFRA careers page at verastroinfra.com
       </p>
     </div>
   `;
 
   const mailOptions = {
-    from: `"Verastro Infra Projects" <${process.env.SMTP_FROM}>`,
+    from: `"VERASTRO INFRA" <${process.env.SMTP_FROM}>`,
     to: process.env.CAREERS_EMAIL,
     replyTo: email,
     subject: `Career Application: ${name} — ${position}`,

@@ -2,7 +2,7 @@
   "name": "verastro-backend",
   "version": "1.0.0",
   "type": "module",
-  "description": "Backend API for Verastro Infra Projects",
+  "description": "Backend API for VERASTRO INFRA",
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",

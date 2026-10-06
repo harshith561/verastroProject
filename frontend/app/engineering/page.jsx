@@ -3,17 +3,17 @@ import PageLayout from '@/components/PageLayout';
 import CTASection from '@/components/CTASection';
 
 export const metadata = {
-  title: 'Engineering & Construction Services | Verastro Infra',
+  title: 'Engineering & Construction Services | VERASTRO INFRA',
   description:
     'From grading and drainage to infrastructure scaling, we provide robust engineering and construction services for residential and commercial projects.',
   alternates: { canonical: '/engineering' },
   openGraph: {
-    title: 'Engineering & Construction Services | Verastro Infra Projects',
+    title: 'Engineering & Construction Services | VERASTRO INFRA',
     description: 'Expert grading, drainage, and infrastructure development across FL, TX, DE, and AR.',
     url: '/engineering',
   },
   twitter: {
-    title: 'Engineering & Construction Services | Verastro Infra',
+    title: 'Engineering & Construction Services | VERASTRO INFRA',
     description: 'Expert grading, drainage, and infrastructure development for residential and commercial projects.',
   }
 };
@@ -73,7 +73,7 @@ export default function EngineeringPage() {
           className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24"
           style={{ backgroundColor: 'var(--color-navy)' }}
         >
-          <div className="max-w-xl w-full">
+          <div data-aos="fade-right" className="max-w-xl w-full">
             <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: 'var(--color-teal)' }}>
               ENGINEERING
             </p>
@@ -103,7 +103,7 @@ export default function EngineeringPage() {
       <section className="section-padding bg-white">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-4">
+            <div data-aos="fade-right" className="lg:col-span-4">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
                 TECHNICAL CAPABILITIES
               </p>
@@ -115,7 +115,7 @@ export default function EngineeringPage() {
               </p>
             </div>
             
-            <div className="lg:col-span-8">
+            <div data-aos="fade-left" className="lg:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 {capabilities.map((cap, index) => (
                   <div key={index} className="flex items-center gap-4 text-sm text-gray-700 py-4 border-b border-gray-100">
@@ -137,7 +137,7 @@ export default function EngineeringPage() {
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Image Left */}
-            <div className="relative w-full h-[400px]">
+            <div data-aos="fade-right" className="relative w-full h-[400px]">
               <Image
                 src="https://images.unsplash.com/photo-1541888081622-4a00af9983b0?w=800&auto=format&fit=crop&q=75"
                 alt="Engineers working on site"
@@ -148,7 +148,7 @@ export default function EngineeringPage() {
             </div>
             
             {/* Content Right */}
-            <div>
+            <div data-aos="fade-left">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
                 TOOLS &amp; SITE INFORMATION
               </p>
@@ -182,7 +182,7 @@ export default function EngineeringPage() {
       {/* Engineering Process */}
       <section className="section-padding bg-white">
         <div className="container-main">
-          <div className="mb-12">
+          <div data-aos="fade-up" className="mb-12">
             <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
               OUR PROCESS
             </p>
@@ -193,7 +193,7 @@ export default function EngineeringPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 relative">
             {engineeringProcess.map((step) => (
-              <div key={step.step} className="flex flex-col border-t border-gray-200 pt-6">
+              <div data-aos="fade-up" data-aos-delay={100} key={step.step} className="flex flex-col border-t border-gray-200 pt-6">
                 <span className="text-sm font-bold mb-4" style={{ color: 'var(--color-teal)' }}>
                   {step.step}
                 </span>
@@ -211,7 +211,7 @@ export default function EngineeringPage() {
 
       <CTASection 
         heading="Discuss the technical needs of your site."
-        subtext="Share your requirements with the Verastro Infra Projects team."
+        subtext="Share your requirements with the VERASTRO INFRA team."
         ctaLabel="Request a Consultation"
       />
     </PageLayout>

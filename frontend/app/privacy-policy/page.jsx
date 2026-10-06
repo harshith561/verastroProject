@@ -1,8 +1,8 @@
 import PageLayout from '@/components/PageLayout';
 
 export const metadata = {
-  title: 'Privacy Policy | Verastro Infra Projects',
-  description: 'Privacy Policy for Verastro Infra Projects, explaining how we collect, use, and protect your information.',
+  title: 'Privacy Policy | VERASTRO INFRA',
+  description: 'Privacy Policy for VERASTRO INFRA, explaining how we collect, use, and protect your information.',
   alternates: { canonical: '/privacy-policy' },
 };
 
@@ -67,14 +67,14 @@ export default function PrivacyPolicyPage() {
           {/* Policy Text */}
           <div className="lg:col-span-9 prose prose-sm sm:prose-base max-w-none text-gray-700">
             <p className="mb-8 leading-relaxed">
-              Verastro Infra Projects (“Verastro Infra,” “we,” “us,” or “our”) respects your privacy and is committed to protecting the personal information you share with us.<br/>
+              VERASTRO INFRA (“VERASTRO INFRA,” “we,” “us,” or “our”) respects your privacy and is committed to protecting the personal information you share with us.<br/>
               This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit <strong>verastroinfra.com</strong> or interact with our services.<br/>
               By accessing or using this website, you consent to the practices described in this Policy.
             </p>
 
             <h2 id="who-we-are" className="text-lg font-bold text-gray-900 mt-10 mb-4">1. Who We Are</h2>
             <p className="mb-4">
-              Verastro Infra Projects is a division of Verastro Inc., headquartered in Middletown, Delaware, with operational offices in Jacksonville, Florida.
+              VERASTRO INFRA is a division of Verastro Inc., headquartered in Middletown, Delaware, with operational offices in Jacksonville, Florida.
             </p>
             <p className="mb-8">
               We provide services in land development, grading, landscaping, sod installation, and real-estate investment facilitation across the United States, including informational guidance on EB-5-compliant opportunities.
@@ -133,7 +133,7 @@ export default function PrivacyPolicyPage() {
               <li>Fulfill requested services or project coordination</li>
               <li>Communicate with trusted vendors, consultants, or affiliate divisions under Verastro Inc.</li>
               <li>Comply with applicable laws, regulations, or lawful court orders</li>
-              <li>Protect the rights, property, or safety of Verastro Infra, our clients, or the public</li>
+              <li>Protect the rights, property, or safety of VERASTRO INFRA, our clients, or the public</li>
             </ul>
             <p className="mb-8">All third-party partners handling personal information are required to adhere to confidentiality and data protection obligations.</p>
 
@@ -170,7 +170,7 @@ export default function PrivacyPolicyPage() {
             <p className="mb-4">If you have questions, concerns, or requests regarding this Privacy Policy, please contact us at:</p>
             
             <div className="bg-gray-50 border border-gray-100 p-6 text-sm text-gray-700">
-              <p className="font-bold text-gray-900 mb-2">Verastro Infra Projects</p>
+              <p className="font-bold text-gray-900 mb-2">VERASTRO INFRA</p>
               <p className="mb-2">A Division of Verastro Inc.</p>
               <div className="flex items-start gap-2 mb-2">
                 <span className="text-red-500 mt-0.5">📍</span>

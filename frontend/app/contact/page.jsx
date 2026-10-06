@@ -3,16 +3,16 @@ import { locations } from '@/data/locations';
 import { Phone, Mail, Clock } from 'lucide-react';
 
 export const metadata = {
-  title: 'Contact Us | Verastro Infra Projects',
-  description: 'Get in touch with Verastro Infra Projects for engineering and site development. View our headquarters in Delaware and offices in FL, TX, and AR.',
+  title: 'Contact Us | VERASTRO INFRA',
+  description: 'Get in touch with VERASTRO INFRA for engineering and site development. View our headquarters in Delaware and offices in FL, TX, and AR.',
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Us | Verastro Infra Projects',
+    title: 'Contact Us | VERASTRO INFRA',
     description: 'Reach out for engineering and site development solutions across FL, TX, DE, and AR.',
     url: '/contact',
   },
   twitter: {
-    title: 'Contact Us | Verastro Infra Projects',
+    title: 'Contact Us | VERASTRO INFRA',
     description: 'Get in touch with our team for engineering and site development solutions.',
   }
 };
@@ -26,7 +26,7 @@ export default function ContactPage() {
         style={{ backgroundColor: 'var(--color-navy)' }}
         aria-label="Contact page header"
       >
-        <div className="container-main text-center">
+        <div data-aos="fade-up" className="container-main text-center">
           <p className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: 'var(--color-teal)' }}>
             CONTACT US
           </p>
@@ -42,7 +42,7 @@ export default function ContactPage() {
         <div className="container-main max-w-4xl mx-auto">
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
-            <div>
+            <div data-aos="fade-right">
               <h2 className="text-2xl font-bold mb-8" style={{ color: 'var(--color-navy)' }}>
                 Direct Contact
               </h2>
@@ -83,13 +83,13 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div>
+            <div data-aos="fade-left">
               <h2 className="text-2xl font-bold mb-8" style={{ color: 'var(--color-navy)' }}>
                 Headquarters
               </h2>
               <div className="bg-gray-50 border border-gray-100 p-6 rounded-sm">
                 <h3 className="text-base font-bold mb-3" style={{ color: 'var(--color-navy)' }}>
-                  Verastro Infra Projects
+                  VERASTRO INFRA
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed mb-4">
                   651 N Broad St, STE 201<br />
@@ -108,7 +108,7 @@ export default function ContactPage() {
       {/* Offices Section */}
       <section className="section-padding" style={{ backgroundColor: 'var(--color-warm-white)' }}>
         <div className="container-main">
-          <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
+          <p data-aos="fade-up" className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
             OUR OFFICES
           </p>
           <h2 className="text-2xl md:text-3xl font-bold mb-12" style={{ color: 'var(--color-navy)' }}>
@@ -117,7 +117,7 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {locations.map((loc) => (
-              <div key={loc.id} className="border-t border-gray-200 pt-4">
+              <div key={loc.id} data-aos="fade-up" data-aos-delay={100} className="border-t border-gray-200 pt-4">
                 <h3 className="text-base font-bold mb-1" style={{ color: 'var(--color-navy)' }}>
                   {loc.state}
                 </h3>

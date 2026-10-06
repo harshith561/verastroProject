@@ -13,7 +13,7 @@ export default function SectionHeading({
       : 'text-left items-start';
 
   return (
-    <div className={`flex flex-col ${alignClass} ${className}`}>
+    <div data-aos="fade-up" className={`flex flex-col ${alignClass} ${className}`}>
       {label && <p className="section-label">{label}</p>}
       <h2 className="section-title">{title}</h2>
       {subtitle && (
