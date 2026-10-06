@@ -69,7 +69,7 @@ export default function EngineeringPage() {
       {/* Split Hero */}
       <section className="relative flex flex-col md:flex-row min-h-[400px]">
         {/* Left Side: Dark Navy Text Area */}
-        <div 
+        <div
           className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24"
           style={{ backgroundColor: 'var(--color-navy)' }}
         >
@@ -85,7 +85,7 @@ export default function EngineeringPage() {
             </p>
           </div>
         </div>
-        
+
         {/* Right Side: Image */}
         <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-full">
           <Image
@@ -114,7 +114,7 @@ export default function EngineeringPage() {
                 Site-development support brings together grading, drainage, outdoor layouts, and the documentation needed for field coordination.
               </p>
             </div>
-            
+
             <div data-aos="fade-left" className="lg:col-span-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8">
                 {capabilities.map((cap, index) => (
@@ -139,14 +139,14 @@ export default function EngineeringPage() {
             {/* Image Left */}
             <div data-aos="fade-right" className="relative w-full h-[400px]">
               <Image
-                src="https://images.unsplash.com/photo-1541888081622-4a00af9983b0?w=800&auto=format&fit=crop&q=75"
+                src="https://csuxjmfbwmkxiegfpljm.supabase.co/storage/v1/object/public/blog-images/organization-25766/1781497075108_Team-discussing-cost-and-schedule-predictability-at-construction-site.jpeg"
                 alt="Engineers working on site"
                 fill
                 className="object-cover"
                 unoptimized
               />
             </div>
-            
+
             {/* Content Right */}
             <div data-aos="fade-left">
               <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
@@ -155,11 +155,11 @@ export default function EngineeringPage() {
               <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: 'var(--color-navy)' }}>
                 Technical insight, grounded in the property.
               </h2>
-              
+
               <ul className="flex flex-col mb-6">
                 {tools.map((tool, index) => (
-                  <li 
-                    key={index} 
+                  <li
+                    key={index}
                     className="flex items-center gap-4 text-sm text-gray-700 py-4 border-b border-gray-200"
                   >
                     <div
@@ -170,7 +170,7 @@ export default function EngineeringPage() {
                   </li>
                 ))}
               </ul>
-              
+
               <p className="text-sm text-gray-600">
                 Supporting site assessment, planning, documentation, and development coordination.
               </p>
@@ -209,7 +209,7 @@ export default function EngineeringPage() {
         </div>
       </section>
 
-      <CTASection 
+      <CTASection
         heading="Discuss the technical needs of your site."
         subtext="Share your requirements with the VERASTRO INFRA team."
         ctaLabel="Request a Consultation"
