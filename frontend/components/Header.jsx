@@ -24,25 +24,23 @@ export default function Header() {
 
   // Prevent body scroll when menu open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
+    document.body.style.overflow = isOpen ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [isOpen]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-200 ${
-        scrolled ? 'shadow-md' : ''
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-shadow duration-200 ${scrolled ? 'shadow-md' : ''}`}
       style={{ backgroundColor: 'var(--color-navy)' }}
     >
       <div className="container-main">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between gap-4 h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5" aria-label="VERASTRO INFRA — Home">
+          <Link
+            href="/"
+            className="flex items-center gap-2.5 shrink-0"
+            aria-label="VERASTRO INFRA — Home"
+          >
             <Image
               src="https://verastrotechnologies.com/wp-content/uploads/2022/08/cropped-Verastrotechnologies_symbol-removebg-preview.png"
               alt="Verastro logo"
@@ -51,27 +49,31 @@ export default function Header() {
               className="object-contain"
               unoptimized
             />
-            <div className="leading-tight flex flex-col justify-center">
-              <div className="flex items-center gap-1.5">
-                <span className="font-extrabold text-[1.1rem] tracking-[0.15em] text-white uppercase drop-shadow-md">VERASTRO</span>
-                <span className="font-semibold text-[1.1rem] tracking-[0.1em] uppercase" style={{ color: 'var(--color-teal-light)' }}>INFRA</span>
-              </div>
+
+            {/* Brand name: hidden below 1280px, shown at xl and above */}
+            <div className="hidden xl:flex items-center gap-1.5 leading-tight whitespace-nowrap">
+              <span className="font-extrabold text-[1.1rem] tracking-[0.15em] text-white uppercase drop-shadow-md">
+                VERASTRO
+              </span>
+              <span
+                className="font-semibold text-[1.1rem] tracking-[0.1em] uppercase"
+                style={{ color: 'var(--color-teal-light)' }}
+              >
+                INFRA
+              </span>
             </div>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Main navigation">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link px-3 py-1.5 rounded text-sm ${
-                    isActive
-                      ? 'text-white font-semibold'
-                      : 'text-gray-300 hover:text-white'
-                  }`}
+                  className={`nav-link whitespace-nowrap px-2 xl:px-3 py-1.5 rounded text-sm ${isActive ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
+                    }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
@@ -81,10 +83,10 @@ export default function Header() {
           </nav>
 
           {/* CTA + Mobile toggle */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <Link
               href="/consultation"
-              className="hidden sm:inline-flex btn-primary text-sm px-4 py-2"
+              className="hidden sm:inline-flex whitespace-nowrap btn-primary text-sm px-3 xl:px-4 py-2"
               id="header-consultation-cta"
             >
               Request a Consultation
@@ -107,7 +109,7 @@ export default function Header() {
       {isOpen && (
         <div
           id="mobile-menu"
-          className="lg:hidden border-t"
+          className="lg:hidden border-t max-h-[calc(100vh-4rem)] overflow-y-auto"
           style={{ backgroundColor: 'var(--color-navy-secondary)', borderColor: 'rgba(255,255,255,0.1)' }}
         >
           <nav className="container-main py-4 flex flex-col gap-1" aria-label="Mobile navigation">
@@ -117,11 +119,10 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2.5 rounded text-sm font-medium ${
-                    isActive
+                  className={`px-3 py-2.5 rounded text-sm font-medium ${isActive
                       ? 'text-white bg-white/10'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
-                  }`}
+                    }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
