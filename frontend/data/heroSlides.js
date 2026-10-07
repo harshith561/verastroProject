@@ -8,31 +8,31 @@ export const heroSlides = [
     primaryCta: { label: 'Explore Our Services', href: '/services' },
     secondaryCta: { label: 'Request a Consultation', href: '/consultation' },
     image:
-      'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1920&q=80',
+      '/images/HeroSlideshow/hero-golf.avif',
     imageAlt: 'Premium golf course greens and landscaped fairway at sunrise',
   },
   {
     id: 'landscaping',
     eyebrow: 'Landscaping & Outdoor Work',
-    headline: 'Transforming Outdoor Spaces\nInto Lasting Experiences.',
+    headline: 'Transforming Outdoor Spaces Into Lasting Experiences.',
     supporting:
       'Professional landscaping, turf, grading and outdoor solutions designed around your project.',
     primaryCta: { label: 'Explore Landscaping', href: '/services' },
     secondaryCta: { label: 'Request a Consultation', href: '/consultation' },
     image:
-      'https://images.unsplash.com/photo-1558904541-efde049ce5d2?auto=format&fit=crop&w=1920&q=80',
+      '/images/HeroSlideshow/hero2.jpg',
     imageAlt: 'Professionally landscaped outdoor environment with lawn and plantings',
   },
   {
     id: 'land-development',
     eyebrow: 'Land Development',
-    headline: 'From Land Planning\nto Real Development.',
+    headline: 'From Land Planning to Real Development.',
     supporting:
       'Practical development solutions that bring land, infrastructure and planning together.',
     primaryCta: { label: 'Explore Services', href: '/services' },
     secondaryCta: { label: 'Talk to Our Team', href: '/contact' },
     image:
-      'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80',
+      '/images/HeroSlideshow/hero3.jpg',
     imageAlt: 'Land development and construction underway on a site',
   },
   {
@@ -44,19 +44,19 @@ export const heroSlides = [
     primaryCta: { label: 'Explore Engineering', href: '/engineering' },
     secondaryCta: { label: 'Request a Consultation', href: '/consultation' },
     image:
-      'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80',
+      '/images/HeroSlideshow/hero4.avif',
     imageAlt: 'Civil engineering plans and construction documentation on site',
   },
   {
     id: 'consultation',
     eyebrow: 'Start a Project',
-    headline: "Let's Build Something\nBetter Together.",
+    headline: "Let's Build Something,Better Together.",
     supporting:
       'Have a project in mind? Talk to VERASTRO INFRA about your next development, landscaping or infrastructure requirement.',
     primaryCta: { label: 'Start Your Project', href: '/consultation' },
     secondaryCta: { label: 'Contact Us', href: '/contact' },
     image:
-      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80',
+      '/images/HeroSlideshow/hero5.avif',
     imageAlt: 'Landscaped contemporary property with lawn and outdoor setting',
   },
 ];
