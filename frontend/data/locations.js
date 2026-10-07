@@ -6,7 +6,7 @@ export const locations = [
     address: '651 N Broad St, STE 201',
     city: 'Middletown, DE 19709',
     image:
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/delaware.avif',
     imageAlt: 'Coastal landscape representing Delaware operations',
   },
   {
@@ -15,7 +15,7 @@ export const locations = [
     address: '10151 Deerwood Park Blvd, Building 200, Suite 250',
     city: 'Jacksonville, FL 32256',
     image:
-      'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/florida.avif',
     imageAlt: 'Florida coastline representing local operations',
   },
   {
@@ -24,7 +24,7 @@ export const locations = [
     address: '3921 Long Prairie Rd, Building 5',
     city: 'Flower Mound, TX 75028',
     image:
-      'https://images.unsplash.com/photo-1530089711127-6c29e9cdb24c?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/texas.jpg',
     imageAlt: 'Open Texas landscape representing regional operations',
   },
   {
@@ -33,7 +33,7 @@ export const locations = [
     address: '801 SW 8th St',
     city: 'Bentonville, AR 72712',
     image:
-      'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/arkansas.avif',
     imageAlt: 'Wooded landscape representing Arkansas operations',
   },
 ];

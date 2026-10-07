@@ -3,7 +3,7 @@ export const mainServices = [
     id: 'land-development',
     title: 'Land Development',
     image:
-      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80',
+      '/images/HeroSlideshow/investment.avif',
     imageAlt: 'Commercial and community development property against the skyline',
     shortDescription:
       'Planning communities that balance functionality, aesthetics, and compliance.',
@@ -20,7 +20,7 @@ export const mainServices = [
     id: 'subdivision-plot-layout',
     title: 'Subdivision & Plot Layout Design',
     image:
-      'https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1600&q=80',
+      '/images/HeroSlideshow/subdivision-plot.avif',
     imageAlt: 'Residential land and lot layout from an elevated view',
     shortDescription:
       'Efficient lot layout, roadway hierarchy, and open-space planning.',
@@ -37,7 +37,7 @@ export const mainServices = [
     id: 'infrastructure-development',
     title: 'Infrastructure Development',
     image:
-      'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1600&q=80',
+      '/images/HeroSlideshow/infrastructure-development.avif',
     imageAlt: 'Roads and urban infrastructure at dusk',
     shortDescription:
       'Roads, drainage, water, sewer, power, and related infrastructure coordination.',
@@ -54,7 +54,7 @@ export const mainServices = [
     id: 'property-investment-consulting',
     title: 'Property Investment Consulting',
     image:
-      'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80',
+      '/images/HeroSlideshow/property-investment-consulting.avif',
     imageAlt: 'Residential property prepared for development and investment review',
     shortDescription:
       'Site selection, feasibility, and development-oriented investment support.',
@@ -71,7 +71,7 @@ export const mainServices = [
     id: 'site-development-utilities',
     title: 'Site Development & Utilities',
     image:
-      'https://images.unsplash.com/photo-1581094794329-adc7c0392600?auto=format&fit=crop&w=1600&q=80',
+      '/images/HeroSlideshow/site-development-utilities.jpg',
     imageAlt: 'Site development and utility coordination on an active project',
     shortDescription:
       'Clearing, grading, underground utilities, curb & gutter, and paving coordination.',
@@ -88,7 +88,7 @@ export const mainServices = [
     id: 'project-management-support',
     title: 'Project Management & Support',
     image:
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80',
+      '/images/HeroSlideshow/project-management-support.avif',
     imageAlt: 'Project team coordinating engineering and field work on site',
     shortDescription:
       'Permitting, scheduling, vendor coordination, cost control, and project support.',
@@ -117,7 +117,7 @@ export const landscapingVisuals = [
     description:
       'Ongoing grounds care shaped around how a property is used — from maintained turf to finished outdoor spaces.',
     image:
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/Landscape-Maintenance.jpg',
     imageAlt: 'Maintained garden beds and landscaped grounds',
   },
   {
@@ -125,7 +125,7 @@ export const landscapingVisuals = [
     description:
       'Grading and leveling support that prepares land for drainage, turf, and outdoor construction.',
     image:
-      'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/Site-Grading.avif',
     imageAlt: 'Site grading and earthwork equipment preparing land',
   },
   {
@@ -133,7 +133,7 @@ export const landscapingVisuals = [
     description:
       'Turf and sod work planned for coverage, appearance, and lasting outdoor performance.',
     image:
-      'https://images.unsplash.com/photo-1558904541-efde049ce5d2?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/Sod-Installation.jpg',
     imageAlt: 'Freshly landscaped lawn and turf around a property',
   },
   {
@@ -141,7 +141,7 @@ export const landscapingVisuals = [
     description:
       'Paver systems and hardscape layouts for walkways, community spaces, and finished outdoor areas.',
     image:
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/Hardscape.jpg',
     imageAlt: 'Paver walkway through a landscaped outdoor space',
   },
   {
@@ -149,7 +149,7 @@ export const landscapingVisuals = [
     description:
       'Drainage and erosion-control coordination that protects graded land and outdoor improvements.',
     image:
-      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80',
+      '/images/HeroSlideshow/Drainage.jpg',
     imageAlt: 'Green landscape with water and drainage along planted ground',
   },
 ];
