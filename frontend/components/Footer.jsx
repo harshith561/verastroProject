@@ -110,8 +110,19 @@ export default function Footer() {
         >
           <p>&copy; {year} VERASTRO INFRA, a division of Verastro Inc. All rights reserved.</p>
           <div className="flex gap-4">
-            <Link href="/privacy-policy" className="hover:text-gray-300 transition-colors">Privacy Policy</Link>
-            <Link href="/terms-of-use" className="hover:text-gray-300 transition-colors">Terms of Use</Link>
+            <div className="flex gap-4">
+              <p >
+                Powered by{' '}
+                <a
+                  href="https://digitalverto.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#4CCFC1] hover:text-white transition-colors duration-200"
+                >
+                  Digital Verto
+                </a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
