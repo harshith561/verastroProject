@@ -66,7 +66,7 @@ export const visualImages = {
     'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1920&q=80',
   golfCourseAlt: 'Expansive golf course fairway and green landscape',
   introLandscape:
-    'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/introLandscape.jpg',
   introLandscapeAlt: 'Layered landscaping, trees, and maintained outdoor grounds',
   engineering:
     'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1600&q=80',

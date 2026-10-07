@@ -72,9 +72,8 @@ export default function HeroSlideshow() {
           role="img"
           aria-label={item.imageAlt}
           aria-hidden={slideIndex !== index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-out ${
-            slideIndex === index ? 'opacity-100 hero-kenburns' : 'opacity-0'
-          }`}
+          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-out ${slideIndex === index ? 'opacity-100 hero-kenburns' : 'opacity-0'
+            }`}
           style={{ backgroundImage: `url(${item.image})` }}
         />
       ))}
@@ -108,7 +107,7 @@ export default function HeroSlideshow() {
       </div>
 
       {/* Dots and progress */}
-      <div className="absolute bottom-20 left-0 right-0 z-20">
+      <div className="absolute bottom-6 md:bottom-25 left-0 right-0 z-20">
         <div className="flex w-full items-center justify-center md:justify-start gap-4 px-6 md:px-12 lg:px-20">
           <div className="flex items-center gap-2" role="tablist" aria-label="Hero slides">
             {heroSlides.map((item, slideIndex) => (
@@ -118,9 +117,8 @@ export default function HeroSlideshow() {
                 role="tab"
                 aria-selected={slideIndex === index}
                 aria-label={`Show slide ${slideIndex + 1}: ${item.eyebrow}`}
-                className={`h-3 w-3 rounded-full border border-white transition-all duration-300 ${
-                  slideIndex === index ? 'bg-white scale-110' : 'bg-transparent hover:bg-white/60'
-                }`}
+                className={`h-3 w-3 rounded-full border border-white transition-all duration-300 ${slideIndex === index ? 'bg-white scale-110' : 'bg-transparent hover:bg-white/60'
+                  }`}
                 onClick={() => goTo(slideIndex)}
               />
             ))}

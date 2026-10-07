@@ -59,31 +59,37 @@ export default function HomePage() {
         ctaHref="/services"
       />
 
-      <section aria-labelledby="services-heading">
-        <div className="container-main section-padding pb-8 md:pb-10">
-          <p className="section-label">Our Services</p>
-          <h2 id="services-heading" className="section-title mb-3">
-            Site solutions, from planning to delivery.
-          </h2>
-          <p className="text-sm text-gray-600 max-w-2xl">
-            Engineering, land development, and outdoor infrastructure support — presented as a visual walk through the work.
-          </p>
-        </div>
-        {mainServices.map((service, index) => (
-          <VisualSplit
-            key={service.id}
-            reverse={index % 2 === 1}
-            image={service.image}
-            alt={service.imageAlt}
-            eyebrow="Service"
-            title={service.title}
-            text={service.shortDescription}
-            ctaLabel="Explore Service"
-            ctaHref="/services"
-            headingAs="h3"
-          />
-        ))}
-      </section>
+     <section aria-labelledby="services-heading">
+  <div className="w-full px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-8 md:pb-10 text-center lg:text-left">
+    <p className="text-xs font-semibold tracking-widest uppercase mb-3 text-[#20B9AD]">
+      Our Services
+    </p>
+    <h2
+      id="services-heading"
+      className="text-2xl md:text-3xl font-semibold leading-tight mb-3 text-[#101A3A]"
+    >
+      Site solutions, from planning to delivery.
+    </h2>
+    <p className="text-sm text-gray-600 max-w-full mx-auto lg:mx-0">
+      Engineering, land development, and outdoor infrastructure support — presented as a visual walk through the work.
+    </p>
+  </div>
+
+  {mainServices.map((service, index) => (
+    <VisualSplit
+      key={service.id}
+      reverse={index % 2 === 1}
+      image={service.image}
+      alt={service.imageAlt}
+      eyebrow="Service"
+      title={service.title}
+      text={service.shortDescription}
+      ctaLabel="Explore Service"
+      ctaHref="/services"
+      headingAs="h3"
+    />
+  ))}
+</section>
 
       <section className="section-padding bg-white" aria-labelledby="landscaping-heading">
         <div className="container-main mb-10">
