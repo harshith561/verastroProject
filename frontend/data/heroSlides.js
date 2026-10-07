@@ -63,48 +63,48 @@ export const heroSlides = [
 
 export const visualImages = {
   golfCourse:
-    'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/golfCourse.avif',
   golfCourseAlt: 'Expansive golf course fairway and green landscape',
   introLandscape:
     '/images/HeroSlideshow/introLandscape.jpg',
   introLandscapeAlt: 'Layered landscaping, trees, and maintained outdoor grounds',
   engineering:
-    'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/engineering.avif',
   engineeringAlt: 'Aerial view used for site survey and development planning',
   infrastructure:
-    'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/infrastructure.avif',
   infrastructureAlt: 'Infrastructure and site construction in progress',
   investment:
-    'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/investment.avif',
   investmentAlt: 'Commercial property development skyline at dusk',
   aboutHero:
-    'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/golfCourse.avif',
   aboutHeroAlt: 'Landscaped outdoor environment with fairway-style turf',
   aboutMessage:
-    'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/aboutMessage.avif',
   aboutMessageAlt: 'Premium landscaped property with lawn and architecture',
   aboutApproach:
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/aboutApproach.avif',
   aboutApproachAlt: 'Engineering documentation supporting site development',
   consultation:
-    'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/hero-golf.avif',
   consultationAlt: 'Golf course greens representing landscaping and outdoor environments',
   contactHero:
-    'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/hero5.avif',
   contactHeroAlt: 'Landscaped property exterior used as contact page visual',
   careersHero:
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/careersHero.avif',
   careersHeroAlt: 'Professionals collaborating over technical project work',
   servicesHero:
-    'https://images.unsplash.com/photo-1558904541-efde049ce5d2?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/servicesHero.jpg',
   servicesHeroAlt: 'Landscaped outdoor space representing VERASTRO INFRA services',
   engineeringHero:
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80',
+    '/images/HeroSlideshow/aboutApproach.avif',
   engineeringHeroAlt: 'Civil engineering plans supporting site development',
   fieldCoordination:
-    'https://images.unsplash.com/photo-1581094794329-adc7c0392600?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/fieldCoordination.jpg',
   fieldCoordinationAlt: 'Field coordination for grading, drainage, and site development',
   commercialProperty:
-    'https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80',
+    '/images/HeroSlideshow/commercialProperty.jpg',
   commercialPropertyAlt: 'Residential and commercial property prepared for development review',
 };

@@ -59,37 +59,54 @@ export default function HomePage() {
         ctaHref="/services"
       />
 
-     <section aria-labelledby="services-heading">
-  <div className="w-full px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-8 md:pb-10 text-center lg:text-left">
-    <p className="text-xs font-semibold tracking-widest uppercase mb-3 text-[#20B9AD]">
-      Our Services
-    </p>
-    <h2
-      id="services-heading"
-      className="text-2xl md:text-3xl font-semibold leading-tight mb-3 text-[#101A3A]"
-    >
-      Site solutions, from planning to delivery.
-    </h2>
-    <p className="text-sm text-gray-600 max-w-full mx-auto lg:mx-0">
-      Engineering, land development, and outdoor infrastructure support — presented as a visual walk through the work.
-    </p>
-  </div>
+      {/* Services gallery */}
+      <section aria-labelledby="services-heading" className="bg-white">
+        <div className="w-full px-6 md:px-12 lg:px-20 pt-16 md:pt-20 pb-8 md:pb-10 text-center lg:text-left">
+          <p className="text-xs font-semibold tracking-widest uppercase mb-3 text-[#20B9AD]">
+            Our Services
+          </p>
+          <h2
+            id="services-heading"
+            className="text-2xl md:text-3xl font-semibold leading-tight mb-3 text-[#101A3A]"
+          >
+            Site solutions, from planning to delivery.
+          </h2>
+          <p className="text-sm text-gray-600 max-w-full mx-auto lg:mx-0">
+            Engineering, land development, and outdoor infrastructure support — presented as a visual walk through the work.
+          </p>
+        </div>
 
-  {mainServices.map((service, index) => (
-    <VisualSplit
-      key={service.id}
-      reverse={index % 2 === 1}
-      image={service.image}
-      alt={service.imageAlt}
-      eyebrow="Service"
-      title={service.title}
-      text={service.shortDescription}
-      ctaLabel="Explore Service"
-      ctaHref="/services"
-      headingAs="h3"
-    />
-  ))}
-</section>
+        <div className="w-full px-6 md:px-12 lg:px-20 pb-16 md:pb-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          {mainServices.map((service) => (
+            <Link
+              key={service.id}
+              href="/services"
+              data-aos="fade-up"
+              className="group relative block aspect-[4/3] overflow-hidden"
+              aria-label={`Explore ${service.title}`}
+            >
+              <Image
+                src={service.image}
+                alt={service.imageAlt}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                unoptimized
+                className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1226]/90 via-[#0B1226]/35 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-5 text-center lg:text-left">
+                <h3 className="text-lg font-semibold text-white mb-1">{service.title}</h3>
+                <p className="text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3">
+                  {service.shortDescription}
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CCFC1]">
+                  Explore Service <ArrowRight size={14} />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section className="section-padding bg-white" aria-labelledby="landscaping-heading">
         <div className="container-main mb-10">
