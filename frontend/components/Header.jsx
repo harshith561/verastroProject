@@ -30,8 +30,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 w-full transition-shadow duration-200 ${scrolled ? 'shadow-md' : ''}`}
-      style={{ backgroundColor: 'var(--color-navy)' }}
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
+        scrolled ? 'shadow-md backdrop-blur-md' : 'backdrop-blur-sm'
+      }`}
+      style={{ backgroundColor: scrolled ? 'rgba(16, 26, 58, 0.92)' : 'rgba(16, 26, 58, 0.38)' }}
     >
       <div className="container-main">
         <div className="flex items-center justify-between gap-4 h-16">

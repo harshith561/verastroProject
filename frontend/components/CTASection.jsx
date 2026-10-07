@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export default function CTASection({
@@ -7,14 +8,29 @@ export default function CTASection({
   ctaLabel = 'Request a Consultation',
   ctaHref = '/consultation',
   id = 'cta-section',
+  backgroundImage,
+  backgroundAlt = '',
 }) {
   return (
     <section
       style={{ backgroundColor: 'var(--color-navy)' }}
-      className="section-padding"
+      className="section-padding relative isolate overflow-hidden"
       aria-labelledby={id}
     >
-      <div className="container-main">
+      {backgroundImage && (
+        <>
+          <Image
+            src={backgroundImage}
+            alt={backgroundAlt}
+            fill
+            sizes="100vw"
+            unoptimized
+            className="object-cover opacity-35"
+          />
+          <div className="absolute inset-0 bg-[rgba(16,26,58,0.62)]" />
+        </>
+      )}
+      <div className="container-main relative z-10">
         <div data-aos="zoom-in" className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
             <h2
@@ -23,7 +39,7 @@ export default function CTASection({
             >
               {heading}
             </h2>
-            <p className="text-gray-400 text-sm mt-1">{subtext}</p>
+            <p className="text-gray-300 text-sm mt-1">{subtext}</p>
           </div>
           <div className="flex-shrink-0">
             <Link

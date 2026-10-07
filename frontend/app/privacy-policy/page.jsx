@@ -25,7 +25,7 @@ export default function PrivacyPolicyPage() {
   return (
     <PageLayout>
       {/* Header */}
-      <section className="py-12 md:py-16" style={{ backgroundColor: 'var(--color-navy)' }}>
+      <section className="-mt-16 pt-28 pb-12 md:pb-16" style={{ backgroundColor: 'var(--color-navy)' }}>
         <div className="container-main">
           <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
             LEGAL

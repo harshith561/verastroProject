@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import PageLayout from '@/components/PageLayout';
+import PageHero from '@/components/PageHero';
+import VisualSplit from '@/components/VisualSplit';
+import FullBleedVisual from '@/components/FullBleedVisual';
 import CTASection from '@/components/CTASection';
+import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
   title: 'Property & Infrastructure Investments | VERASTRO INFRA',
@@ -22,14 +26,20 @@ const investmentTypes = [
   {
     title: 'Commercial Investments',
     description: 'Site selection, feasibility, and development-oriented support for commercial properties and infrastructure.',
+    image: visualImages.investment,
+    imageAlt: visualImages.investmentAlt,
   },
   {
     title: 'Residential Investments',
     description: 'Land planning, subdivision layouts, and outdoor infrastructure support for residential development.',
+    image: visualImages.commercialProperty,
+    imageAlt: visualImages.commercialPropertyAlt,
   },
   {
     title: 'Asset-Backed Projects',
     description: 'Project assessment and site-development coordination for investor-backed real estate and infrastructure.',
+    image: visualImages.infrastructure,
+    imageAlt: visualImages.infrastructureAlt,
   },
 ];
 
@@ -42,148 +52,97 @@ const guidanceList = [
 export default function InvestmentsPage() {
   return (
     <PageLayout>
-      {/* Split Hero */}
-      <section className="relative flex flex-col md:flex-row min-h-[400px]">
-        {/* Left Side: Dark Navy Text Area */}
-        <div 
-          className="w-full md:w-1/2 flex items-center justify-center p-8 md:p-16 lg:p-24"
-          style={{ backgroundColor: 'var(--color-navy)' }}
-        >
-          <div data-aos="fade-right" className="max-w-xl w-full">
-            <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: 'var(--color-teal)' }}>
-              INVESTMENTS
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
-              Property &amp; Infrastructure Investment Support
-            </h1>
-            <p className="text-gray-300 text-sm md:text-base leading-relaxed">
-              Development-oriented consultation for commercial, residential, and asset-backed projects.
-            </p>
-          </div>
-        </div>
-        
-        {/* Right Side: Image */}
-        <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-full">
-          <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop&q=75"
-            alt="Infrastructure development project"
-            fill
-            className="object-cover"
-            priority
-            unoptimized
-          />
-        </div>
-      </section>
+      <PageHero
+        image={visualImages.investment}
+        alt={visualImages.investmentAlt}
+        eyebrow="Investments"
+        title="Property & Infrastructure Investment Support"
+        text="Development-oriented consultation for commercial, residential, and asset-backed projects."
+      />
 
-      {/* Intro Section */}
-      <section className="section-padding bg-white">
-        <div className="container-main">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-start">
-            <div data-aos="fade-right">
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
-                BUILD, DEVELOP, AND GROW
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold" style={{ color: 'var(--color-navy)' }}>
-                Start with the property. Plan for the project.
-              </h2>
-            </div>
-            <div data-aos="fade-left">
-              <p className="text-base md:text-lg text-gray-700 leading-relaxed mb-6 font-medium">
-                We blend engineering expertise, landscape craftsmanship, and smart development planning to turn spaces into long-term assets.
-              </p>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Multi-state operations across Florida, Texas, and Arkansas, with headquarters in Delaware.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VisualSplit
+        image={visualImages.aboutMessage}
+        alt={visualImages.aboutMessageAlt}
+        eyebrow="Build, Develop, and Grow"
+        title="Start with the property. Plan for the project."
+        text="We blend engineering expertise, landscape craftsmanship, and smart development planning to turn spaces into long-term assets. Multi-state operations across Florida, Texas, and Arkansas, with headquarters in Delaware."
+      />
 
-      {/* Development support cards */}
       <section className="section-padding" style={{ backgroundColor: 'var(--color-warm-white)' }}>
-        <div className="container-main">
-          <h2 className="text-2xl font-bold mb-10" style={{ color: 'var(--color-navy)' }}>
+        <div className="container-main mb-10">
+          <p className="section-label">Development Support</p>
+          <h2 className="section-title">
             Development support across property types.
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {investmentTypes.map((type, index) => (
-              <div key={index} data-aos="fade-up" data-aos-delay={index * 100} className="bg-white p-8 shadow-sm">
-                <div className="w-8 h-1 mb-6" style={{ backgroundColor: 'var(--color-teal)' }} />
-                <h3 className="text-lg font-bold mb-4" style={{ color: 'var(--color-navy)' }}>
+        </div>
+        <div className="container-main grid grid-cols-1 md:grid-cols-3 gap-5">
+          {investmentTypes.map((type) => (
+            <article key={type.title} data-aos="fade-up" className="overflow-hidden bg-white">
+              <div className="relative h-48 group overflow-hidden">
+                <Image src={type.image} alt={type.imageAlt} fill sizes="33vw" unoptimized className="object-cover img-zoom-hover" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--color-navy)' }}>
                   {type.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">
                   {type.description}
                 </p>
               </div>
-            ))}
-          </div>
+            </article>
+          ))}
         </div>
       </section>
 
-      {/* Split information section */}
+      <VisualSplit
+        reverse
+        image={visualImages.engineering}
+        alt={visualImages.engineeringAlt}
+        eyebrow="Investor Consultation"
+        title="Practical guidance for development decisions."
+        text="We evaluate properties from an engineering and development standpoint so investors and developers can plan with clearer site information."
+      >
+        <ul className="flex flex-col mb-2">
+          {guidanceList.map((item) => (
+            <li
+              key={item}
+              className="flex items-center gap-4 text-sm text-gray-700 py-4 border-b border-gray-100 last:border-0"
+            >
+              <div
+                className="w-1.5 h-6 rounded-sm flex-shrink-0"
+                style={{ backgroundColor: 'var(--color-teal)' }}
+              />
+              {item}
+            </li>
+          ))}
+        </ul>
+      </VisualSplit>
+
+      <FullBleedVisual
+        image={visualImages.golfCourse}
+        alt={visualImages.golfCourseAlt}
+        eyebrow="EB-5 — Informational Guidance Only"
+        title="Understand the information. Consult qualified advisors."
+        text="VERASTRO INFRA provides informational guidance on real-estate investment and EB-5-compliant opportunities. Such information is educational only and does not constitute financial, legal, or immigration advice."
+      />
+
       <section className="section-padding bg-white">
         <div className="container-main">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-12">
-            
-            {/* Left Col */}
-            <div data-aos="fade-right">
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
-                INVESTOR CONSULTATION
-              </p>
-              <h2 className="text-2xl md:text-3xl font-bold mb-8" style={{ color: 'var(--color-navy)' }}>
-                Practical guidance for development decisions.
-              </h2>
-              
-              <ul className="flex flex-col">
-                {guidanceList.map((item, index) => (
-                  <li 
-                    key={index} 
-                    className="flex items-center gap-4 text-sm text-gray-700 py-4 border-b border-gray-100 last:border-0"
-                  >
-                    <div
-                      className="w-1.5 h-6 rounded-sm flex-shrink-0"
-                      style={{ backgroundColor: 'var(--color-teal)' }}
-                    />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Right Col */}
-            <div data-aos="fade-left">
-              <p className="text-xs font-bold tracking-widest uppercase mb-3" style={{ color: 'var(--color-teal)' }}>
-                EB-5 - INFORMATIONAL GUIDANCE ONLY
-              </p>
-              <h2 className="text-xl md:text-2xl font-bold mb-6" style={{ color: 'var(--color-navy)' }}>
-                Understand the information. Consult qualified advisors.
-              </h2>
-              <p className="text-sm text-gray-600 leading-relaxed mb-4">
-                VERASTRO INFRA provides informational guidance on real-estate investment and EB-5-compliant opportunities. Such information is educational only and does not constitute financial, legal, or immigration advice.
-              </p>
-              <p className="text-sm text-gray-600 leading-relaxed">
-                Users should consult qualified advisors before making investment or visa-related decisions. We make no representations regarding profitability, approval timelines, or outcomes.
-              </p>
-            </div>
-            
-          </div>
-
-          {/* Important Information Banner */}
-          <div data-aos="zoom-in" className="bg-gray-50 border border-gray-200 p-6">
-            <h4 className="text-xs font-bold tracking-widest uppercase text-gray-800 mb-2">IMPORTANT INFORMATION</h4>
-            <p className="text-sm text-gray-600">
-              Nothing on this Site constitutes a binding offer, guarantee, or professional advice. Formal terms are defined only in executed written agreements between you and VERASTRO INFRA.
+          <div data-aos="zoom-in" className="border border-gray-200 p-6" style={{ backgroundColor: 'var(--color-warm-white)' }}>
+            <h2 className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--color-navy)' }}>Important Information</h2>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              Users should consult qualified advisors before making investment or visa-related decisions. We make no representations regarding profitability, approval timelines, or outcomes. Nothing on this Site constitutes a binding offer, guarantee, or professional advice. Formal terms are defined only in executed written agreements between you and VERASTRO INFRA.
             </p>
           </div>
         </div>
       </section>
 
-      <CTASection 
+      <CTASection
         heading="Discuss your property and development goals."
         subtext="Share your requirements with the VERASTRO INFRA team."
         ctaLabel="Talk to Our Team"
+        backgroundImage={visualImages.investment}
+        backgroundAlt=""
       />
     </PageLayout>
   );

@@ -1,13 +1,15 @@
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
-import SectionHeading from '@/components/SectionHeading';
-import ServiceCard from '@/components/ServiceCard';
+import HeroSlideshow from '@/components/HeroSlideshow';
+import VisualSplit from '@/components/VisualSplit';
+import FullBleedVisual from '@/components/FullBleedVisual';
 import LocationCard from '@/components/LocationCard';
 import CTASection from '@/components/CTASection';
-import { mainServices, siteWorkServices } from '@/data/services';
+import { mainServices, landscapingVisuals } from '@/data/services';
 import { locations } from '@/data/locations';
+import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
   title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
@@ -25,237 +27,131 @@ export const metadata = {
   twitter: {
     title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
     description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
-  }
+  },
 };
 
 export default function HomePage() {
   return (
     <PageLayout>
-      {/* Hero */}
-      <section
-        className="relative min-h-[520px] md:min-h-[600px] flex items-center"
-        style={{ backgroundColor: 'var(--color-navy)' }}
-        aria-label="Hero"
-      >
-        {/* Background image */}
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&auto=format&fit=crop&q=75"
-            alt="Land development and site grading work — excavation equipment on a construction site"
-            fill
-            className="object-cover"
-            style={{ opacity: 0.25 }}
-            priority
-            sizes="100vw"
-            unoptimized
+      <div className="-mt-16">
+        <HeroSlideshow />
+      </div>
+
+      <section className="bg-white" aria-labelledby="intro-heading">
+        <VisualSplit
+          image={visualImages.introLandscape}
+          alt={visualImages.introLandscapeAlt}
+          eyebrow="Practical Expertise & Clear Communication"
+          title="Your Local Partner for Smart, Scalable Site Solutions"
+          text="VERASTRO INFRA is a locally operated division of Verastro Inc. Our engineering and field teams evaluate site conditions and project requirements to provide data-driven recommendations, clear communication, and transparent pricing. From initial site assessments to project completion, we coordinate every phase with professional precision — keeping clients informed and projects on track."
+          ctaLabel="More About Our Company"
+          ctaHref="/about"
+        />
+      </section>
+
+      <FullBleedVisual
+        image={visualImages.golfCourse}
+        alt={visualImages.golfCourseAlt}
+        eyebrow="Landscaping & Outdoor Environments"
+        title="Outdoor spaces designed for performance."
+        text="Golf-course imagery reflects the standard of turf, grading, and grounds care we bring to outdoor work — landscaping, sod, drainage, and finished environments shaped around how a property is used."
+        ctaLabel="Explore Landscaping"
+        ctaHref="/services"
+      />
+
+      <section aria-labelledby="services-heading">
+        <div className="container-main section-padding pb-8 md:pb-10">
+          <p className="section-label">Our Services</p>
+          <h2 id="services-heading" className="section-title mb-3">
+            Site solutions, from planning to delivery.
+          </h2>
+          <p className="text-sm text-gray-600 max-w-2xl">
+            Engineering, land development, and outdoor infrastructure support — presented as a visual walk through the work.
+          </p>
+        </div>
+        {mainServices.map((service, index) => (
+          <VisualSplit
+            key={service.id}
+            reverse={index % 2 === 1}
+            image={service.image}
+            alt={service.imageAlt}
+            eyebrow="Service"
+            title={service.title}
+            text={service.shortDescription}
+            ctaLabel="Explore Service"
+            ctaHref="/services"
+            headingAs="h3"
           />
-        </div>
+        ))}
+      </section>
 
-        <div className="relative container-main py-16 md:py-20">
-          <div data-aos="fade-up" className="max-w-2xl">
-            <p className="section-label mb-4">
-              VERASTRO INFRA — A Division of Verastro Inc.
-            </p>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-5">
-              Engineering Better Infrastructure.{' '}
-              <span className="block">Building Stronger Communities.</span>
-            </h1>
-            <p className="text-gray-300 text-base md:text-lg mb-8 leading-relaxed max-w-xl">
-              Engineering, site development, landscaping, grading, drainage, and outdoor
-              infrastructure — built around your property and project requirements.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link href="/consultation" className="btn-primary" id="hero-consultation-cta">
-                Request a Consultation <ArrowRight size={16} />
-              </Link>
-              <Link href="/services" className="btn-secondary" id="hero-services-link">
-                Explore Our Services
-              </Link>
-            </div>
-            <p className="mt-5 text-xs text-gray-500">
-              Land Development &nbsp;·&nbsp; Site Grading &nbsp;·&nbsp; Drainage &nbsp;·&nbsp; Infrastructure
-            </p>
-          </div>
+      <section className="section-padding bg-white" aria-labelledby="landscaping-heading">
+        <div className="container-main mb-10">
+          <p className="section-label">Landscaping & Outdoor Work</p>
+          <h2 id="landscaping-heading" className="section-title">
+            Well-planned grounds. Functional outdoor spaces.
+          </h2>
+        </div>
+        <div className="container-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          {landscapingVisuals.map((item) => (
+            <article key={item.title} data-aos="fade-up" className="group overflow-hidden bg-white border border-gray-100">
+              <div className="relative h-52 overflow-hidden">
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  unoptimized
+                  className="object-cover img-zoom-hover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--color-navy)' }}>
+                  {item.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">{item.description}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="container-main mt-8">
+          <Link href="/services" className="btn-outline" id="home-sitework-link">
+            View Services <ArrowRight size={14} />
+          </Link>
         </div>
       </section>
 
-      {/* Company Introduction */}
-      <section className="section-padding bg-white" aria-labelledby="intro-heading">
-        <div className="container-main">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div data-aos="fade-right">
-              <p className="section-label">Practical Expertise &amp; Clear Communication</p>
-              <h2 id="intro-heading" className="section-title">
-                Your Local Partner for Smart, Scalable Site Solutions
-              </h2>
-            </div>
-            <div data-aos="fade-left" className="space-y-4 text-gray-600">
-              <p className="text-sm leading-relaxed">
-                VERASTRO INFRA is a locally operated division of Verastro Inc. Our engineering
-                and field teams evaluate site conditions and project requirements to provide
-                data-driven recommendations, clear communication, and transparent pricing.
-              </p>
-              <p className="text-sm leading-relaxed">
-                From initial site assessments to project completion, we coordinate every phase with
-                professional precision — keeping clients informed and projects on track.
-              </p>
-              <Link
-                href="/about"
-                className="inline-flex items-center gap-1.5 text-sm font-medium transition-colors"
-                style={{ color: 'var(--color-teal)' }}
-                id="intro-about-link"
-              >
-                More About Our Company <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <VisualSplit
+        reverse
+        image={visualImages.engineering}
+        alt={visualImages.engineeringAlt}
+        eyebrow="Engineering & Site Development"
+        title="Technical planning for practical fieldwork."
+        text="Site grading, drainage, erosion control, and development coordination — supported by quantity takeoffs, technical documentation, and site-plan coordination. Tools include AutoCAD Civil 3D, drone surveys, and GIS."
+        ctaLabel="Explore Engineering"
+        ctaHref="/engineering"
+      />
 
-      {/* Services Overview */}
-      <section
-        className="section-padding"
-        style={{ backgroundColor: 'var(--color-warm-white)' }}
-        aria-labelledby="services-heading"
-      >
-        <div className="container-main">
-          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
-            <div>
-              <p className="section-label">Our Services</p>
-              <h2 id="services-heading" className="section-title mb-0">
-                Site solutions, from planning to delivery.
-              </h2>
-            </div>
-            <Link
-              href="/services"
-              className="inline-flex items-center gap-1.5 text-sm font-medium whitespace-nowrap transition-colors"
-              style={{ color: 'var(--color-teal)' }}
-              id="services-view-all-link"
-            >
-              View All Services <ArrowRight size={14} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {mainServices.map((service) => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <VisualSplit
+        image={visualImages.infrastructure}
+        alt={visualImages.infrastructureAlt}
+        eyebrow="Infrastructure & Development"
+        title="From land planning to coordinated delivery."
+        text="Roads, drainage, utilities, and site preparation brought together through practical development coordination — from planning through field execution within approved scopes."
+        ctaLabel="Explore Services"
+        ctaHref="/services"
+      />
 
-      {/* Engineering Section */}
-      <section className="section-padding bg-white" aria-labelledby="engineering-heading">
-        <div className="container-main">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="relative rounded-lg overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&auto=format&fit=crop&q=75"
-                alt="Civil engineers reviewing site plans on a land development project"
-                width={600}
-                height={400}
-                className="w-full h-72 object-cover rounded-lg"
-                unoptimized
-              />
-            </div>
-            <div>
-              <p className="section-label">Engineering &amp; Site Development</p>
-              <h2 id="engineering-heading" className="section-title">
-                Technical planning for practical fieldwork.
-              </h2>
-              <p className="text-sm text-gray-600 mb-5 leading-relaxed">
-                Site grading, drainage, erosion control, and development coordination —
-                supported by quantity takeoffs, technical documentation, and site-plan coordination.
-              </p>
-              <ul className="flex flex-col gap-2 mb-6">
-                {['AutoCAD Civil 3D', 'Drone surveys', 'GIS'].map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                    <CheckCircle size={15} style={{ color: 'var(--color-teal)' }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/engineering" className="btn-outline" id="home-engineering-link">
-                Explore Engineering <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <FullBleedVisual
+        image={visualImages.investment}
+        alt={visualImages.investmentAlt}
+        eyebrow="Property & Infrastructure"
+        title="Build, Develop, and Grow — With VERASTRO INFRA"
+        text="We blend engineering expertise, landscape craftsmanship, and smart development planning to turn spaces into long-term assets. The portfolio may include sod installation, drainage, paver systems for community projects, commercial developments, and investor-backed infrastructure."
+        ctaLabel="Explore Investments"
+        ctaHref="/investments"
+      />
 
-      {/* Landscaping / Outdoor Work */}
-      <section
-        className="section-padding"
-        style={{ backgroundColor: 'var(--color-warm-white)' }}
-        aria-labelledby="sitework-heading"
-      >
-        <div className="container-main">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="section-label">Landscaping &amp; Outdoor Work</p>
-              <h2 id="sitework-heading" className="section-title">
-                Well-planned grounds. Functional outdoor spaces.
-              </h2>
-              <ul className="flex flex-col gap-2.5 mb-6">
-                {siteWorkServices.map((service) => (
-                  <li key={service} className="flex items-center gap-2 text-sm text-gray-700">
-                    <div
-                      className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                      style={{ backgroundColor: 'var(--color-teal)' }}
-                    />
-                    {service}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/services" className="btn-outline" id="home-sitework-link">
-                View Services
-              </Link>
-            </div>
-            <div>
-              <Image
-                src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&auto=format&fit=crop&q=75"
-                alt="Professionally landscaped community walkway with pavers and sod"
-                width={600}
-                height={400}
-                className="w-full h-72 object-cover rounded-lg"
-                unoptimized
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Investment Section */}
-      <section
-        className="section-padding"
-        style={{ backgroundColor: 'var(--color-navy-secondary)' }}
-        aria-labelledby="investments-heading"
-      >
-        <div className="container-main">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <p className="section-label">Property &amp; Infrastructure</p>
-              <h2 id="investments-heading" className="text-2xl md:text-3xl font-semibold text-white mb-4">
-                Build, Develop, and Grow — With VERASTRO INFRA
-              </h2>
-              <Link href="/investments" className="btn-primary" id="home-investments-link">
-                Explore Investments <ArrowRight size={16} />
-              </Link>
-            </div>
-            <div className="space-y-4">
-              <p className="text-gray-300 text-sm leading-relaxed">
-                We blend engineering expertise, landscape craftsmanship, and smart development
-                planning to turn spaces into long-term assets.
-              </p>
-              <p className="text-gray-400 text-sm leading-relaxed">
-                The portfolio may include sod installation, drainage, paver systems for community
-                projects, commercial developments, and investor-backed infrastructure.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Where We Serve */}
       <section className="section-padding bg-white" aria-labelledby="locations-heading">
         <div className="container-main">
           <div className="mb-8">
@@ -272,8 +168,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <CTASection />
+      <CTASection
+        backgroundImage={visualImages.golfCourse}
+        backgroundAlt=""
+        heading="Let's discuss your site and project needs."
+        subtext="Share your requirements with the VERASTRO INFRA team."
+      />
     </PageLayout>
   );
 }
