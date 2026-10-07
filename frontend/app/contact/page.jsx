@@ -31,7 +31,7 @@ export default function ContactPage() {
         alt={visualImages.contactHeroAlt}
         eyebrow="Contact Us"
         title="Get in Touch"
-        text="Need immediate assistance? Reach out to our team directly."
+        text="Need help with a site or project? Our team is ready to listen. Whether you are planning land development, site grading, drainage, or outdoor infrastructure, share your requirements with us and we will respond with clear next steps and honest guidance."
       />
 
       <VisualSplit
@@ -39,7 +39,11 @@ export default function ContactPage() {
         alt={visualImages.introLandscapeAlt}
         eyebrow="Direct Contact"
         title="Talk with VERASTRO INFRA."
-        text="Our headquarters is in Middletown, Delaware, with coordinated operations across Florida, Texas, and Arkansas."
+        text={<>
+          Based in Delaware, serving Florida, Texas, and Arkansas.
+          <br />
+          Tell us about your project and we'll reply with clear next steps.
+        </>}
       >
         <div className="flex flex-col gap-6 mb-4">
           <div>

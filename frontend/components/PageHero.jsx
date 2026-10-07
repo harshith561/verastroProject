@@ -6,7 +6,7 @@ export default function PageHero({
   eyebrow,
   title,
   text,
-  minHeight = 'min-h-[52vh] md:min-h-[64vh]',
+  minHeight = 'min-h-[55vh] md:min-h-[70vh]',
 }) {
   return (
     <section
@@ -23,12 +23,24 @@ export default function PageHero({
         className="object-cover hero-kenburns-slow"
       />
       <div className="hero-overlay absolute inset-0" />
-      <div data-aos="fade-up" className="relative container-main py-16 md:py-20">
-        {eyebrow && <p className="section-label text-white/80">{eyebrow}</p>}
-        <h1 className="text-3xl md:text-5xl font-bold text-white mb-3 max-w-3xl">{title}</h1>
-        {text && (
-          <p className="text-gray-200 text-sm md:text-base leading-relaxed max-w-xl">{text}</p>
-        )}
+
+      <div
+        data-aos="fade-up"
+        className="relative w-full px-6 md:px-12 lg:px-20 py-16 md:py-20"
+      >
+        <div className="text-center lg:text-left">
+          {eyebrow && 
+          <p className="section-label text-[#F3B44A]">{eyebrow}</p>
+          }
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-3 max-w-3xl mx-auto lg:mx-0">
+            {title}
+          </h1>
+          {text && (
+            <p className="text-gray-200 text-sm md:text-base leading-relaxed max-w-auto mx-auto lg:mx-0">
+              {text}
+            </p>
+          )}
+        </div>
       </div>
     </section>
   );

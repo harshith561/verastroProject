@@ -90,7 +90,7 @@ export const visualImages = {
     '/images/HeroSlideshow/hero-golf.avif',
   consultationAlt: 'Golf course greens representing landscaping and outdoor environments',
   contactHero:
-    '/images/HeroSlideshow/hero5.avif',
+    '/images/HeroSlideshow/contactHero.jpg',
   contactHeroAlt: 'Landscaped property exterior used as contact page visual',
   careersHero:
     '/images/HeroSlideshow/careersHero.avif',
