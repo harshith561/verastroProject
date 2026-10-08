@@ -9,9 +9,22 @@ import careersRoutes from './routes/careers.js';
 const app = express();
 const port = process.env.PORT || 5000;
 
+const allowedOrigins = [
+  'https://verastro-project.vercel.app',
+  'http://localhost:3000',
+];
+
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
   })
 );
 
