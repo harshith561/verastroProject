@@ -9,7 +9,12 @@ import careersRoutes from './routes/careers.js';
 const app = express();
 const port = process.env.PORT || 5000;
 
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000' }));
+app.use(
+  cors({
+    origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  })
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -21,18 +26,28 @@ app.use('/api/careers', careersRoutes);
 app.use((err, req, res, next) => {
   if (err) {
     console.error(err.message);
+
     const message =
       err.code === 'LIMIT_FILE_SIZE'
         ? 'File is too large. Maximum size is 10MB.'
         : err.message === 'Unsupported file type'
         ? 'Unsupported file type.'
         : 'Invalid form submission.';
-    return res.status(400).json({ success: false, message });
+
+    return res.status(400).json({
+      success: false,
+      message,
+    });
   }
+
   next();
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-  verifySmtp();
-});
+if (!process.env.VERCEL) {
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
+    verifySmtp();
+  });
+}
+
+export default app;
