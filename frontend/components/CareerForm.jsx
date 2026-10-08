@@ -7,6 +7,8 @@ import { careerSchema } from '@/lib/validation';
 import { CheckCircle, AlertCircle, Loader2, ArrowRight, Check, FileText } from 'lucide-react';
 import { jobListings } from '@/data/jobs';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
 export default function CareerForm({ defaultPosition = '' }) {
   const [status, setStatus] = useState('idle');
   const [serverMessage, setServerMessage] = useState('');
@@ -15,6 +17,7 @@ export default function CareerForm({ defaultPosition = '' }) {
   const {
     register,
     handleSubmit,
+    getValues,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(careerSchema),
@@ -26,13 +29,16 @@ export default function CareerForm({ defaultPosition = '' }) {
     try {
       const formData = new FormData();
       Object.entries(data).forEach(([key, val]) => {
-        if (key !== 'resume') formData.append(key, String(val));
+        if (key !== 'resume' && val !== undefined && val !== null) {
+          formData.append(key, String(val));
+        }
       });
-      if (data.resume?.[0]) {
-        formData.append('resume', data.resume[0]);
+      const resumeFile = getValues('resume')?.[0];
+      if (resumeFile) {
+        formData.append('resume', resumeFile);
       }
 
-      const res = await fetch('/api/careers', {
+      const res = await fetch(`${API_URL}/api/careers`, {
         method: 'POST',
         body: formData,
       });
@@ -43,11 +49,13 @@ export default function CareerForm({ defaultPosition = '' }) {
         setServerMessage(json.message);
       } else {
         setStatus('error');
-        setServerMessage(json.message || 'We couldn\'t send your application. Please try again.');
+        setServerMessage(json.message || "We couldn't send your application. Please try again.");
       }
     } catch {
       setStatus('error');
-      setServerMessage('We couldn\'t send your application. Please try again. If the issue continues, call (904) 302-9170 or email inquiries@verastroinfra.com.');
+      setServerMessage(
+        "We couldn't send your application. Please try again. If the issue continues, call (904) 302-9170 or email inquiries@verastroinfra.com."
+      );
     }
   };
 
@@ -60,6 +68,8 @@ export default function CareerForm({ defaultPosition = '' }) {
       setFileName('');
     }
   };
+
+  const locked = status === 'loading' || status === 'success';
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
@@ -99,11 +109,11 @@ export default function CareerForm({ defaultPosition = '' }) {
           className={`form-input ${errors.name ? 'error' : ''}`}
           placeholder="Your full name"
           {...register('name')}
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
         />
         {errors.name && <p className="form-error">{errors.name.message}</p>}
       </div>
-      
+
       <div>
         <label htmlFor="career-email" className="form-label">Email</label>
         <input
@@ -113,7 +123,7 @@ export default function CareerForm({ defaultPosition = '' }) {
           className={`form-input ${errors.email ? 'error' : ''}`}
           placeholder="you@example.com"
           {...register('email')}
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
         />
         {errors.email && <p className="form-error">{errors.email.message}</p>}
       </div>
@@ -127,18 +137,18 @@ export default function CareerForm({ defaultPosition = '' }) {
           className={`form-input ${errors.phone ? 'error' : ''}`}
           placeholder="Your phone number"
           {...register('phone')}
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
         />
         {errors.phone && <p className="form-error">{errors.phone.message}</p>}
       </div>
-      
+
       <div>
         <label htmlFor="career-position" className="form-label">Position</label>
         <select
           id="career-position"
           className={`form-input ${errors.position ? 'error' : ''}`}
           {...register('position')}
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
         >
           <option value="">Select a position</option>
           {jobListings.map((job) => (
@@ -165,9 +175,9 @@ export default function CareerForm({ defaultPosition = '' }) {
               fileRest.onChange(e);
               handleFileChange(e);
             }}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
-          <div className={`border border-gray-300 rounded p-4 flex flex-col items-start gap-1 bg-gray-50 ${status === 'loading' || status === 'success' ? 'opacity-60' : ''}`}>
+          <div className={`border border-gray-300 rounded p-4 flex flex-col items-start gap-1 bg-gray-50 ${locked ? 'opacity-60' : ''}`}>
             <div className="flex items-center gap-2 text-sm font-medium" style={{ color: 'var(--color-navy)' }}>
               <FileText size={16} style={{ color: 'var(--color-teal)' }} />
               {fileName || 'Choose a file'}
@@ -185,14 +195,14 @@ export default function CareerForm({ defaultPosition = '' }) {
           className="form-input resize-y"
           placeholder="Tell us briefly about yourself and your interest in this position..."
           {...register('message')}
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
         />
       </div>
 
       <div className="mt-2">
         <button
           type="submit"
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
           className="btn-primary w-full justify-center disabled:opacity-80"
           id="career-form-submit"
         >

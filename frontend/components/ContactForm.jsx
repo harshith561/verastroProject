@@ -6,6 +6,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { contactSchema } from '@/lib/validation';
 import { CheckCircle, AlertCircle, Loader2, ArrowRight, Check, UploadCloud } from 'lucide-react';
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
 const SERVICE_OPTIONS = [
   'Land Development',
   'Subdivision & Plot Layout Design',
@@ -36,7 +38,7 @@ export default function ContactForm() {
   const {
     register,
     handleSubmit,
-    reset,
+    getValues,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(contactSchema),
@@ -48,15 +50,16 @@ export default function ContactForm() {
     try {
       const formData = new FormData();
       Object.entries(data).forEach(([key, val]) => {
-        if (key !== 'projectFile') {
+        if (key !== 'projectFile' && val !== undefined && val !== null) {
           formData.append(key, String(val));
         }
       });
-      if (data.projectFile?.[0]) {
-        formData.append('projectFile', data.projectFile[0]);
+      const projectFile = getValues('projectFile')?.[0];
+      if (projectFile) {
+        formData.append('projectFile', projectFile);
       }
 
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_URL}/api/consultation`, {
         method: 'POST',
         body: formData,
       });
@@ -67,11 +70,13 @@ export default function ContactForm() {
         setServerMessage(json.message);
       } else {
         setStatus('error');
-        setServerMessage(json.message || 'We couldn\'t send your request. Please try again.');
+        setServerMessage(json.message || "We couldn't send your request. Please try again.");
       }
     } catch {
       setStatus('error');
-      setServerMessage('We couldn\'t send your request. Please try again. If the issue continues, call (904) 302-9170 or email inquiries@verastroinfra.com.');
+      setServerMessage(
+        "We couldn't send your request. Please try again. If the issue continues, call (904) 302-9170 or email inquiries@verastroinfra.com."
+      );
     }
   };
 
@@ -84,6 +89,8 @@ export default function ContactForm() {
       setFileName('');
     }
   };
+
+  const locked = status === 'loading' || status === 'success';
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate className="flex flex-col gap-5">
@@ -124,7 +131,7 @@ export default function ContactForm() {
             className={`form-input ${errors.name ? 'error' : ''}`}
             placeholder="Your full name"
             {...register('name')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
           {errors.name && <p className="form-error">{errors.name.message}</p>}
         </div>
@@ -137,7 +144,7 @@ export default function ContactForm() {
             className={`form-input ${errors.email ? 'error' : ''}`}
             placeholder="you@example.com"
             {...register('email')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
           {errors.email && <p className="form-error">{errors.email.message}</p>}
         </div>
@@ -153,7 +160,7 @@ export default function ContactForm() {
             className={`form-input ${errors.phone ? 'error' : ''}`}
             placeholder="Your phone number"
             {...register('phone')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
           {errors.phone && <p className="form-error">{errors.phone.message}</p>}
         </div>
@@ -166,7 +173,7 @@ export default function ContactForm() {
             className="form-input"
             placeholder="Company or organization"
             {...register('company')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
         </div>
       </div>
@@ -178,7 +185,7 @@ export default function ContactForm() {
             id="contact-service"
             className={`form-input ${errors.service ? 'error' : ''}`}
             {...register('service')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           >
             <option value="">Select a service</option>
             {SERVICE_OPTIONS.map((s) => (
@@ -193,7 +200,7 @@ export default function ContactForm() {
             id="contact-location"
             className={`form-input ${errors.location ? 'error' : ''}`}
             {...register('location')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           >
             <option value="">Select a location</option>
             {LOCATION_OPTIONS.map((l) => (
@@ -212,7 +219,7 @@ export default function ContactForm() {
           className={`form-input resize-y ${errors.message ? 'error' : ''}`}
           placeholder="Tell us about the property, project scope and requirements."
           {...register('message')}
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
         />
         {errors.message && <p className="form-error">{errors.message.message}</p>}
       </div>
@@ -233,9 +240,9 @@ export default function ContactForm() {
               fileRest.onChange(e);
               handleFileChange(e);
             }}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
-          <div className={`border border-dashed border-gray-300 rounded p-4 flex flex-col items-start gap-1 bg-gray-50 ${status === 'loading' || status === 'success' ? 'opacity-60' : ''}`}>
+          <div className={`border border-dashed border-gray-300 rounded p-4 flex flex-col items-start gap-1 bg-gray-50 ${locked ? 'opacity-60' : ''}`}>
             <div className="flex items-center gap-2 text-sm font-medium" style={{ color: 'var(--color-navy)' }}>
               <UploadCloud size={16} style={{ color: 'var(--color-teal)' }} />
               {fileName || 'Choose a file or drag it here'}
@@ -252,7 +259,7 @@ export default function ContactForm() {
             className="mt-0.5 w-4 h-4 rounded border-gray-300 flex-shrink-0"
             style={{ accentColor: 'var(--color-teal)' }}
             {...register('consent')}
-            disabled={status === 'loading' || status === 'success'}
+            disabled={locked}
           />
           <span className="text-xs text-gray-500">
             I consent to VERASTRO INFRA using this information to respond to my inquiry. I have read the Privacy Policy.
@@ -264,9 +271,9 @@ export default function ContactForm() {
       <div className="mt-2">
         <button
           type="submit"
-          disabled={status === 'loading' || status === 'success'}
+          disabled={locked}
           className="btn-primary w-full sm:w-auto justify-center disabled:opacity-80"
-          style={status === 'loading' || status === 'success' || status === 'error' ? { width: '100%' } : {}}
+          style={locked || status === 'error' ? { width: '100%' } : {}}
           id="contact-form-submit"
         >
           {status === 'loading' && (
