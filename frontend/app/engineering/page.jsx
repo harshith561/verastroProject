@@ -6,8 +6,7 @@ import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
   title: 'Engineering & Construction Services | VERASTRO INFRA',
-  description:
-    'From grading and drainage to infrastructure scaling, we provide robust engineering and construction services for residential and commercial projects.',
+  description: 'From grading and drainage to infrastructure scaling, we provide robust engineering and construction services for your projects.',
   alternates: { canonical: '/engineering' },
   openGraph: {
     title: 'Engineering & Construction Services | VERASTRO INFRA',

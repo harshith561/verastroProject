@@ -11,8 +11,7 @@ import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
   title: 'About Us | VERASTRO INFRA',
-  description:
-    'Learn about VERASTRO INFRA, a division of Verastro Inc. We deliver professional engineering, landscaping, site development, grading, and outdoor infrastructure across FL, TX, DE, and AR.',
+  description: 'VERASTRO INFRA, a division of Verastro Inc, delivers engineering, site development, and outdoor infrastructure across FL, TX, DE, and AR.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About VERASTRO INFRA',

@@ -8,8 +8,7 @@ import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
   title: 'Our Services | Site Development & Engineering',
-  description:
-    'Explore VERASTRO INFRA services: land development, site grading, drainage, subdivision layout, infrastructure development, and property investment consulting across FL, TX, DE, and AR.',
+  description: 'Explore VERASTRO INFRA services: land development, site grading, drainage, subdivision layout, and infrastructure consulting across FL, TX, DE, and AR.',
   alternates: { canonical: '/services' },
   openGraph: {
     title: 'Our Services | Site Development & Engineering',

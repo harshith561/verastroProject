@@ -8,8 +8,7 @@ import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
   title: 'Property & Infrastructure Investments | VERASTRO INFRA',
-  description:
-    'Property and infrastructure investment consulting. We provide site selection and development feasibility support for investors and developers across FL, TX, DE, and AR.',
+  description: 'Property and infrastructure investment consulting. We provide site selection and development feasibility support across FL, TX, DE, and AR.',
   alternates: { canonical: '/investments' },
   openGraph: {
     title: 'Property & Infrastructure Investments | VERASTRO INFRA',
