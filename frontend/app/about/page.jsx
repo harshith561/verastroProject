@@ -19,10 +19,12 @@ export const metadata = {
     description:
       'A division of Verastro Inc. — professional engineering, site development, and outdoor infrastructure across FL, TX, DE, and AR.',
     url: '/about',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'About VERASTRO INFRA' }],
   },
   twitter: {
     title: 'About Us | VERASTRO INFRA',
     description: 'A division of Verastro Inc. delivering professional engineering and site development.',
+    images: ['/og-image.jpg'],
   },
 };
 

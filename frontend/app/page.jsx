@@ -11,6 +11,8 @@ import { mainServices, landscapingVisuals } from '@/data/services';
 import { locations } from '@/data/locations';
 import { visualImages } from '@/data/heroSlides';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+
 export const metadata = {
   title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
   description:
@@ -23,16 +25,55 @@ export const metadata = {
     description:
       'Professional engineering, site development, grading, and infrastructure solutions. A division of Verastro Inc., operating across FL, TX, DE, and AR.',
     url: '/',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'VERASTRO INFRA — Engineering & Site Development',
+      },
+    ],
   },
   twitter: {
     title: 'Engineering & Site Development Solutions | VERASTRO INFRA',
     description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
+    images: ['/og-image.jpg'],
   },
+};
+
+// JSON-LD: LocalBusiness for the home page
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'VERASTRO INFRA',
+  url: siteUrl,
+  telephone: '+1-904-302-9170',
+  email: 'inquiries@verastroinfra.com',
+  description:
+    'Engineering, site development, grading, drainage, landscaping, and outdoor infrastructure — a division of Verastro Inc.',
+  areaServed: [
+    { '@type': 'State', name: 'Florida' },
+    { '@type': 'State', name: 'Texas' },
+    { '@type': 'State', name: 'Delaware' },
+    { '@type': 'State', name: 'Arkansas' },
+  ],
+  serviceType: [
+    'Site Grading',
+    'Land Development',
+    'Drainage Systems',
+    'Landscaping',
+    'Infrastructure Development',
+    'Civil Engineering',
+  ],
 };
 
 export default function HomePage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <div className="-mt-16">
         <HeroSlideshow />
       </div>

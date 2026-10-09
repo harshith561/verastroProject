@@ -13,10 +13,12 @@ export const metadata = {
     title: 'Engineering & Construction Services | VERASTRO INFRA',
     description: 'Expert grading, drainage, and infrastructure development across FL, TX, DE, and AR.',
     url: '/engineering',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'VERASTRO INFRA Engineering Services' }],
   },
   twitter: {
     title: 'Engineering & Construction Services | VERASTRO INFRA',
     description: 'Expert grading, drainage, and infrastructure development for residential and commercial projects.',
+    images: ['/og-image.jpg'],
   },
 };
 

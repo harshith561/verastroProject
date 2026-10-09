@@ -15,10 +15,12 @@ export const metadata = {
     title: 'Property & Infrastructure Investments | VERASTRO INFRA',
     description: 'Infrastructure and property investment consulting across FL, TX, DE, and AR.',
     url: '/investments',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'VERASTRO INFRA Investments' }],
   },
   twitter: {
     title: 'Property & Infrastructure Investments | VERASTRO INFRA',
     description: 'Infrastructure and property investment consulting and feasibility support.',
+    images: ['/og-image.jpg'],
   }
 };
 

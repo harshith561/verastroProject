@@ -15,10 +15,12 @@ export const metadata = {
     title: 'Our Services | Site Development & Engineering',
     description: 'Land development, site grading, drainage, landscaping, pavers, and infrastructure coordination.',
     url: '/services',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'VERASTRO INFRA Services' }],
   },
   twitter: {
     title: 'Our Services | Site Development & Engineering',
     description: 'Explore land development, grading, drainage, and infrastructure services.',
+    images: ['/og-image.jpg'],
   },
 };
 

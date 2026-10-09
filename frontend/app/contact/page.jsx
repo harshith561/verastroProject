@@ -16,10 +16,12 @@ export const metadata = {
     title: 'Contact Us | VERASTRO INFRA',
     description: 'Reach out for engineering and site development solutions across FL, TX, DE, and AR.',
     url: '/contact',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Contact VERASTRO INFRA' }],
   },
   twitter: {
     title: 'Contact Us | VERASTRO INFRA',
     description: 'Get in touch with our team for engineering and site development solutions.',
+    images: ['/og-image.jpg'],
   }
 };
 

@@ -15,10 +15,12 @@ export const metadata = {
     title: 'Careers | VERASTRO INFRA',
     description: 'Build your career in civil engineering, site development, and infrastructure.',
     url: '/careers',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Careers at VERASTRO INFRA' }],
   },
   twitter: {
     title: 'Careers | Join VERASTRO INFRA',
     description: 'We are hiring civil engineers, heavy equipment operators, surveyors, and project managers.',
+    images: ['/og-image.jpg'],
   }
 };
 

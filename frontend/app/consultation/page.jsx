@@ -13,10 +13,12 @@ export const metadata = {
     title: 'Request a Consultation | VERASTRO INFRA',
     description: 'Share your site details and project requirements for engineering and site development solutions.',
     url: '/consultation',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Request a Consultation - VERASTRO INFRA' }],
   },
   twitter: {
     title: 'Request a Consultation | VERASTRO INFRA',
     description: 'Request a consultation for engineering and site development.',
+    images: ['/og-image.jpg'],
   }
 };
 
