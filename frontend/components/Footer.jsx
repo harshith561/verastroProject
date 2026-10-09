@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail } from 'lucide-react';
+import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { footerLinks } from '@/data/navigation';
 
 export default function Footer() {
@@ -47,6 +48,22 @@ export default function Footer() {
               >
                 <Mail size={14} />
                 inquiries@verastroinfra.com
+              </a>
+            </div>
+            
+            {/* Social media links */}
+            <div className="flex items-center gap-4 mt-6">
+              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
+                <FaFacebook size={18} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
+                <FaTwitter size={18} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+                <FaLinkedin size={18} />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                <FaInstagram size={18} />
               </a>
             </div>
           </div>
