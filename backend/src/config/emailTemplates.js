@@ -54,8 +54,8 @@ export function buildInternalQuoteEmail(data, file) {
               <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
                 <tr>
                   <td>
-                    <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase;">
-                      VERASTRO <span style="color: #20B9AD;">INFRA</span>
+                    <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.12em; color: #ffffff;">
+                      Verastro <span style="color: #20B9AD;">Infra</span>
                     </div>
                     <div style="color: #94a3b8; font-size: 13px; margin-top: 4px; letter-spacing: 0.02em;">
                       Florida Landscaping &amp; Property Maintenance
@@ -198,7 +198,7 @@ ${message}
 </html>`;
 
   const text =
-    `NEW MAINTENANCE QUOTE REQUEST — VERASTRO INFRA\n` +
+    `NEW MAINTENANCE QUOTE REQUEST — Verastro Infra\n` +
     `================================================\n\n` +
     `CUSTOMER INFORMATION:\n` +
     `Name: ${data.name || '-'}\n` +
@@ -256,7 +256,7 @@ export function buildCustomerConfirmationEmail(data) {
                 <tr>
                   <td>
                     <div style="font-size: 20px; font-weight: 800; letter-spacing: 0.12em; color: #ffffff; text-transform: uppercase;">
-                      VERASTRO <span style="color: #20B9AD;">INFRA</span>
+                      Verastro <span style="color: #20B9AD;">Infra</span>
                     </div>
                     <div style="color: #94a3b8; font-size: 13px; margin-top: 4px; letter-spacing: 0.02em;">
                       Florida Landscaping, Grounds Care &amp; Property Maintenance
