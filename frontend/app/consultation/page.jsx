@@ -17,7 +17,7 @@ export const metadata = {
     url: '/consultation',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Request a Quote — Verastro Infra',
@@ -28,7 +28,7 @@ export const metadata = {
     title: 'Request a Quote | Verastro Infra',
     description:
       'Request a quote for Florida landscaping and property maintenance.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
 };
 

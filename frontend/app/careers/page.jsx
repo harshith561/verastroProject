@@ -15,13 +15,13 @@ export const metadata = {
     description:
       'Careers at Verastro Infra. Commercial grounds care and property maintenance in Jacksonville, FL. No current openings at this time.',
     url: '/careers',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Careers at Verastro Infra' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Careers at Verastro Infra' }],
   },
   twitter: {
     title: 'Careers | Verastro Infra',
     description:
       'Careers at Verastro Infra. Commercial grounds care and property maintenance in Jacksonville, FL. No current openings at this time.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
 };
 

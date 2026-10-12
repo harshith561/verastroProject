@@ -57,7 +57,7 @@ export const metadata = {
     url: '/',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Verastro Infra — Florida Landscaping & Property Maintenance',
@@ -69,7 +69,7 @@ export const metadata = {
     title: 'Verastro Infra | Florida Landscaping & Property Maintenance',
     description:
       'Professional landscaping, grounds care, and routine property maintenance in Jacksonville, Florida. A division of Verastro Inc.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   robots: isPreview
     ? {

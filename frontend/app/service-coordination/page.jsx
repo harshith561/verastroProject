@@ -16,13 +16,13 @@ export const metadata = {
     description:
       'Confirming maintenance requirements, scheduling services, communicating updates, and maintaining service records in Florida.',
     url: '/service-coordination',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Verastro Infra Service Coordination' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Verastro Infra Service Coordination' }],
   },
   twitter: {
     title: 'Service Coordination & Support | Verastro Infra',
     description:
       'Confirming maintenance requirements, scheduling services, communicating updates, and maintaining service records.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
 };
 

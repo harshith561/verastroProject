@@ -18,13 +18,13 @@ export const metadata = {
     description:
       'Routine property maintenance, lawn care, one-time cleanup, and recurring grounds maintenance in Jacksonville, FL.',
     url: '/services',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Verastro Infra Services' }],
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Verastro Infra Services' }],
   },
   twitter: {
     title: 'Landscaping & Grounds Care Services | Verastro Infra',
     description:
       'Routine property maintenance, lawn care, one-time cleanup, and recurring maintenance.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
 };
 
