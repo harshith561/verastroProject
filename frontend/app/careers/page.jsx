@@ -31,7 +31,7 @@ export default function CareersPage() {
       <PageHero
         image={visualImages.careersHero}
         alt={visualImages.careersHeroAlt}
-        eyebrow="Verastro Infra"
+        eyebrow="GROW WITH US"
         title="Careers"
         text={noOpeningsMessage}
       />
