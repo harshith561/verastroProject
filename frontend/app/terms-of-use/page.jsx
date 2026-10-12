@@ -57,9 +57,6 @@ export default function TermsOfUsePage() {
           <p className="mb-6">
             These Terms of Use shall be governed by and construed in accordance with the laws of the State of Delaware, without regard to its conflict of law provisions.
           </p>
-          <div className="p-3 mb-6 bg-gray-50 border border-gray-200 text-xs text-gray-500 rounded">
-            <strong>Note for Legal Counsel:</strong> This Delaware governing-law clause reflects the corporate formation jurisdiction of Verastro Inc. and is flagged for owner legal review regarding local Florida commercial alignment.
-          </div>
 
           <h2 className="text-xl font-semibold mt-8 mb-4">8. Contact Information</h2>
           <p className="mb-6">

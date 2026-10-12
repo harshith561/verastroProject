@@ -63,8 +63,7 @@ export default function ServicesPage() {
       {/* Approved Main Services Showcase */}
       <section aria-labelledby="main-services-heading" className="bg-white">
         <div className="mx-auto px-4 sm:px-6 lg:px-8 section-padding pb-6">
-          <p className="section-label">Approved Launch Scope</p>
-          <h2 id="main-services-heading" className="section-title">
+          <h2 id="main-services-heading" className="section-title text-center">
             Grounds care shaped around your property.
           </h2>
           <p className="text-sm text-gray-600 w-full mt-2">

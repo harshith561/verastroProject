@@ -159,10 +159,6 @@ export default function HomePage() {
       {/* Main Services Section */}
       <section aria-labelledby="services-heading" className="bg-white py-16 md:py-24">
         <div className="container-main mb-12 text-center lg:text-left">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-xs font-semibold text-[#20B9AD] tracking-wider uppercase mb-3">
-            <Sparkles size={12} />
-            Approved Launch Scope
-          </div>
           <h2
             id="services-heading"
             className="text-2xl md:text-4xl font-bold leading-tight mb-3 text-[#101A3A]"
