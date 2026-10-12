@@ -104,7 +104,7 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      
+
       {/* Hero Slideshow */}
       <div className="-mt-16">
         <HeroSlideshow />
@@ -192,7 +192,7 @@ export default function HomePage() {
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B1226]/95 via-[#0B1226]/40 to-transparent transition-opacity group-hover:opacity-90" />
-              
+
               <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end text-left">
                 <h3 className="text-lg font-bold text-white mb-1.5 transition-colors group-hover:text-[#4CCFC1]">
                   {service.title}
@@ -289,7 +289,7 @@ export default function HomePage() {
       {/* Main Office & Florida Service Coverage Showcase */}
       <section className="section-padding bg-slate-50 border-t border-slate-100" aria-labelledby="locations-heading">
         <div className="container-main">
-          
+
           <div className="max-w-2xl mb-12">
             <p className="section-label">Where We Serve</p>
             <h2 id="locations-heading" className="section-title">
@@ -301,7 +301,7 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-            
+
             {/* Left: Featured Main Office Card (7 columns) */}
             <div data-aos="fade-up" className="lg:col-span-7 flex flex-col">
               <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200/80 bg-[#101A3A] text-white flex-1 flex flex-col justify-between min-h-[360px]">
@@ -312,7 +312,7 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 60vw"
                   unoptimized
-                  className="object-cover opacity-35"
+                  className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B1226] via-[#0B1226]/80 to-transparent" />
 
@@ -379,7 +379,7 @@ export default function HomePage() {
 
             {/* Right: Coverage & Service Commitments (5 columns) */}
             <div data-aos="fade-up" className="lg:col-span-5 flex flex-col justify-between gap-4">
-              
+
               {/* Coverage Card 1 */}
               <div className="bg-white p-5 rounded-lg border border-gray-200/70 shadow-sm">
                 <div className="flex items-start gap-3">

@@ -70,7 +70,7 @@ export const visualImages = {
   consultationAlt: 'Maintained grounds representing landscaping and property maintenance',
   contactHero: '/images/HeroSlideshow/contactHero.jpg',
   contactHeroAlt: 'Maintained Florida property exterior for contact visual',
-  careersHero: '/images/HeroSlideshow/careersHero.avif',
+  careersHero: '/images/HeroSlideshow/careersHero.jpg',
   careersHeroAlt: 'Team professionals coordinating service operations',
   servicesHero: '/images/HeroSlideshow/servicesHero.jpg',
   servicesHeroAlt: 'Landscaped grounds representing Verastro Infra maintenance services',

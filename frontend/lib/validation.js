@@ -66,7 +66,7 @@ export const quoteSchema = z.object({
 // Alias for backwards compatibility
 export const consultationSchema = quoteSchema;
 
-// Career schema: Enforces that closed positions cannot be applied to
+// Career schema: Enforces that closed positions cannot be applied to (all positions closed)
 export const careerSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters').max(100),
   email: z.string().email('Please enter a valid email address'),
@@ -81,6 +81,21 @@ export const careerSchema = z.object({
   message: z.string().max(2000).optional().or(z.literal('')),
   honeypot: z.string().max(0).optional(),
 });
+
+// Preserved career schema for future reopening (when recruitment is authorized)
+export const careerReopenSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100),
+  email: z.string().email('Please enter a valid email address'),
+  phone: z
+    .string()
+    .regex(phoneRegex, 'Please enter a valid phone number')
+    .optional()
+    .or(z.literal('')),
+  position: z.string().min(1, 'Please select a position'),
+  message: z.string().max(2000).optional().or(z.literal('')),
+  honeypot: z.string().max(0).optional(),
+});
+
 
 // Allowed MIME types and extensions for property photos / documents
 export const ALLOWED_PROJECT_FILES = {

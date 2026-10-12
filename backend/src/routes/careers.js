@@ -51,14 +51,14 @@ router.post('/', upload.single('resume'), async (req, res) => {
 
     try {
       await transporter.sendMail({
-        from: `"Verastro Infra" <${process.env.SMTP_USER}>`,
+        from: `"Verastro Infra Recruitment" <${process.env.SMTP_USER}>`,
         to: email,
-        replyTo: 'inquries@verastro.com',
+        replyTo: recruitmentRecipient,
         subject: 'We received your application',
         text:
           `Hi ${name},\n\nThank you for your interest in Verastro Infra. ` +
           `Our hiring team will review your application when opportunities become available.\n\n` +
-          `Regards,\nVerastro Infra\n(904) 302-9170`,
+          `Regards,\nVerastro Infra Recruitment\n(904) 302-9170`,
       });
     } catch (err) {
       console.error('Confirmation email failed:', err.message);

@@ -273,7 +273,7 @@ export async function sendCareerEmail(data, resumeFile) {
   const { name, email, phone, position, message } = data;
 
   const recruitmentRecipient = process.env.CAREERS_EMAIL || 'manideep@verastro.com';
-  const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER || 'inquries@verastro.com';
+  const fromAddress = process.env.SMTP_FROM || process.env.SMTP_USER || 'manideep@verastro.com';
 
   const html = `
     <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; color: #1a1a1a;">
