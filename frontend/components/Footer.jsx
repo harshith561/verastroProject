@@ -79,7 +79,7 @@ export default function Footer() {
               <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
                 <FaTwitter size={18} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/verastrousa" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
                 <FaLinkedin size={18} />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
