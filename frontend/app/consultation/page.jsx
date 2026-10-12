@@ -95,7 +95,7 @@ export default function ConsultationPage() {
         <div className="container-main">
           <p className="section-label">Our Office</p>
           <h2 className="section-title mb-10">Florida Operations</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="max-w-xl mx-auto">
             {locations.map((loc) => (
               <LocationCard key={loc.id} location={loc} />
             ))}

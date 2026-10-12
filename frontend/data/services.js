@@ -19,7 +19,7 @@ export const mainServices = [
   {
     id: 'one-time-cleanup',
     title: 'One-Time Cleanup',
-    image: '/images/HeroSlideshow/introLandscape.jpg',
+    image: '/images/HeroSlideshow/service2.jpg',
     imageAlt: 'Freshly cleared and tidy outdoor property grounds',
     shortDescription:
       'Comprehensive property cleanup, leaf removal, debris collection, and grounds revitalization.',
@@ -67,7 +67,7 @@ export const mainServices = [
   {
     id: 'leaf-removal-cleanup',
     title: 'Leaf Removal & Routine Grounds Cleanup',
-    image: '/images/HeroSlideshow/commercialProperty.jpg',
+    image: '/images/HeroSlideshow/service4.jpg',
     imageAlt: 'Clean commercial property grounds free of leaves and debris',
     shortDescription:
       'Thorough leaf collection, litter sweep, and walkway clearance for a clean exterior appearance.',
@@ -83,7 +83,7 @@ export const mainServices = [
   {
     id: 'service-coordination-support',
     title: 'Customer Communications & Service Coordination',
-    image: '/images/HeroSlideshow/fieldCoordination.jpg',
+    image: '/images/HeroSlideshow/Customer-services.webp',
     imageAlt: 'Field representative coordinating maintenance schedule with client',
     shortDescription:
       'Clear maintenance scheduling, scope confirmation, and proactive customer communications.',
@@ -139,7 +139,7 @@ export const landscapingVisuals = [
   {
     title: 'Leaf Removal & Grounds Cleanup',
     description: 'Seasonal leaf collection and routine grounds clearing that keeps outdoor spaces orderly.',
-    image: '/images/HeroSlideshow/introLandscape.jpg',
+    image: '/images/HeroSlideshow/service4.jpg',
     imageAlt: 'Clean, open lawn and landscaped grounds free of clutter',
   },
   {

@@ -131,23 +131,6 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Florida Service Area */}
-      <section className="section-padding bg-white" aria-labelledby="offices-heading">
-        <div className="container-main">
-          <div className="mb-8">
-            <p className="section-label">Service Reach</p>
-            <h2 id="offices-heading" className="section-title">
-              Florida Operations
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {locations.map((loc) => (
-              <LocationCard key={loc.id} location={loc} />
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CTASection
         heading="Ready to discuss your property maintenance?"
         subtext="Share your requirements with the Verastro Infra team."

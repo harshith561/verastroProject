@@ -40,7 +40,7 @@ export default function ServicesPage() {
       />
 
       {/* Intro Context Banner */}
-      <section className="bg-white border-b border-gray-100 py-8">
+      {/* <section className="bg-white border-b border-gray-100 py-8">
         <div className="container-main flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <h2 className="text-lg font-bold text-[#101A3A]">
@@ -58,16 +58,16 @@ export default function ServicesPage() {
             Request a Quote <ArrowRight size={14} />
           </Link>
         </div>
-      </section>
+      </section> */}
 
       {/* Approved Main Services Showcase */}
       <section aria-labelledby="main-services-heading" className="bg-white">
-        <div className="container-main section-padding pb-6">
+        <div className="mx-auto px-4 sm:px-6 lg:px-8 section-padding pb-6">
           <p className="section-label">Approved Launch Scope</p>
           <h2 id="main-services-heading" className="section-title">
             Grounds care shaped around your property.
           </h2>
-          <p className="text-sm text-gray-600 max-w-2xl mt-2">
+          <p className="text-sm text-gray-600 w-full mt-2">
             Every property has distinct maintenance needs. We offer both targeted one-time cleanups and dependable recurring maintenance programs with confirmed scopes of work.
           </p>
         </div>
