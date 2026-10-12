@@ -18,14 +18,19 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
+  // Close mobile menu on route transition
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
     setIsOpen(false);
-  }, [pathname]);
+  }
 
   // Prevent body scroll when menu open
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = '';
+    };
   }, [isOpen]);
 
   return (
@@ -37,11 +42,11 @@ export default function Header() {
     >
       <div className="container-main">
         <div className="flex items-center justify-between gap-4 h-16">
-          {/* Logo */}
+          {/* Logo & Brand */}
           <Link
             href="/"
             className="flex items-center gap-2.5 shrink-0"
-            aria-label="VERASTRO INFRA — Home"
+            aria-label="Verastro Infra — Home"
           >
             <Image
               src="https://verastrotechnologies.com/wp-content/uploads/2022/08/cropped-Verastrotechnologies_symbol-removebg-preview.png"
@@ -52,16 +57,16 @@ export default function Header() {
               unoptimized
             />
 
-            {/* Brand name: hidden below 1280px, shown at xl and above */}
+            {/* Brand name */}
             <div className="hidden xl:flex items-center gap-1.5 leading-tight whitespace-nowrap">
-              <span className="font-extrabold text-[1.1rem] tracking-[0.15em] text-white uppercase drop-shadow-md">
-                VERASTRO
+              <span className="font-extrabold text-[1.1rem] tracking-wide text-white drop-shadow-md">
+                Verastro
               </span>
               <span
-                className="font-semibold text-[1.1rem] tracking-[0.1em] uppercase"
+                className="font-semibold text-[1.1rem] tracking-wide"
                 style={{ color: 'var(--color-teal-light)' }}
               >
-                INFRA
+                Infra
               </span>
             </div>
           </Link>
@@ -74,8 +79,9 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link whitespace-nowrap px-2 xl:px-3 py-1.5 rounded text-sm ${isActive ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
-                    }`}
+                  className={`nav-link whitespace-nowrap px-2 xl:px-3 py-1.5 rounded text-sm ${
+                    isActive ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
+                  }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
@@ -91,7 +97,7 @@ export default function Header() {
               className="hidden sm:inline-flex whitespace-nowrap btn-primary text-sm px-3 xl:px-4 py-2"
               id="header-consultation-cta"
             >
-              Request a Consultation
+              Request a Quote
             </Link>
 
             <button
@@ -121,10 +127,11 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-3 py-2.5 rounded text-sm font-medium ${isActive
+                  className={`px-3 py-2.5 rounded text-sm font-medium ${
+                    isActive
                       ? 'text-white bg-white/10'
                       : 'text-gray-300 hover:text-white hover:bg-white/5'
-                    }`}
+                  }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
                   {link.label}
@@ -137,7 +144,7 @@ export default function Header() {
                 className="btn-primary w-full justify-center"
                 id="mobile-consultation-cta"
               >
-                Request a Consultation
+                Request a Quote
               </Link>
             </div>
           </nav>

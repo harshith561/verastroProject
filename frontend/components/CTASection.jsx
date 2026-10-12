@@ -3,9 +3,9 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export default function CTASection({
-  heading = "Let's discuss your site and project needs.",
-  subtext = 'Share your requirements with the VERASTRO INFRA team.',
-  ctaLabel = 'Request a Consultation',
+  heading = "Let's discuss your property maintenance needs.",
+  subtext = 'Share your requirements with the Verastro Infra team.',
+  ctaLabel = 'Request a Quote',
   ctaHref = '/consultation',
   id = 'cta-section',
   backgroundImage,

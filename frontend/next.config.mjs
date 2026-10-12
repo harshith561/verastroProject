@@ -31,6 +31,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/engineering',
+        destination: '/service-coordination',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

@@ -6,7 +6,6 @@ export const runtime = 'nodejs';
 
 export async function POST(request) {
   try {
-    // Rate limiting
     const ip = getClientIp(request);
     if (!checkRateLimit(ip, 5, 60000)) {
       return Response.json(
@@ -21,7 +20,10 @@ export async function POST(request) {
       name: formData.get('name') || '',
       email: formData.get('email') || '',
       phone: formData.get('phone') || '',
-      company: formData.get('company') || '',
+      serviceAddress: formData.get('serviceAddress') || '',
+      propertyType: formData.get('propertyType') || '',
+      groundsSize: formData.get('groundsSize') || '',
+      frequencyPreference: formData.get('frequencyPreference') || '',
       service: formData.get('service') || '',
       location: formData.get('location') || '',
       message: formData.get('message') || '',
@@ -29,12 +31,10 @@ export async function POST(request) {
       honeypot: formData.get('honeypot') || '',
     };
 
-    // Spam check
     if (isSpam(body.honeypot)) {
       return Response.json({ success: true, message: 'Message received.' }, { status: 200 });
     }
 
-    // Validate
     const result = contactSchema.safeParse(body);
     if (!result.success) {
       const errors = result.error.flatten().fieldErrors;
@@ -44,44 +44,48 @@ export async function POST(request) {
       );
     }
 
-    // Handle file upload (optional)
+    // Optional file upload
     const file = formData.get('projectFile');
+    let processedFile = null;
     if (file && file.size > 0) {
       const sizeMB = file.size / (1024 * 1024);
       const ext = '.' + file.name.split('.').pop()?.toLowerCase();
 
-      if (!ALLOWED_PROJECT_FILES.extensions.includes(ext)) {
+      if (
+        !ALLOWED_PROJECT_FILES.extensions.includes(ext) ||
+        !ALLOWED_PROJECT_FILES.mimeTypes.includes(file.type) ||
+        sizeMB > ALLOWED_PROJECT_FILES.maxSizeMB
+      ) {
         return Response.json(
-          { success: false, message: 'Invalid file type for project upload.' },
+          { success: false, message: 'Invalid or oversized file attachment.' },
           { status: 400 }
         );
       }
-      if (!ALLOWED_PROJECT_FILES.mimeTypes.includes(file.type)) {
-        return Response.json(
-          { success: false, message: 'Invalid file format.' },
-          { status: 400 }
-        );
-      }
-      if (sizeMB > ALLOWED_PROJECT_FILES.maxSizeMB) {
-        return Response.json(
-          { success: false, message: `File too large. Maximum size is ${ALLOWED_PROJECT_FILES.maxSizeMB}MB.` },
-          { status: 400 }
-        );
-      }
-      // File is valid — for now we just note it was uploaded
-      // In production you could attach it to email or upload to storage
+
+      const arrayBuffer = await file.arrayBuffer();
+      processedFile = {
+        buffer: Buffer.from(arrayBuffer),
+        filename: sanitizeFilename(file.name),
+        mimetype: file.type,
+      };
     }
 
-    await sendContactEmail(result.data);
+    await sendContactEmail(result.data, processedFile);
 
     return Response.json(
-      { success: true, message: 'Your message has been sent. We will respond within 24 business hours.' },
+      {
+        success: true,
+        message: 'Your message has been sent. Our team will contact you to discuss your request.',
+      },
       { status: 200 }
     );
   } catch (err) {
     console.error('Contact form error:', err);
     return Response.json(
-      { success: false, message: 'An error occurred. Please try again or contact us directly.' },
+      {
+        success: false,
+        message: 'An error occurred. Please try again or email us at inquries@verastro.com.',
+      },
       { status: 500 }
     );
   }

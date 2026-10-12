@@ -10,48 +10,50 @@ import { faqItems } from '@/data/faq';
 import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
-  title: 'About Us | VERASTRO INFRA',
-  description: 'VERASTRO INFRA, a division of Verastro Inc, delivers engineering, site development, and outdoor infrastructure across FL, TX, DE, and AR.',
+  title: 'About Us | Verastro Infra',
+  description:
+    'Verastro Infra is a Florida landscaping and property-maintenance company. A division of Verastro Inc., based in Jacksonville, FL.',
   alternates: { canonical: '/about' },
   openGraph: {
-    title: 'About VERASTRO INFRA',
+    title: 'About Us | Verastro Infra',
     description:
-      'A division of Verastro Inc. — professional engineering, site development, and outdoor infrastructure across FL, TX, DE, and AR.',
+      'A division of Verastro Inc. — Florida landscaping, grounds care, and routine property maintenance.',
     url: '/about',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'About VERASTRO INFRA' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'About Verastro Infra' }],
   },
   twitter: {
-    title: 'About Us | VERASTRO INFRA',
-    description: 'A division of Verastro Inc. delivering professional engineering and site development.',
+    title: 'About Us | Verastro Infra',
+    description:
+      'A division of Verastro Inc. providing Florida landscaping and routine property maintenance.',
     images: ['/og-image.jpg'],
   },
 };
 
 const whyChooseUs = [
   {
-    title: 'Licensed-Compliant Expertise',
+    title: 'Clear Service Scope',
     description:
-      'Defined operating scopes guide our project planning, technical support, and field coordination. We work within approved boundaries and clearly communicate what is included in each scope.',
+      'Defined operating scopes guide our routine property and grounds maintenance. We work within confirmed boundaries and clearly communicate what tasks are included in each visit.',
   },
   {
-    title: 'Transparent & Hassle-Free Process',
+    title: 'Consistent Service Delivery',
     description:
-      'Clear communication and documented project coordination keeps requirements and next steps understandable. We provide regular updates and maintain organized records throughout.',
+      'Reliable scheduling and conscientious grounds care ensure your Florida property receives regular, dependable upkeep without unnecessary delays.',
   },
   {
-    title: 'Professional Standards & Safety',
+    title: 'Customer Communication',
     description:
-      'Safety and compliance are part of planning and coordinating work within approved scopes. We prioritize site safety, maintain proper documentation, and coordinate within established professional standards.',
+      'Clear and proactive communication keeps you updated on upcoming visits, completed tasks, and any property observations that need your attention.',
   },
   {
-    title: 'Sustainable, Future-Ready Results',
+    title: 'Clear Service Expectations',
     description:
-      'Efficient grading, water management, and responsible landscaping support functional outdoor spaces that perform well over time and minimize ongoing maintenance requirements.',
+      'We provide straightforward service descriptions, transparent quotes, and agreed-upon maintenance checklists so you always know what to expect.',
   },
   {
-    title: 'Quality Workmanship & Accountability',
+    title: 'Responsible Grounds Care',
     description:
-      'Quality control and professional execution guide fieldwork and final project coordination. We hold our work to consistent standards and maintain accountability throughout every project.',
+      'Thoughtful turf mowing, careful manual weeding, and tidy cleanup practices protect your lawns and garden beds over time.',
   },
 ];
 
@@ -62,53 +64,74 @@ export default function AboutPage() {
         image={visualImages.aboutHero}
         alt={visualImages.aboutHeroAlt}
         eyebrow="About Us"
-        title="About VERASTRO INFRA"
-        text="A Division of Verastro Inc. — Building Outdoor Excellence Across Florida, Texas & Arkansas"
+        title="About Verastro Infra"
+        text="A Division of Verastro Inc. — Florida Landscaping, Grounds Care & Property Maintenance"
       />
 
+      {/* About Intro */}
       <section className="bg-white" aria-labelledby="about-intro-heading">
         <VisualSplit
           image={visualImages.aboutMessage}
           alt={visualImages.aboutMessageAlt}
-          eyebrow="Engineering Precision & Outdoor Purpose"
-          title="Practical solutions for land and outdoor infrastructure."
-          text="VERASTRO INFRA brings together professional engineering, creative landscaping, and site development. Our work includes grading, drainage, sod, turf, pavers, hardscape, and outdoor infrastructure. As a locally operated division of Verastro Inc., our engineering and field teams evaluate site conditions and project requirements. Engineering precision, compliance, safety, quality, and transparency guide that work."
+          eyebrow="Dedicated Grounds Care"
+          title="Practical maintenance for Florida properties."
+          text="Verastro Infra is a Florida landscaping and property-maintenance company operating as a division of Verastro Inc., based in Jacksonville. We focus on routine grounds care, lawn maintenance, garden upkeep, leaf removal, and scheduled property cleaning for residential and commercial properties. We believe that dependable service begins with clear expectations, consistent delivery, and prompt, respectful customer communication."
         />
       </section>
 
-      <section className="section-padding" style={{ backgroundColor: 'var(--color-warm-white)' }} aria-labelledby="core-services-heading">
+      {/* Routine Services Visuals */}
+      <section
+        className="section-padding"
+        style={{ backgroundColor: 'var(--color-warm-white)' }}
+        aria-labelledby="core-services-heading"
+      >
         <div className="container-main mb-10">
-          <p className="section-label">Our Core Services</p>
+          <p className="section-label">Our Service Focus</p>
           <h2 id="core-services-heading" className="section-title">
-            From ground preparation to finishing.
+            Essential care for lawns and grounds.
           </h2>
         </div>
-        <div className="container-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="container-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {landscapingVisuals.map((item) => (
             <article key={item.title} data-aos="fade-up" className="overflow-hidden bg-white">
               <div className="relative h-48 group overflow-hidden">
-                <Image src={item.image} alt={item.imageAlt} fill sizes="33vw" unoptimized className="object-cover img-zoom-hover" />
+                <Image
+                  src={item.image}
+                  alt={item.imageAlt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 25vw"
+                  unoptimized
+                  className="object-cover img-zoom-hover"
+                />
               </div>
               <div className="p-5">
-                <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>{item.title}</h3>
+                <h3 className="text-sm font-semibold mb-1" style={{ color: 'var(--color-navy)' }}>
+                  {item.title}
+                </h3>
+                <p className="text-xs text-gray-600 leading-relaxed">{item.description}</p>
               </div>
             </article>
           ))}
         </div>
       </section>
 
+      {/* Our Approach */}
       <VisualSplit
         reverse
         image={visualImages.aboutApproach}
         alt={visualImages.aboutApproachAlt}
         eyebrow="Our Approach"
         title="A clear, accountable approach."
-        text="Practical principles for how we plan, coordinate, and deliver site solutions."
+        text="Practical principles for how we plan, coordinate, and deliver grounds maintenance."
       >
         <div className="flex flex-col gap-5 mb-2">
           {whyChooseUs.map((item) => (
             <div key={item.title} className="flex gap-3">
-              <CheckCircle size={18} className="flex-shrink-0 mt-0.5" style={{ color: 'var(--color-teal)' }} />
+              <CheckCircle
+                size={18}
+                className="flex-shrink-0 mt-0.5"
+                style={{ color: 'var(--color-teal)' }}
+              />
               <div>
                 <h3 className="text-sm font-semibold mb-1" style={{ color: 'var(--color-navy)' }}>
                   {item.title}
@@ -120,21 +143,29 @@ export default function AboutPage() {
         </div>
       </VisualSplit>
 
+      {/* CTA Section */}
       <CTASection
         backgroundImage={visualImages.golfCourse}
         backgroundAlt=""
+        heading="Let's discuss your property maintenance needs."
+        subtext="Share your requirements with the Verastro Infra team."
+        ctaLabel="Request a Quote"
+        ctaHref="/consultation"
       />
 
+      {/* FAQ */}
       <section className="section-padding bg-white" aria-labelledby="faq-heading">
         <div className="container-main">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div data-aos="fade-right">
               <p className="section-label">Frequently Asked Questions</p>
               <h2 id="faq-heading" className="section-title">
-                A few things to know.
+                Common questions about our services.
               </h2>
             </div>
-            <div data-aos="fade-left"><FAQ items={faqItems} /></div>
+            <div data-aos="fade-left">
+              <FAQ items={faqItems} />
+            </div>
           </div>
         </div>
       </section>

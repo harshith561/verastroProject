@@ -9,6 +9,8 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 const allowedOrigins = [
+  'https://verastroinfra.com',
+  'https://www.verastroinfra.com',
   'https://verastro-project.vercel.app',
   'http://localhost:3000',
 ];

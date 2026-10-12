@@ -29,6 +29,20 @@ export async function POST(request) {
       return Response.json({ success: true, message: 'Application received.' }, { status: 200 });
     }
 
+    // BACKEND ENFORCEMENT: Reject applications for all closed positions.
+    // There are no open positions at this time.
+    return Response.json(
+      {
+        success: false,
+        message: 'No current openings. We are not hiring at this time. Please check back for future opportunities.',
+      },
+      { status: 400 }
+    );
+
+    /* =========================================================================
+     * PRESERVED RECRUITMENT WORKFLOW (For future reopening authorized by owner)
+     * Recipient: manideep@verastro.com
+     * =========================================================================
     const result = careerSchema.safeParse(body);
     if (!result.success) {
       const errors = result.error.flatten().fieldErrors;
@@ -86,10 +100,11 @@ export async function POST(request) {
       { success: true, message: 'Your application has been submitted. We will review it and be in touch.' },
       { status: 200 }
     );
+    ========================================================================= */
   } catch (err) {
     console.error('Career application error:', err);
     return Response.json(
-      { success: false, message: 'An error occurred. Please try again or email your resume directly.' },
+      { success: false, message: 'An error occurred. Please try again or contact us directly.' },
       { status: 500 }
     );
   }

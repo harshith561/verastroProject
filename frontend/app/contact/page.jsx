@@ -9,20 +9,23 @@ import { locations } from '@/data/locations';
 import { visualImages } from '@/data/heroSlides';
 
 export const metadata = {
-  title: 'Contact Us | VERASTRO INFRA',
-  description: 'Get in touch with VERASTRO INFRA for engineering and site development. View our headquarters in Delaware and offices in FL, TX, and AR.',
+  title: 'Contact Us | Verastro Infra',
+  description:
+    'Based in Jacksonville, Florida. Contact Verastro Infra for landscaping and property maintenance, and our team will respond with the next steps.',
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Us | VERASTRO INFRA',
-    description: 'Reach out for engineering and site development solutions across FL, TX, DE, and AR.',
+    title: 'Contact Us | Verastro Infra',
+    description:
+      'Contact Verastro Infra for Florida landscaping and property maintenance. Main Office in Jacksonville, FL.',
     url: '/contact',
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Contact VERASTRO INFRA' }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Contact Verastro Infra' }],
   },
   twitter: {
-    title: 'Contact Us | VERASTRO INFRA',
-    description: 'Get in touch with our team for engineering and site development solutions.',
+    title: 'Contact Us | Verastro Infra',
+    description:
+      'Contact Verastro Infra for Florida landscaping and property maintenance solutions.',
     images: ['/og-image.jpg'],
-  }
+  },
 };
 
 export default function ContactPage() {
@@ -33,77 +36,111 @@ export default function ContactPage() {
         alt={visualImages.contactHeroAlt}
         eyebrow="Contact Us"
         title="Get in Touch"
-        text="Need help with a site or project? Our team is ready to listen. Whether you are planning land development, site grading, drainage, or outdoor infrastructure, share your requirements with us and we will respond with clear next steps and honest guidance."
+        text="Based in Jacksonville, Florida. Contact us for landscaping and property maintenance, and our team will respond with the next steps."
       />
 
       <VisualSplit
         image={visualImages.introLandscape}
         alt={visualImages.introLandscapeAlt}
         eyebrow="Direct Contact"
-        title="Talk with VERASTRO INFRA."
-        text={<>
-          Based in Delaware, serving Florida, Texas, and Arkansas.
-          <br />
-          Tell us about your project and we'll reply with clear next steps.
-        </>}
+        title="Talk with Verastro Infra."
+        text={
+          <>
+            Based in Jacksonville, Florida. Contact us for landscaping and property maintenance, and our team will respond with the next steps.
+          </>
+        }
       >
         <div className="flex flex-col gap-6 mb-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
               <Phone size={16} style={{ color: 'var(--color-teal)' }} />
-              <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>Call Us</h3>
+              <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>
+                Call Us
+              </h3>
             </div>
-            <a href="tel:+19043029170" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+            <a
+              href="tel:+19043029170"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
               (904) 302-9170
             </a>
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1">
               <Mail size={16} style={{ color: 'var(--color-teal)' }} />
-              <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>Email Us</h3>
+              <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>
+                Email Us
+              </h3>
             </div>
-            <a href="mailto:inquiries@verastroinfra.com" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
-              inquiries@verastroinfra.com
+            <a
+              href="mailto:inquries@verastro.com"
+              className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              inquries@verastro.com
             </a>
           </div>
           <div>
             <div className="flex items-center gap-2 mb-1">
               <Clock size={16} style={{ color: 'var(--color-teal)' }} />
-              <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>Response Time</h3>
+              <h3 className="text-sm font-semibold" style={{ color: 'var(--color-navy)' }}>
+                Next Steps
+              </h3>
             </div>
-            <p className="text-sm text-gray-600">Our team responds within 24 business hours.</p>
+            <p className="text-sm text-gray-600">
+              Our team will contact you to discuss your request.
+            </p>
           </div>
         </div>
       </VisualSplit>
 
-      <section className="bg-white">
+      {/* Main Office Map Section */}
+      <section className="bg-white border-t border-b border-gray-100">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch">
           <div className="px-6 py-12 md:px-12 lg:px-16 flex flex-col justify-center">
-            <p className="section-label">Headquarters</p>
-            <h2 className="text-2xl md:text-3xl font-semibold mb-4" style={{ color: 'var(--color-navy)' }}>
-              Middletown, Delaware
+            <p className="section-label">Main Office</p>
+            <h2
+              className="text-2xl md:text-3xl font-semibold mb-4"
+              style={{ color: 'var(--color-navy)' }}
+            >
+              Jacksonville, Florida
             </h2>
             <p className="text-sm text-gray-600 leading-relaxed mb-2">
-              651 N Broad St, STE 201<br />
-              Middletown, DE 19709
+              10151 Deerwood Park Blvd, Building 200, Suite 250
+              <br />
+              Jacksonville, FL 32256
             </p>
-            <p className="text-xs text-gray-500">A division of Verastro Inc.</p>
+            <p className="text-xs text-gray-500 mb-6">A division of Verastro Inc.</p>
+            <div className="flex flex-col gap-1 text-sm text-gray-600">
+              <p>
+                <span className="font-semibold text-gray-800">Phone:</span> (904) 302-9170
+              </p>
+              <p>
+                <span className="font-semibold text-gray-800">Email:</span>{' '}
+                <a href="mailto:inquries@verastro.com" className="hover:underline text-teal-700">
+                  inquries@verastro.com
+                </a>
+              </p>
+            </div>
           </div>
-          <div className="min-h-[320px] md:min-h-[420px] p-4 md:p-8" style={{ backgroundColor: 'var(--color-warm-white)' }}>
+          <div
+            className="min-h-[320px] md:min-h-[420px] p-4 md:p-8"
+            style={{ backgroundColor: 'var(--color-warm-white)' }}
+          >
             <GoogleMapEmbed />
           </div>
         </div>
       </section>
 
+      {/* Florida Service Area */}
       <section className="section-padding bg-white" aria-labelledby="offices-heading">
         <div className="container-main">
           <div className="mb-8">
-            <p className="section-label">Our Offices</p>
+            <p className="section-label">Service Reach</p>
             <h2 id="offices-heading" className="section-title">
-              Connect with our team.
+              Florida Operations
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locations.map((loc) => (
               <LocationCard key={loc.id} location={loc} />
             ))}
@@ -112,8 +149,10 @@ export default function ContactPage() {
       </section>
 
       <CTASection
-        heading="Ready to start a project conversation?"
-        subtext="Share your requirements with the VERASTRO INFRA team."
+        heading="Ready to discuss your property maintenance?"
+        subtext="Share your requirements with the Verastro Infra team."
+        ctaLabel="Request a Quote"
+        ctaHref="/consultation"
         backgroundImage={visualImages.golfCourse}
         backgroundAlt=""
       />

@@ -1,5 +1,6 @@
 import { Inter, Manrope } from 'next/font/google';
 import './globals.css';
+import AosInit from '@/components/AosInit';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -15,30 +16,33 @@ const manrope = Manrope({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
 
+const isPreview =
+  process.env.VERCEL_ENV === 'preview' ||
+  siteUrl.includes('vercel.app');
+
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'VERASTRO INFRA | Engineering & Site Development',
-    template: '%s | VERASTRO INFRA',
+    default: 'Verastro Infra | Florida Landscaping & Property Maintenance',
+    template: '%s | Verastro Infra',
   },
   description:
-    'VERASTRO INFRA is a division of Verastro Inc., delivering professional engineering, site development, grading, drainage, and outdoor infrastructure solutions across Florida, Texas, Delaware, and Arkansas.',
+    'Verastro Infra is a Florida landscaping, grounds-care, and property-maintenance company. A division of Verastro Inc., based in Jacksonville, FL.',
   keywords: [
-    'site development',
-    'civil engineering',
-    'land development',
-    'grading',
-    'drainage',
     'landscaping',
-    'infrastructure',
-    'Verastro',
-    'Florida',
-    'Texas',
-    'Arkansas',
-    'Delaware',
+    'grounds care',
+    'property maintenance',
+    'lawn mowing',
+    'lawn edging',
+    'garden upkeep',
+    'leaf removal',
+    'Florida landscaping',
+    'Jacksonville grounds maintenance',
+    'Verastro Infra',
+    'Verastro Inc.',
   ],
-  authors: [{ name: 'VERASTRO INFRA' }],
-  creator: 'VERASTRO INFRA',
+  authors: [{ name: 'Verastro Infra' }],
+  creator: 'Verastro Infra',
   publisher: 'Verastro Inc.',
   alternates: {
     canonical: '/',
@@ -46,74 +50,85 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    siteName: 'VERASTRO INFRA',
-    title: 'VERASTRO INFRA | Engineering & Site Development',
-    description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
+    siteName: 'Verastro Infra',
+    title: 'Verastro Infra | Florida Landscaping & Property Maintenance',
+    description:
+      'Professional landscaping, grounds care, and routine property maintenance in Jacksonville, Florida. A division of Verastro Inc.',
     url: '/',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'VERASTRO INFRA — Engineering & Site Development',
+        alt: 'Verastro Infra — Florida Landscaping & Property Maintenance',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'VERASTRO INFRA | Engineering & Site Development',
-    description: 'Professional engineering, site development, grading, and infrastructure solutions across FL, TX, DE, and AR.',
+    title: 'Verastro Infra | Florida Landscaping & Property Maintenance',
+    description:
+      'Professional landscaping, grounds care, and routine property maintenance in Jacksonville, Florida. A division of Verastro Inc.',
     images: ['/og-image.jpg'],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+  robots: isPreview
+    ? {
+        index: false,
+        follow: false,
+        googleBot: {
+          index: false,
+          follow: false,
+        },
+      }
+    : {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
+        },
+      },
 };
-
-import AosInit from '@/components/AosInit';
 
 // JSON-LD structured data — Organization
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'VERASTRO INFRA',
+  name: 'Verastro Infra',
   url: siteUrl,
   logo: `${siteUrl}/icon.png`,
   description:
-    'VERASTRO INFRA is a division of Verastro Inc., delivering professional engineering, site development, grading, drainage, and outdoor infrastructure solutions.',
+    'Verastro Infra is a Florida landscaping, grounds-care, and property-maintenance company. A division of Verastro Inc.',
   parentOrganization: {
     '@type': 'Organization',
     name: 'Verastro Inc.',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '10151 Deerwood Park Blvd, Building 200, Suite 250',
+    addressLocality: 'Jacksonville',
+    addressRegion: 'FL',
+    postalCode: '32256',
+    addressCountry: 'US',
   },
   contactPoint: {
     '@type': 'ContactPoint',
     telephone: '+1-904-302-9170',
     contactType: 'customer service',
-    email: 'inquiries@verastroinfra.com',
-    areaServed: ['FL', 'TX', 'DE', 'AR'],
+    email: 'inquries@verastro.com',
+    areaServed: 'Florida',
     availableLanguage: 'English',
   },
-  areaServed: [
-    { '@type': 'State', name: 'Florida' },
-    { '@type': 'State', name: 'Texas' },
-    { '@type': 'State', name: 'Delaware' },
-    { '@type': 'State', name: 'Arkansas' },
-  ],
 };
 
 // JSON-LD structured data — WebSite
 const webSiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'VERASTRO INFRA',
+  name: 'Verastro Infra',
   url: siteUrl,
 };
 

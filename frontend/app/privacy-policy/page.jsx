@@ -1,8 +1,9 @@
 import PageLayout from '@/components/PageLayout';
 
 export const metadata = {
-  title: 'Privacy Policy | VERASTRO INFRA',
-  description: 'Privacy Policy for VERASTRO INFRA, explaining how we collect, use, and protect your information.',
+  title: 'Privacy Policy | Verastro Infra',
+  description:
+    'Privacy Policy for Verastro Infra, explaining how we collect, use, and protect your information for landscaping and property maintenance inquiries.',
   alternates: { canonical: '/privacy-policy' },
 };
 
@@ -13,12 +14,11 @@ const navigation = [
   { id: 'legal-basis', label: '4. Legal Basis for Processing' },
   { id: 'information-sharing', label: '5. Information Sharing and Disclosure' },
   { id: 'data-retention', label: '6. Data Retention' },
-  { id: 'cookies', label: '7. Cookies and Tracking Technologies' },
+  { id: 'cookies', label: '7. Cookies and Technical Information' },
   { id: 'your-rights', label: '8. Your Rights' },
   { id: 'data-security', label: '9. Data Security' },
-  { id: 'international-access', label: '10. International Access' },
-  { id: 'updates', label: '11. Updates to This Policy' },
-  { id: 'contact-us', label: '12. Contact Us' },
+  { id: 'updates', label: '10. Updates to This Policy' },
+  { id: 'contact-us', label: '11. Contact Us' },
 ];
 
 export default function PrivacyPolicyPage() {
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="text-gray-400 text-sm">
-            Last Updated: October 29, 2025
+            Last Updated: October 12, 2026
           </p>
         </div>
       </section>
@@ -42,7 +42,6 @@ export default function PrivacyPolicyPage() {
       {/* Content */}
       <section className="section-padding bg-white">
         <div className="container-main grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
           {/* Sidebar */}
           <div className="hidden lg:block lg:col-span-3">
             <div className="sticky top-24">
@@ -52,8 +51,8 @@ export default function PrivacyPolicyPage() {
               <ul className="flex flex-col gap-3">
                 {navigation.map((item) => (
                   <li key={item.id}>
-                    <a 
-                      href={`#${item.id}`} 
+                    <a
+                      href={`#${item.id}`}
                       className="text-xs text-gray-500 hover:text-gray-900 transition-colors"
                     >
                       {item.label}
@@ -67,133 +66,153 @@ export default function PrivacyPolicyPage() {
           {/* Policy Text */}
           <div className="lg:col-span-9 prose prose-sm sm:prose-base max-w-none text-gray-700">
             <p className="mb-8 leading-relaxed">
-              VERASTRO INFRA (“VERASTRO INFRA,” “we,” “us,” or “our”) respects your privacy and is committed to protecting the personal information you share with us.<br/>
-              This Privacy Policy explains how we collect, use, disclose, and protect your information when you visit <strong>verastroinfra.com</strong> or interact with our services.<br/>
-              By accessing or using this website, you consent to the practices described in this Policy.
+              Verastro Infra (“Verastro Infra,” “we,” “us,” or “our”) respects your privacy and is committed to protecting the personal information you share with us.
+              This Privacy Policy explains how we collect, use, disclose, and protect information when you visit <strong>verastroinfra.com</strong>, request a maintenance quote, or communicate with our team.
+              By accessing or using this website, you acknowledge the practices described in this Policy.
             </p>
 
-            <h2 id="who-we-are" className="text-lg font-bold text-gray-900 mt-10 mb-4">1. Who We Are</h2>
+            <h2 id="who-we-are" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              1. Who We Are
+            </h2>
             <p className="mb-4">
-              VERASTRO INFRA is a division of Verastro Inc., headquartered in Middletown, Delaware, with operational offices in Jacksonville, Florida.
+              Verastro Infra is a Florida landscaping and property-maintenance company operating as a division of Verastro Inc.
+              Our Main Office is located at 10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256.
             </p>
             <p className="mb-8">
-              We provide services in land development, grading, landscaping, sod installation, and real-estate investment facilitation across the United States, including informational guidance on EB-5-compliant opportunities.
+              We specialize in routine grounds care, lawn maintenance, garden upkeep, one-time property cleanups, and recurring property maintenance services in Florida.
             </p>
 
-            <h2 id="information-we-collect" className="text-lg font-bold text-gray-900 mt-10 mb-4">2. Information We Collect</h2>
-            <p className="mb-4">We may collect information in several ways:</p>
-            
-            <h3 className="text-sm font-semibold text-gray-900 mt-6 mb-2">a. Information You Provide Voluntarily</h3>
-            <p className="mb-2">When you fill out contact forms, request proposals, subscribe to newsletters, or inquire about investment or property services, you may provide:</p>
+            <h2 id="information-we-collect" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              2. Information We Collect
+            </h2>
+            <p className="mb-4">We collect information through the following channels:</p>
+
+            <h3 className="text-sm font-semibold text-gray-900 mt-6 mb-2">
+              a. Information You Provide Directly
+            </h3>
+            <p className="mb-2">When you submit a quote request, contact form, or direct communication, you may provide:</p>
             <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li>Name, company, or organization</li>
-              <li>Email address and phone number</li>
-              <li>Project details or property interests</li>
-              <li>Location or investment preferences</li>
-              <li>Any attachments or supporting documents you choose to upload</li>
+              <li>Contact details: Name, email address, and phone number</li>
+              <li>Florida property details: Service address, city, ZIP code, property type, and approximate grounds size</li>
+              <li>Service requirements: Description of maintenance needs, one-time or recurring frequency preference</li>
+              <li>Attachments: Property photos or site overview documents you choose to upload</li>
+              <li>Recruitment information: Résumés and professional qualifications submitted in connection with hiring inquiries</li>
             </ul>
 
-            <h3 className="text-sm font-semibold text-gray-900 mt-6 mb-2">b. Information Collected Automatically</h3>
-            <p className="mb-2">When you visit our website, we may automatically collect:</p>
-            <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li>IP address, browser type, and device information</li>
-              <li>Pages visited, time spent, and referring sites</li>
-              <li>Cookies or similar technologies used for analytics and website performance</li>
-            </ul>
-
-            <h3 className="text-sm font-semibold text-gray-900 mt-6 mb-2">c. Information from Third Parties</h3>
+            <h3 className="text-sm font-semibold text-gray-900 mt-6 mb-2">
+              b. Technical and Server Log Information
+            </h3>
             <p className="mb-8">
-              We may receive limited business information from trusted partners, referral sources, or affiliates (such as Verastro Overseas or Verastro Inc.) to facilitate communication or service continuity.
+              When you browse our website, hosting servers may automatically record standard technical log data such as IP address, browser type, operating system, referring URL, and page timestamps for site security and operational integrity.
             </p>
 
-            <h2 id="how-we-use-information" className="text-lg font-bold text-gray-900 mt-10 mb-4">3. How We Use Your Information</h2>
-            <p className="mb-2">We use collected information for purposes such as:</p>
+            <h2 id="how-we-use-information" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              3. How We Use Your Information
+            </h2>
+            <p className="mb-2">We use collected information to:</p>
             <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li>Responding to your inquiries or service requests</li>
-              <li>Preparing and sending proposals or investment details</li>
-              <li>Communicating project updates or consultation availability</li>
-              <li>Managing client relationships and billing coordination</li>
-              <li>Sending newsletters, updates, or announcements (only if you subscribe)</li>
-              <li>Complying with legal obligations and protecting our rights</li>
+              <li>Process and respond to maintenance quote requests and service inquiries</li>
+              <li>Coordinate service visits, confirm maintenance scopes, and communicate scheduling updates</li>
+              <li>Retain recruitment inquiries for future hiring consideration</li>
+              <li>Maintain customer communication records and service history</li>
+              <li>Protect website security and fulfill ordinary legal obligations</li>
             </ul>
-            <p className="mb-8">We do not sell, rent, or trade personal information for marketing purposes.</p>
+            <p className="mb-8">We do not sell, rent, or trade your personal information to third parties for marketing purposes.</p>
 
-            <h2 id="legal-basis" className="text-lg font-bold text-gray-900 mt-10 mb-4">4. Legal Basis for Processing</h2>
-            <p className="mb-2">We process your data on one or more of the following legal bases:</p>
+            <h2 id="legal-basis" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              4. Legal Basis for Processing
+            </h2>
+            <p className="mb-2">We process personal data based on:</p>
             <ul className="list-disc pl-5 mb-8 space-y-1">
-              <li>Performance of a contract: when you request or engage our services</li>
-              <li>Consent: when you voluntarily share data or subscribe to communications</li>
-              <li>Legitimate interest: improving our services and website user experience</li>
-              <li>Legal compliance: when required by U.S. or state law</li>
+              <li>Performance of requested services: communicating quotes and coordinating maintenance</li>
+              <li>Consent: when you submit a quote form or voluntarily upload photos or documents</li>
+              <li>Legitimate business interests: operating our grounds maintenance operations and ensuring website security</li>
+              <li>Legal compliance: fulfilling applicable statutory or tax obligations</li>
             </ul>
 
-            <h2 id="information-sharing" className="text-lg font-bold text-gray-900 mt-10 mb-4">5. Information Sharing and Disclosure</h2>
-            <p className="mb-2">We may share limited personal information only when necessary to:</p>
+            <h2 id="information-sharing" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              5. Information Sharing and Disclosure
+            </h2>
+            <p className="mb-2">We may share information only as strictly needed with:</p>
             <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li>Fulfill requested services or project coordination</li>
-              <li>Communicate with trusted vendors, consultants, or affiliate divisions under Verastro Inc.</li>
-              <li>Comply with applicable laws, regulations, or lawful court orders</li>
-              <li>Protect the rights, property, or safety of VERASTRO INFRA, our clients, or the public</li>
+              <li>Our operational field staff and service coordination team</li>
+              <li>Hosting and technical infrastructure providers (such as Vercel and secure email transport services) solely to process transmissions</li>
+              <li>Our parent entity, Verastro Inc., for corporate administration</li>
+              <li>Law enforcement or regulatory bodies if required by valid legal process</li>
             </ul>
-            <p className="mb-8">All third-party partners handling personal information are required to adhere to confidentiality and data protection obligations.</p>
 
-            <h2 id="data-retention" className="text-lg font-bold text-gray-900 mt-10 mb-4">6. Data Retention</h2>
-            <p className="mb-4">We retain personal information only as long as necessary to fulfill the purposes described in this Policy or as required by applicable law.</p>
-            <p className="mb-8">Information related to project proposals or financial records may be stored securely for audit and compliance requirements.</p>
+            <h2 id="data-retention" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              6. Data Retention
+            </h2>
+            <p className="mb-4">
+              We retain customer inquiries and maintenance records only as long as necessary to serve client accounts, maintain business continuity, or satisfy tax and legal record-keeping requirements.
+            </p>
+            <p className="mb-8">
+              Recruitment submissions may be securely retained for review when future hiring opportunities arise, or deleted upon applicant request.
+            </p>
 
-            <h2 id="cookies" className="text-lg font-bold text-gray-900 mt-10 mb-4">7. Cookies and Tracking Technologies</h2>
-            <p className="mb-4">Our website uses cookies and analytics tools to improve performance and understand visitor interactions.</p>
-            <p className="mb-8">You can manage or disable cookies through your browser settings. Disabling cookies may limit some website functionality.</p>
+            <h2 id="cookies" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              7. Cookies and Technical Information
+            </h2>
+            <p className="mb-4">
+              This website does not deploy third-party advertising tracking cookies. It relies on standard web hosting technical protocols to deliver web pages securely.
+            </p>
+            <p className="mb-8">
+              You can configure your browser to reject cookies or notify you when cookies are sent without disrupting core website browsing.
+            </p>
 
-            <h2 id="your-rights" className="text-lg font-bold text-gray-900 mt-10 mb-4">8. Your Rights</h2>
-            <p className="mb-2">Depending on your location, you may have the right to:</p>
+            <h2 id="your-rights" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              8. Your Rights
+            </h2>
+            <p className="mb-2">You may at any time:</p>
             <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li>Access, correct, or update your personal information</li>
-              <li>Request deletion of your information (subject to record-keeping laws)</li>
-              <li>Withdraw consent for communications at any time</li>
-              <li>Opt-out of non-essential cookies or marketing emails</li>
+              <li>Request a copy of personal information we have recorded for your property</li>
+              <li>Request corrections or updates to your contact details</li>
+              <li>Request deletion of your inquiry details, subject to applicable record-keeping laws</li>
             </ul>
-            <p className="mb-8">To exercise these rights, contact us at inquiries@verastroinfra.com or via the details below.</p>
+            <p className="mb-8">
+              To exercise these rights, contact us at <strong>inquries@verastro.com</strong>.
+            </p>
 
-            <h2 id="data-security" className="text-lg font-bold text-gray-900 mt-10 mb-4">9. Data Security</h2>
-            <p className="mb-4">We employ reasonable administrative, technical, and physical safeguards to protect your personal information from unauthorized access, misuse, or loss.</p>
-            <p className="mb-8">While no system is entirely secure, we maintain industry-standard protections consistent with U.S. data-handling practices.</p>
+            <h2 id="data-security" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              9. Data Security
+            </h2>
+            <p className="mb-8">
+              We implement reasonable administrative, technical, and physical safeguards to protect submitted customer details and file attachments against unauthorized access, loss, or misuse.
+            </p>
 
-            <h2 id="international-access" className="text-lg font-bold text-gray-900 mt-10 mb-4">10. International Access</h2>
-            <p className="mb-8">This website is operated in the United States. If you access it from outside the U.S., you consent to the transfer and processing of your data under U.S. privacy laws, which may differ from those in your country.</p>
+            <h2 id="updates" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              10. Updates to This Policy
+            </h2>
+            <p className="mb-8">
+              We may update this Privacy Policy to reflect operational or regulatory changes. The “Last Updated” date at the top of this page indicates the date of the latest revisions.
+            </p>
 
-            <h2 id="updates" className="text-lg font-bold text-gray-900 mt-10 mb-4">11. Updates to This Policy</h2>
-            <p className="mb-4">We may revise this Privacy Policy periodically. Updates will be posted on this page with a new "Last Updated" date.</p>
-            <p className="mb-8">Your continued use of the website after changes signifies your acceptance of the updated Policy.</p>
-
-            <h2 id="contact-us" className="text-lg font-bold text-gray-900 mt-10 mb-4">12. Contact Us</h2>
-            <p className="mb-4">If you have questions, concerns, or requests regarding this Privacy Policy, please contact us at:</p>
-            
-            <div className="bg-gray-50 border border-gray-100 p-6 text-sm text-gray-700">
-              <p className="font-bold text-gray-900 mb-2">VERASTRO INFRA</p>
-              <p className="mb-2">A Division of Verastro Inc.</p>
-              <div className="flex items-start gap-2 mb-2">
-                <span className="text-red-500 mt-0.5">📍</span>
-                <span>651 N Broad St, STE 201, Middletown, Delaware 19709</span>
-              </div>
-              <div className="flex items-start gap-2 mb-2">
-                <span className="text-red-500 mt-0.5">📍</span>
-                <span>10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256</span>
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-blue-500">📧</span>
-                <a href="mailto:inquiries@verastroinfra.com" className="hover:underline">inquiries@verastroinfra.com</a>
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="text-blue-500">📞</span>
-                <span>(904) 302-9170</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-blue-500">🌐</span>
-                <a href="https://www.verastroinfra.com" className="hover:underline">www.verastroinfra.com</a>
-              </div>
+            <h2 id="contact-us" className="text-lg font-bold text-gray-900 mt-10 mb-4">
+              11. Contact Us
+            </h2>
+            <div className="bg-gray-50 border border-gray-200 p-6 text-sm text-gray-700 not-prose">
+              <p className="font-bold text-gray-900 mb-1">Verastro Infra</p>
+              <p className="text-xs text-gray-500 mb-3">A division of Verastro Inc.</p>
+              <p className="mb-2">
+                <strong>Main Office:</strong> 10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256
+              </p>
+              <p className="mb-2">
+                <strong>Email:</strong>{' '}
+                <a href="mailto:inquries@verastro.com" className="text-teal-700 hover:underline">
+                  inquries@verastro.com
+                </a>
+              </p>
+              <p className="mb-2">
+                <strong>Phone:</strong> (904) 302-9170
+              </p>
+              <p>
+                <strong>Website:</strong>{' '}
+                <a href="https://verastroinfra.com" className="text-teal-700 hover:underline">
+                  verastroinfra.com
+                </a>
+              </p>
             </div>
-
           </div>
         </div>
       </section>

@@ -1,8 +1,8 @@
-const HQ_QUERY = '651 N Broad St, STE 201, Middletown, DE 19709';
+const MAIN_OFFICE_QUERY = '10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256';
 
 export default function GoogleMapEmbed({
-  query = HQ_QUERY,
-  title = 'VERASTRO INFRA headquarters map',
+  query = MAIN_OFFICE_QUERY,
+  title = 'Verastro Infra Main Office — Jacksonville, FL',
 }) {
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
   const encoded = encodeURIComponent(query);
@@ -27,10 +27,11 @@ export default function GoogleMapEmbed({
         href={directionsHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-3 text-sm font-medium"
+        className="mt-3 text-sm font-medium hover:underline inline-flex items-center gap-1.5"
         style={{ color: 'var(--color-teal)' }}
       >
-        View on Google Maps
+        <span>View Main Office on Google Maps</span>
+        <span aria-hidden="true">&rarr;</span>
       </a>
     </div>
   );

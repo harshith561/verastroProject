@@ -1,38 +1,38 @@
 export const faqItems = [
   {
     id: 'what-is-verastro-infra',
-    question: 'What is VERASTRO INFRA?',
+    question: 'What is Verastro Infra?',
     answer:
-      'VERASTRO INFRA is a division of Verastro Inc., focused on engineering, landscaping, site development, grading, and outdoor infrastructure. We serve clients across Florida, Texas, Delaware, and Arkansas.',
+      'Verastro Infra is a division of Verastro Inc., focused on Florida landscaping, routine grounds care, and property maintenance. We provide dependable grounds upkeep for residential and commercial properties.',
   },
   {
     id: 'where-located',
-    question: 'Where is the company located?',
+    question: 'Where is Verastro Infra located?',
     answer:
-      'Our headquarters is in Middletown, Delaware, with locations in Jacksonville, Florida; Flower Mound, Texas; and Bentonville, Arkansas.',
+      'Our Main Office is located at 10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256.',
   },
   {
-    id: 'how-discuss-project',
-    question: 'How can I discuss a project?',
+    id: 'how-request-quote',
+    question: 'How can I request a quote or discuss service?',
     answer:
-      'Call (904) 302-9170, email inquiries@verastroinfra.com, or request a consultation through our website. Our team responds within 24 business hours.',
+      'You can call us at (904) 302-9170, email inquries@verastro.com, or submit a request through our Request a Quote form. Our team will contact you to discuss your request.',
   },
   {
-    id: 'what-states-serve',
-    question: 'What states do you serve?',
+    id: 'what-services-offered',
+    question: 'What services does Verastro Infra provide?',
     answer:
-      'We currently operate across Delaware, Florida, Texas, and Arkansas. Contact us to discuss your specific project location and requirements.',
+      'We offer routine property and grounds maintenance including lawn mowing, lawn edging, manual weeding, leaf removal, garden upkeep, ordinary watering, one-time cleanups, recurring maintenance programs, and maintenance service coordination.',
   },
   {
-    id: 'what-types-projects',
-    question: 'What types of projects does VERASTRO INFRA handle?',
+    id: 'one-time-vs-recurring',
+    question: 'Do you offer both one-time and recurring maintenance?',
     answer:
-      'We handle a range of site development and outdoor infrastructure projects including land development, site grading, drainage, sod installation, paver systems, hardscape, and project coordination support. Contact us to discuss your specific needs.',
+      'Yes. We provide comprehensive one-time property cleanups as well as scheduled recurring maintenance programs (weekly, bi-weekly, or monthly) with confirmed scopes of work.',
   },
   {
-    id: 'investment-consulting',
-    question: 'Do you offer investment consulting?',
+    id: 'how-services-scheduled',
+    question: 'How is service scheduled and confirmed?',
     answer:
-      'Yes. We provide site selection and development feasibility support for property investors and developers. Our team evaluates sites from an engineering and development standpoint. Contact us for a consultation.',
+      'Once you share your property details and service requirements, we confirm the exact scope of work, provide a clear quote, and coordinate a scheduled service visit with ongoing customer communication.',
   },
 ];

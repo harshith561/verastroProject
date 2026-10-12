@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { footerLinks } from '@/data/navigation';
 
@@ -13,7 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand column */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2.5 mb-4" aria-label="VERASTRO INFRA">
+            <Link href="/" className="flex items-center gap-2.5 mb-4" aria-label="Verastro Infra">
               <Image
                 src="https://verastrotechnologies.com/wp-content/uploads/2022/08/cropped-Verastrotechnologies_symbol-removebg-preview.png"
                 alt="Verastro logo"
@@ -24,15 +24,35 @@ export default function Footer() {
               />
               <div className="leading-tight flex flex-col justify-center">
                 <div className="flex items-center gap-1.5">
-                  <span className="font-extrabold text-[1.1rem] tracking-[0.15em] text-white uppercase drop-shadow-md">VERASTRO</span>
-                  <span className="font-semibold text-[1.1rem] tracking-[0.1em] uppercase" style={{ color: 'var(--color-teal-light)' }}>INFRA</span>
+                  <span className="font-extrabold text-[1.1rem] tracking-wide text-white drop-shadow-md">
+                    Verastro
+                  </span>
+                  <span
+                    className="font-semibold text-[1.1rem] tracking-wide"
+                    style={{ color: 'var(--color-teal-light)' }}
+                  >
+                    Infra
+                  </span>
                 </div>
               </div>
             </Link>
-            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+
+            <p className="text-sm text-gray-400 mb-3 leading-relaxed">
               A division of Verastro Inc.<br />
-              Engineering, site development &amp; outdoor infrastructure.
+              Landscaping, grounds care &amp; property maintenance.
             </p>
+
+            <div className="mb-4 text-xs text-gray-400 leading-relaxed">
+              <p className="font-semibold text-gray-300 flex items-center gap-1.5 mb-1">
+                <MapPin size={13} style={{ color: 'var(--color-teal-light)' }} />
+                Main Office:
+              </p>
+              <p className="pl-4">
+                10151 Deerwood Park Blvd, Building 200, Suite 250<br />
+                Jacksonville, FL 32256
+              </p>
+            </div>
+
             <div className="flex flex-col gap-2 text-sm">
               <a
                 href="tel:+19043029170"
@@ -42,15 +62,15 @@ export default function Footer() {
                 (904) 302-9170
               </a>
               <a
-                href="mailto:inquiries@verastroinfra.com"
+                href="mailto:inquries@verastro.com"
                 className="flex items-center gap-2 transition-colors"
                 style={{ color: 'var(--color-teal-light)' }}
               >
                 <Mail size={14} />
-                inquiries@verastroinfra.com
+                inquries@verastro.com
               </a>
             </div>
-            
+
             {/* Social media links */}
             <div className="flex items-center gap-4 mt-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
@@ -102,11 +122,11 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Locations */}
+          {/* Service Area */}
           <div>
-            <h3 className="text-white text-sm font-semibold mb-4">Locations</h3>
+            <h3 className="text-white text-sm font-semibold mb-4">Florida Service Area</h3>
             <ul className="flex flex-col gap-2.5">
-              {footerLinks.locations.map((link) => (
+              {footerLinks.serviceAreas.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
@@ -125,21 +145,19 @@ export default function Footer() {
           className="mt-10 pt-6 border-t flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-gray-500"
           style={{ borderColor: 'rgba(255,255,255,0.08)' }}
         >
-          <p>&copy; {year} VERASTRO INFRA, a division of Verastro Inc. All rights reserved.</p>
+          <p>&copy; {year} Verastro Infra, a division of Verastro Inc. All rights reserved.</p>
           <div className="flex gap-4">
-            <div className="flex gap-4">
-              <p >
-                Powered by{' '}
-                <a
-                  href="https://digitalverto.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-semibold text-[#4CCFC1] hover:text-white transition-colors duration-200"
-                >
-                  Digital Verto
-                </a>
-              </p>
-            </div>
+            <p>
+              Powered by{' '}
+              <a
+                href="https://digitalverto.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-[#4CCFC1] hover:text-white transition-colors duration-200"
+              >
+                Digital Verto
+              </a>
+            </p>
           </div>
         </div>
       </div>

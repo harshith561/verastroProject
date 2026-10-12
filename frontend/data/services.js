@@ -1,188 +1,190 @@
+// Approved public services for Verastro Infra (Florida Landscaping & Property Maintenance)
 export const mainServices = [
   {
-    id: 'land-development',
-    title: 'Land Development',
-    image:
-      '/images/HeroSlideshow/investment.avif',
-    imageAlt: 'Commercial and community development property against the skyline',
+    id: 'routine-grounds-maintenance',
+    title: 'Routine Property & Grounds Maintenance',
+    image: '/images/HeroSlideshow/Landscape-Maintenance.jpg',
+    imageAlt: 'Well-maintained turf and garden grounds at a Florida property',
     shortDescription:
-      'Planning communities that balance functionality, aesthetics, and compliance.',
+      'Consistent lawn mowing, precision edging, manual weeding, and regular watering to keep grounds neat and healthy.',
     description:
-      'We support full-scope land development projects from initial site evaluation through development coordination. Our team helps clients navigate zoning, entitlements, and site feasibility to deliver practical, compliant outcomes.',
+      'Our routine grounds maintenance ensures your Florida property remains tidy, well-kept, and presentable throughout every season. We focus on essential outdoor care performed with attention to detail and clear service parameters.',
     features: [
-      'Site feasibility and due diligence',
-      'Zoning and entitlement coordination',
-      'Community and subdivision planning',
-      'Land use analysis and documentation',
+      'Scheduled lawn mowing',
+      'Lawn and walkway edging',
+      'Manual weeding of beds and borders',
+      'Ordinary watering and hydration care',
     ],
   },
   {
-    id: 'subdivision-plot-layout',
-    title: 'Subdivision & Plot Layout Design',
-    image:
-      '/images/HeroSlideshow/subdivision-plot.avif',
-    imageAlt: 'Residential land and lot layout from an elevated view',
+    id: 'one-time-cleanup',
+    title: 'One-Time Cleanup',
+    image: '/images/HeroSlideshow/introLandscape.jpg',
+    imageAlt: 'Freshly cleared and tidy outdoor property grounds',
     shortDescription:
-      'Efficient lot layout, roadway hierarchy, and open-space planning.',
+      'Comprehensive property cleanup, leaf removal, debris collection, and grounds revitalization.',
     description:
-      'Our team develops subdivision and plot layout designs that optimize land use, address infrastructure requirements, and meet local planning standards. We focus on functional, compliant designs that support efficient development.',
+      'Ideal for seasonal transitions, property turnovers, or addressing overgrown areas. Our one-time cleanup restores order to outdoor grounds with thorough leaf gathering, manual bed clearing, and general property tidying.',
     features: [
-      'Lot configuration and layout planning',
-      'Roadway and circulation design support',
-      'Open space and setback planning',
-      'AutoCAD Civil 3D documentation',
+      'Seasonal leaf and debris collection',
+      'Overgrowth and dead vegetation clearing',
+      'Manual weeding of landscape beds',
+      'Walkway and driveway clearance',
     ],
   },
   {
-    id: 'infrastructure-development',
-    title: 'Infrastructure Development',
-    image:
-      '/images/HeroSlideshow/infrastructure-development.avif',
-    imageAlt: 'Roads and urban infrastructure at dusk',
+    id: 'recurring-maintenance',
+    title: 'Recurring Maintenance',
+    image: '/images/HeroSlideshow/servicesHero.jpg',
+    imageAlt: 'Neatly maintained lawn and landscaped property grounds',
     shortDescription:
-      'Roads, drainage, water, sewer, power, and related infrastructure coordination.',
+      'Scheduled weekly, bi-weekly, or monthly grounds care programs tailored to your property requirements.',
     description:
-      'We coordinate infrastructure development across multiple disciplines including roads, drainage systems, underground utilities, and site grading. Our team provides technical support for infrastructure planning and field coordination.',
+      'Keep your residential or commercial property consistently maintained with a dependable recurring schedule. We agree on the maintenance frequency, confirm specific tasks, and provide reliable grounds care with proactive updates.',
     features: [
-      'Road and pavement design support',
-      'Drainage and stormwater management',
-      'Underground utility coordination',
-      'Infrastructure planning documentation',
+      'Weekly or bi-weekly maintenance visits',
+      'Routine mowing, trimming, and edging',
+      'Ongoing garden bed upkeep',
+      'Dependable visit schedule and service records',
     ],
   },
   {
-    id: 'property-investment-consulting',
-    title: 'Property Investment Consulting',
-    image:
-      '/images/HeroSlideshow/property-investment-consulting.avif',
-    imageAlt: 'Residential property prepared for development and investment review',
+    id: 'garden-upkeep',
+    title: 'Garden Upkeep & Care',
+    image: '/images/HeroSlideshow/hero2.jpg',
+    imageAlt: 'Cared-for garden beds and decorative shrubs',
     shortDescription:
-      'Site selection, feasibility, and development-oriented investment support.',
+      'Targeted care for ornamental beds, shrub upkeep, mulch refreshment, and neat garden edges.',
     description:
-      'VERASTRO INFRA provides site selection and feasibility support to investors and developers. We evaluate properties from an engineering and development standpoint, helping clients make informed decisions.',
+      'Healthy garden beds make a lasting impression. Our garden upkeep service focuses on manual weeding, routine pruning of small shrubs, raking, and keeping landscaped perimeters orderly and attractive.',
     features: [
-      'Site selection and evaluation',
-      'Development feasibility analysis',
-      'Infrastructure cost assessment',
-      'Multi-state market awareness',
+      'Manual weed removal (no chemical treatment claims)',
+      'Routine shrub and hedge trimming',
+      'Bed raking and border cleanup',
+      'Plant health observation and reporting',
     ],
   },
   {
-    id: 'site-development-utilities',
-    title: 'Site Development & Utilities',
-    image:
-      '/images/HeroSlideshow/site-development-utilities.jpg',
-    imageAlt: 'Site development and utility coordination on an active project',
+    id: 'leaf-removal-cleanup',
+    title: 'Leaf Removal & Routine Grounds Cleanup',
+    image: '/images/HeroSlideshow/commercialProperty.jpg',
+    imageAlt: 'Clean commercial property grounds free of leaves and debris',
     shortDescription:
-      'Clearing, grading, underground utilities, curb & gutter, and paving coordination.',
+      'Thorough leaf collection, litter sweep, and walkway clearance for a clean exterior appearance.',
     description:
-      'From site clearing and grading through underground utility installation and paving, we support the full range of site development activities. Our field teams coordinate with contractors to deliver prepared, ready-to-build sites.',
+      'Leaves and fallen debris can smother lawns and create an unkempt appearance. We provide prompt leaf clearing, walkway sweeping, and routine grounds cleanup across Florida properties.',
     features: [
-      'Site clearing and preparation',
-      'Grading and earthwork coordination',
-      'Underground utility layout',
-      'Curb, gutter, and paving coordination',
+      'Lawn and turf leaf clearance',
+      'Bed and corner debris gathering',
+      'Paved walkway and entrance sweep',
+      'Responsible organic waste disposal',
     ],
   },
   {
-    id: 'project-management-support',
-    title: 'Project Management & Support',
-    image:
-      '/images/HeroSlideshow/project-management-support.avif',
-    imageAlt: 'Project team coordinating engineering and field work on site',
+    id: 'service-coordination-support',
+    title: 'Customer Communications & Service Coordination',
+    image: '/images/HeroSlideshow/fieldCoordination.jpg',
+    imageAlt: 'Field representative coordinating maintenance schedule with client',
     shortDescription:
-      'Permitting, scheduling, vendor coordination, cost control, and project support.',
+      'Clear maintenance scheduling, scope confirmation, and proactive customer communications.',
     description:
-      'Our project management team provides end-to-end coordination support, from permitting and scheduling to vendor management and cost tracking. We keep projects organized, on schedule, and within approved parameters.',
+      'Every successful service engagement starts with clarity. Our coordination team confirms specific service tasks, establishes visit calendars, communicates timely schedule updates, and maintains accurate service records.',
     features: [
-      'Permit application and coordination',
-      'Project scheduling and tracking',
-      'Vendor and subcontractor coordination',
-      'Cost control and documentation',
+      'Clear service scope agreements',
+      'Advance maintenance scheduling',
+      'Prompt status updates and notifications',
+      'Responsive customer support via phone and email',
     ],
   },
 ];
 
-export const siteWorkServices = [
-  'Landscape Maintenance & Grounds Care',
-  'Site Grading & Leveling Solutions',
-  'Sod Installation & Turf Renovation',
-  'Paver & Hardscape Installation',
-  'Drainage & Erosion Control',
+// Delivery process explanation (How Services Are Delivered)
+export const deliveryProcess = [
+  {
+    step: '01',
+    title: 'Share Requirements',
+    description: 'Tell us about your Florida property, grounds size, and specific maintenance needs.',
+  },
+  {
+    step: '02',
+    title: 'Confirm Scope',
+    description: 'We clarify the exact tasks included, agree on one-time or recurring frequency, and provide a clear quote.',
+  },
+  {
+    step: '03',
+    title: 'Schedule Service',
+    description: 'We establish a convenient service window and assign our grounds care team.',
+  },
+  {
+    step: '04',
+    title: 'Receive Updates',
+    description: 'Stay informed with timely visit notifications, completed work confirmation, and ongoing communication.',
+  },
 ];
 
+// Approved visual cards for homepage and about page
 export const landscapingVisuals = [
   {
-    title: 'Landscape Maintenance & Grounds Care',
-    description:
-      'Ongoing grounds care shaped around how a property is used — from maintained turf to finished outdoor spaces.',
-    image:
-      '/images/HeroSlideshow/Landscape-Maintenance.jpg',
-    imageAlt: 'Maintained garden beds and landscaped grounds',
+    title: 'Lawn Mowing & Edging',
+    description: 'Precision mowing and crisp mechanical edging along sidewalks, curbs, and landscape beds.',
+    image: '/images/HeroSlideshow/Landscape-Maintenance.jpg',
+    imageAlt: 'Crisply edged lawn and maintained garden grounds',
   },
   {
-    title: 'Site Grading & Leveling Solutions',
-    description:
-      'Grading and leveling support that prepares land for drainage, turf, and outdoor construction.',
-    image:
-      '/images/HeroSlideshow/Site-Grading.avif',
-    imageAlt: 'Site grading and earthwork equipment preparing land',
+    title: 'Garden Upkeep & Manual Weeding',
+    description: 'Hands-on weeding and bed care that preserves plant health without unapproved chemical treatments.',
+    image: '/images/HeroSlideshow/hero2.jpg',
+    imageAlt: 'Well-groomed garden bed with neat landscape plantings',
   },
   {
-    title: 'Sod Installation & Turf Renovation',
-    description:
-      'Turf and sod work planned for coverage, appearance, and lasting outdoor performance.',
-    image:
-      '/images/HeroSlideshow/Sod-Installation.jpg',
-    imageAlt: 'Freshly landscaped lawn and turf around a property',
+    title: 'Leaf Removal & Grounds Cleanup',
+    description: 'Seasonal leaf collection and routine grounds clearing that keeps outdoor spaces orderly.',
+    image: '/images/HeroSlideshow/introLandscape.jpg',
+    imageAlt: 'Clean, open lawn and landscaped grounds free of clutter',
   },
   {
-    title: 'Paver & Hardscape Installation',
-    description:
-      'Paver systems and hardscape layouts for walkways, community spaces, and finished outdoor areas.',
-    image:
-      '/images/HeroSlideshow/Hardscape.jpg',
-    imageAlt: 'Paver walkway through a landscaped outdoor space',
-  },
-  {
-    title: 'Drainage & Erosion Control',
-    description:
-      'Drainage and erosion-control coordination that protects graded land and outdoor improvements.',
-    image:
-      '/images/HeroSlideshow/Drainage.jpg',
-    imageAlt: 'Green landscape with water and drainage along planted ground',
+    title: 'Recurring Grounds Maintenance',
+    description: 'Consistent maintenance visits scheduled weekly or bi-weekly for dependable property appeal.',
+    image: '/images/HeroSlideshow/servicesHero.jpg',
+    imageAlt: 'Neatly maintained commercial and residential grounds',
   },
 ];
 
-export const engineeringCapabilities = [
+// Unpublished draft services (preserved privately — NOT exposed on public pages)
+export const unpublishedServicesDraft = [
   {
-    title: 'Site Grading & Earthwork',
-    description:
-      'Technical grading plans, cut/fill analysis, and earthwork quantity takeoffs using AutoCAD Civil 3D.',
+    id: 'land-development-draft',
+    title: 'Land Development (Draft)',
+    note: 'Excluded from public launch scope. Preserved privately.',
   },
   {
-    title: 'Drainage & Stormwater',
-    description:
-      'Drainage design support, stormwater management planning, and erosion control documentation.',
+    id: 'civil-engineering-draft',
+    title: 'Civil Engineering (Draft)',
+    note: 'Excluded from public launch scope. Preserved privately.',
   },
   {
-    title: 'Paver & Hardscape Layouts',
-    description:
-      'Layout planning and technical documentation for paver systems, hardscape features, and site improvements.',
+    id: 'site-grading-draft',
+    title: 'Site Grading & Leveling (Draft)',
+    note: 'Excluded from public launch scope. Preserved privately.',
   },
   {
-    title: 'Turf & Sod Planning',
-    description:
-      'Sod installation planning, turf renovation layouts, and site preparation documentation.',
+    id: 'sod-turf-installation-draft',
+    title: 'Sod & Turf Renovation (Draft)',
+    note: 'Held unpublished until owner verifies scope and licensing.',
   },
   {
-    title: 'Quantity Takeoffs',
-    description:
-      'Material quantity calculations and documentation to support project estimating and planning.',
+    id: 'paver-hardscape-draft',
+    title: 'Paver & Hardscape Installation (Draft)',
+    note: 'Excluded from public launch scope. Preserved privately.',
   },
   {
-    title: 'Site Preparation',
-    description:
-      'Technical support for site clearing, grubbing, and initial preparation activities.',
+    id: 'drainage-erosion-control-draft',
+    title: 'Drainage & Erosion Control (Draft)',
+    note: 'Excluded from public launch scope. Preserved privately.',
+  },
+  {
+    id: 'property-investment-consulting-draft',
+    title: 'Property Investment Consulting (Draft)',
+    note: 'Excluded from public launch scope. Preserved privately.',
   },
 ];

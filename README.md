@@ -75,20 +75,20 @@ npm run dev
 
 | Route | Description |
 |-------|-------------|
-| `/` | Home |
-| `/about` | About VERASTRO INFRA |
-| `/services` | All Services |
-| `/engineering` | Engineering capabilities |
-| `/investments` | Investment opportunities |
-| `/careers` | Job listings & application |
-| `/contact` | Contact form & locations |
+| `/` | Home (Landscaping & Property Maintenance) |
+| `/about` | About Verastro Infra |
+| `/services` | Landscaping & Maintenance Services |
+| `/service-coordination` | Service Coordination & Support |
+| `/careers` | Careers & Closed Openings |
+| `/contact` | Contact & Jacksonville Main Office |
+| `/consultation` | Request a Quote |
 | `/privacy-policy` | Privacy Policy |
 | `/terms-of-use` | Terms of Use |
 
 ## Company
 
-**VERASTRO INFRA** is a division of Verastro Inc., focused on engineering, site development, landscaping, grading, drainage, and outdoor infrastructure.
+**Verastro Infra** is a division of Verastro Inc., focused on Florida landscaping, grounds care, and routine property maintenance.
 
-📍 Delaware · Florida · Texas · Arkansas  
+📍 Main Office: 10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256  
 📞 (904) 302-9170  
-📧 inquiries@verastroinfra.com
+📧 inquries@verastro.com
