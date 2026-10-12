@@ -19,7 +19,7 @@ export const metadata = {
     description:
       'A division of Verastro Inc. — Florida landscaping, grounds care, and routine property maintenance.',
     url: '/about',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'About Verastro Infra' }],
+    images: [{ url: '/og-image.png', width: 500, height: 500, alt: 'About Verastro Infra' }],
   },
   twitter: {
     title: 'About Us | Verastro Infra',

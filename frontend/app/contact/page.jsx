@@ -18,7 +18,7 @@ export const metadata = {
     description:
       'Contact Verastro Infra for Florida landscaping and property maintenance. Main Office in Jacksonville, FL.',
     url: '/contact',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Contact Verastro Infra' }],
+    images: [{ url: '/og-image.png', width: 500, height: 500, alt: 'Contact Verastro Infra' }],
   },
   twitter: {
     title: 'Contact Us | Verastro Infra',

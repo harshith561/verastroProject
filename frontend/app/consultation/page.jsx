@@ -18,8 +18,8 @@ export const metadata = {
     images: [
       {
         url: '/og-image.png',
-        width: 1200,
-        height: 630,
+        width: 500,
+        height: 500,
         alt: 'Request a Quote — Verastro Infra',
       },
     ],
