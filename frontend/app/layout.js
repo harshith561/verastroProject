@@ -24,7 +24,7 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: 'Verastro Infra | Florida Landscaping & Property Maintenance',
-    template: '%s | Verastro Infra',
+    template: '%s',
   },
   description:
     'Verastro Infra is a Florida landscaping, grounds-care, and property-maintenance company. A division of Verastro Inc., based in Jacksonville, FL.',
@@ -73,24 +73,24 @@ export const metadata = {
   },
   robots: isPreview
     ? {
+      index: false,
+      follow: false,
+      googleBot: {
         index: false,
         follow: false,
-        googleBot: {
-          index: false,
-          follow: false,
-        },
-      }
+      },
+    }
     : {
+      index: true,
+      follow: true,
+      googleBot: {
         index: true,
         follow: true,
-        googleBot: {
-          index: true,
-          follow: true,
-          'max-video-preview': -1,
-          'max-image-preview': 'large',
-          'max-snippet': -1,
-        },
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
+    },
 };
 
 // JSON-LD structured data — Organization
