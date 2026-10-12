@@ -18,9 +18,8 @@ export default function VisualSplit({
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch overflow-hidden">
       <div
-        className={`relative min-h-[280px] md:min-h-[420px] lg:min-h-[520px] overflow-hidden group ${
-          reverse ? 'lg:order-2' : ''
-        }`}
+        className={`relative min-h-[280px] md:min-h-[420px] lg:min-h-[520px] overflow-hidden group ${reverse ? 'lg:order-2' : ''
+          }`}
       >
         <Image
           src={image}
@@ -45,13 +44,13 @@ export default function VisualSplit({
         {text && <p className="text-sm md:text-base text-gray-600 leading-relaxed mb-6">{text}</p>}
         {children}
         {ctaLabel && (
-          <div className="mt-2">
+          <div className="mt-6 flex justify-center">
             <Link href={ctaHref} className="btn-outline">
               {ctaLabel} <ArrowRight size={14} />
             </Link>
           </div>
         )}
       </div>
-    </div>
+    </div >
   );
 }
