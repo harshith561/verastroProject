@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Phone, Mail, MapPin } from 'lucide-react';
-import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
 import { footerLinks } from '@/data/navigation';
+
+const linkedinUrl = 'https://www.linkedin.com/company/verastroinfra/';
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -70,22 +72,6 @@ export default function Footer() {
                 inquries@verastro.com
               </a>
             </div>
-
-            {/* Social media links */}
-            <div className="flex items-center gap-4 mt-6">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Facebook">
-                <FaFacebook size={18} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Twitter">
-                <FaTwitter size={18} />
-              </a>
-              <a href="https://www.linkedin.com/company/verastrousa" className="text-gray-400 hover:text-white transition-colors" aria-label="LinkedIn">
-                <FaLinkedin size={18} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
-                <FaInstagram size={18} />
-              </a>
-            </div>
           </div>
 
           {/* Company links */}
@@ -137,6 +123,29 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            {/* LinkedIn box */}
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow Verastro Infra on LinkedIn"
+              className="group mt-6 inline-flex w-fit items-center gap-3 rounded-lg border px-4 py-3 transition-colors hover:bg-white/5"
+              style={{ borderColor: 'rgba(255,255,255,0.15)' }}
+            >
+              <span
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md text-white"
+                style={{ backgroundColor: '#0A66C2' }}
+              >
+                <FaLinkedin size={18} />
+              </span>
+              <span className="leading-tight">
+                <span className="block text-sm font-semibold text-white">Follow us on LinkedIn</span>
+                <span className="block text-xs text-gray-400 group-hover:text-gray-300 transition-colors">
+                  Company updates &amp; projects
+                </span>
+              </span>
+            </a>
           </div>
         </div>
 
