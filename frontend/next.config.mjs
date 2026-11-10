@@ -64,12 +64,10 @@ const nextConfig = {
     };
     return config;
   },
-  experimental: {
-    cpus: 1,
-    workerThreads: false,
-  },
+  experimental: {},
   outputFileTracingRoot: __dirname,
   images: {
+    formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
         protocol: 'https',

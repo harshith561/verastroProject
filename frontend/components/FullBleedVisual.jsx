@@ -19,7 +19,7 @@ export default function FullBleedVisual({
         alt={alt}
         fill
         sizes="100vw"
-        unoptimized
+        loading="lazy"
         className="object-cover hero-kenburns-slow"
       />
       <div className="hero-overlay absolute inset-0" />

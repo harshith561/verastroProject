@@ -24,8 +24,8 @@ export default function CTASection({
             alt={backgroundAlt}
             fill
             sizes="100vw"
-            unoptimized
-            className="object-cover opacity-35"
+            loading="lazy"
+            className="object-cover opacity-35 transition-opacity duration-700 ease-out"
           />
           <div className="absolute inset-0 bg-[rgba(16,26,58,0.62)]" />
         </>

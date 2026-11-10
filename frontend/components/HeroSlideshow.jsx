@@ -1,9 +1,11 @@
 'use client';
 
 import { useCallback, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { heroSlides } from '@/data/heroSlides';
+import useSynchronizedMedia from '@/lib/useSynchronizedMedia';
 
 const INTERVAL_MS = 5500;
 
@@ -27,6 +29,13 @@ export default function HeroSlideshow() {
   const reducedMotion = usePrefersReducedMotion();
   const touchStartX = useRef(null);
 
+  // Synchronize initial presentation of the first slide image and headline
+  const { isLoaded: isInitialLoaded, imgRef: firstImgRef, handleLoad: handleFirstLoad, handleError: handleFirstError } =
+    useSynchronizedMedia(heroSlides[0]?.image, {
+      priority: true,
+      timeout: 3000,
+    });
+
   const goTo = useCallback((nextIndex) => {
     setIndex(((nextIndex % heroSlides.length) + heroSlides.length) % heroSlides.length);
     setProgressKey((key) => key + 1);
@@ -38,10 +47,10 @@ export default function HeroSlideshow() {
   }, []);
 
   useEffect(() => {
-    if (reducedMotion) return undefined;
+    if (reducedMotion || !isInitialLoaded) return undefined;
     const timer = window.setInterval(() => step(1), INTERVAL_MS);
     return () => window.clearInterval(timer);
-  }, [index, reducedMotion, step]);
+  }, [index, reducedMotion, isInitialLoaded, step]);
 
   const slide = heroSlides[index];
 
@@ -59,34 +68,58 @@ export default function HeroSlideshow() {
 
   return (
     <section
-      className="hero-slideshow relative isolate min-h-[100svh] w-full overflow-hidden"
+      className="hero-slideshow relative isolate min-h-[100svh] w-full overflow-hidden bg-[#080f1e]"
       aria-label="Featured visual stories"
       aria-roledescription="carousel"
       onTouchStart={onTouchStart}
       onTouchEnd={onTouchEnd}
     >
-      {/* Background images */}
-      {heroSlides.map((item, slideIndex) => (
-        <div
-          key={item.id}
-          role="img"
-          aria-label={item.imageAlt}
-          aria-hidden={slideIndex !== index}
-          className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-[1200ms] ease-out ${slideIndex === index ? 'opacity-100 hero-kenburns' : 'opacity-0'
-            }`}
-          style={{ backgroundImage: `url(${item.image})` }}
-        />
-      ))}
+      {/* Background images with optimized Next.js Image component and preloaded first slide */}
+      {heroSlides.map((item, slideIndex) => {
+        const isCurrent = slideIndex === index;
+        const isFirst = slideIndex === 0;
 
-      {/* Dark gradient so text stays readable: bottom-up on mobile, left-to-right on desktop */}
+        return (
+          <div
+            key={item.id}
+            aria-hidden={!isCurrent}
+            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
+              isCurrent && (isFirst ? isInitialLoaded : true)
+                ? 'opacity-100 z-0'
+                : 'opacity-0 -z-10 pointer-events-none'
+            }`}
+          >
+            <Image
+              ref={isFirst ? firstImgRef : undefined}
+              src={item.image}
+              alt={item.imageAlt}
+              fill
+              priority={isFirst}
+              loading={isFirst ? 'eager' : 'lazy'}
+              sizes="100vw"
+              onLoad={isFirst ? handleFirstLoad : undefined}
+              onError={isFirst ? handleFirstError : undefined}
+              className={`object-cover ${isCurrent ? 'hero-kenburns' : ''}`}
+            />
+          </div>
+        );
+      })}
+
+      {/* Dark gradient overlay so text stays readable: bottom-up on mobile, left-to-right on desktop */}
       <div
-        className="absolute inset-0 bg-[linear-gradient(0deg,rgba(8,15,30,0.9)_0%,rgba(8,15,30,0.5)_60%,rgba(8,15,30,0.2)_100%)] md:bg-[linear-gradient(90deg,rgba(8,15,30,0.85)_0%,rgba(8,15,30,0.6)_45%,rgba(8,15,30,0.15)_100%)]"
+        className="absolute inset-0 z-10 bg-[linear-gradient(0deg,rgba(8,15,30,0.9)_0%,rgba(8,15,30,0.5)_60%,rgba(8,15,30,0.2)_100%)] md:bg-[linear-gradient(90deg,rgba(8,15,30,0.85)_0%,rgba(8,15,30,0.6)_45%,rgba(8,15,30,0.15)_100%)]"
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex min-h-[100svh] items-end md:items-center">
+      {/* Synchronized slide copy */}
+      <div className="relative z-20 flex min-h-[100svh] items-end md:items-center">
         <div className="w-full px-6 md:px-12 lg:px-20 pt-24 pb-24 md:pb-28">
-          <div key={slide.id} className="hero-copy mx-auto md:mx-0 max-w-2xl text-center md:text-left">
+          <div
+            key={slide.id}
+            className={`hero-copy mx-auto md:mx-0 max-w-2xl text-center md:text-left transition-opacity duration-700 ease-out ${
+              isInitialLoaded ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+          >
             <p className="section-label text-white/80">{slide.eyebrow}</p>
             <h1 className="whitespace-pre-line text-3xl md:text-5xl lg:text-[3.25rem] font-bold text-white leading-tight mb-4">
               {slide.headline}
@@ -117,8 +150,9 @@ export default function HeroSlideshow() {
                 role="tab"
                 aria-selected={slideIndex === index}
                 aria-label={`Show slide ${slideIndex + 1}: ${item.eyebrow}`}
-                className={`h-3 w-3 rounded-full border border-white transition-all duration-300 ${slideIndex === index ? 'bg-white scale-110' : 'bg-transparent hover:bg-white/60'
-                  }`}
+                className={`h-3 w-3 rounded-full border border-white transition-all duration-300 ${
+                  slideIndex === index ? 'bg-white scale-110' : 'bg-transparent hover:bg-white/60'
+                }`}
                 onClick={() => goTo(slideIndex)}
               />
             ))}

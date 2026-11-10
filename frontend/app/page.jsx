@@ -1,16 +1,13 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import {
-  ArrowRight,
   MapPin,
-  Phone,
-  Mail,
-  Navigation,
   Calendar,
 } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import VisualSplit from '@/components/VisualSplit';
+import HomeServiceCard from '@/components/HomeServiceCard';
+import MainOfficeCard from '@/components/MainOfficeCard';
 import CTASection from '@/components/CTASection';
 import { homeServiceCards } from '@/data/services';
 import { locations } from '@/data/locations';
@@ -129,35 +126,7 @@ export default function HomePage() {
 
         <div className="container-main grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {homeServiceCards.map((service) => (
-            <Link
-              key={service.id}
-              href={service.href}
-              data-aos="fade-up"
-              className="group relative block aspect-[4/3] rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100"
-              aria-label={`View Service: ${service.title}`}
-            >
-              <Image
-                src={service.image}
-                alt={service.imageAlt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                unoptimized
-                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0B1226]/95 via-[#0B1226]/40 to-transparent transition-opacity group-hover:opacity-90" />
-
-              <div className="absolute inset-x-0 bottom-0 p-6 flex flex-col justify-end text-left">
-                <h3 className="text-lg font-bold text-white mb-1.5 transition-colors group-hover:text-[#4CCFC1]">
-                  {service.title}
-                </h3>
-                <p className="text-xs md:text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3">
-                  {service.description}
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4CCFC1] group-hover:translate-x-1 transition-transform duration-300">
-                  View Service <ArrowRight size={14} />
-                </span>
-              </div>
-            </Link>
+            <HomeServiceCard key={service.id} service={service} />
           ))}
         </div>
       </section>
@@ -177,77 +146,8 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left: Featured Main Office Card (7 columns) */}
-            <div data-aos="fade-up" className="lg:col-span-7 flex flex-col">
-              <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200/80 bg-[#101A3A] text-white flex-1 flex flex-col justify-between min-h-[360px]">
-                <Image
-                  src={mainOffice.image}
-                  alt={mainOffice.imageAlt || 'Jacksonville Main Office'}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 60vw"
-                  unoptimized
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1226] via-[#0B1226]/80 to-transparent" />
-
-                {/* Top Badge */}
-                <div className="relative z-10 p-6 sm:p-8 flex items-center justify-between">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#20B9AD]/20 border border-[#20B9AD]/40 text-xs font-bold text-[#4CCFC1] tracking-wider uppercase">
-                    <MapPin size={13} />
-                    {mainOffice.label || 'Main Office'}
-                  </div>
-                  <span className="text-xs text-gray-300 font-medium hidden sm:inline">
-                    Duval County, FL
-                  </span>
-                </div>
-
-                {/* Bottom Details */}
-                <div className="relative z-10 p-6 sm:p-8">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                    Jacksonville Main Office
-                  </h3>
-                  <p className="text-sm text-gray-300 mb-6 leading-relaxed max-w-lg">
-                    {mainOffice.address}
-                    <br />
-                    <span className="text-white font-medium">{mainOffice.city}</span>
-                  </p>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6 pt-6 border-t border-white/10 text-xs sm:text-sm">
-                    <a
-                      href="tel:+19043029170"
-                      className="flex items-center gap-2.5 text-gray-200 hover:text-white transition-colors p-2 rounded bg-white/5 hover:bg-white/10"
-                    >
-                      <Phone size={15} className="text-[#20B9AD] shrink-0" />
-                      <span>(904) 302-9170</span>
-                    </a>
-                    <a
-                      href="mailto:inquries@verastro.com"
-                      className="flex items-center gap-2.5 text-gray-200 hover:text-white transition-colors p-2 rounded bg-white/5 hover:bg-white/10"
-                    >
-                      <Mail size={15} className="text-[#20B9AD] shrink-0" />
-                      <span className="truncate">inquries@verastro.com</span>
-                    </a>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-3">
-                    <a
-                      href="https://maps.google.com/?q=10151+Deerwood+Park+Blvd,+Building+200,+Suite+250,+Jacksonville,+FL+32256"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="btn-primary text-xs sm:text-sm py-2.5 px-4"
-                      id="home-office-directions-btn"
-                    >
-                      <Navigation size={14} /> Get Directions
-                    </a>
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white px-4 py-2.5 rounded border border-white/20 hover:bg-white/10 transition-colors"
-                      id="home-office-contact-btn"
-                    >
-                      Contact Office
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            <div className="lg:col-span-7 flex flex-col">
+              <MainOfficeCard office={mainOffice} />
             </div>
 
             {/* Right: Coverage Columns (5 columns) */}

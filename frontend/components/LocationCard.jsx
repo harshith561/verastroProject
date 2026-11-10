@@ -10,8 +10,8 @@ export default function LocationCard({ location }) {
           alt={location.imageAlt || `${location.city} office`}
           fill
           sizes="(max-width: 768px) 100vw, 25vw"
-          unoptimized
-          className="object-cover img-zoom-hover"
+          loading="lazy"
+          className="object-cover img-zoom-hover transition-opacity duration-500 ease-out"
         />
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-[rgba(16,26,58,0.88)] via-[rgba(16,26,58,0.45)] to-transparent" />
