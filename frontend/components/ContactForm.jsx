@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { quoteSchema, APPROVED_SERVICES, FLORIDA_SERVICE_REGIONS } from '@/lib/validation';
+import { trackFormSubmission } from '@/lib/analytics';
 import { CheckCircle, AlertCircle, Loader2, ArrowRight, Check, UploadCloud } from 'lucide-react';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || '';
@@ -86,6 +87,7 @@ export default function ContactForm({ submitLabel = 'Request a Quote' }) {
       if (json.success) {
         setStatus('success');
         setServerMessage(json.message || 'Our team will contact you to discuss your request.');
+        trackFormSubmission('quote_request', data.service || '');
       } else {
         setStatus('error');
         setServerMessage(json.message || "We couldn't send your request. Please try again.");

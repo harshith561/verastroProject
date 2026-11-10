@@ -4,7 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
   const now = new Date();
 
-  // Only approved, publicly accessible production pages
+  // Core production pages
   const routes: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}/`,
@@ -23,12 +23,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
-    },
-    {
-      url: `${siteUrl}/service-coordination`,
-      lastModified: now,
-      changeFrequency: 'monthly',
-      priority: 0.8,
     },
     {
       url: `${siteUrl}/careers`,

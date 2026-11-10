@@ -1,40 +1,69 @@
 import Link from 'next/link';
-import { AlertCircle, Clock, MapPin, ShieldCheck, Mail } from 'lucide-react';
+import { AlertCircle, Clock, MapPin } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import { noOpeningsMessage } from '@/data/jobs';
 import { visualImages } from '@/data/heroSlides';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+
 export const metadata = {
-  title: 'Careers | Verastro Infra',
+  title: 'Careers & Opportunities | Verastro Infra Jacksonville FL',
   description:
-    'Careers at Verastro Infra. Commercial grounds care and property maintenance in Jacksonville, FL. No current openings. We are not hiring at this time. Please check back for future opportunities.',
+    'Careers information for Verastro Infra in Jacksonville, Florida. We are currently not hiring and have no open positions. Check back for future opportunities.',
   alternates: { canonical: '/careers' },
   openGraph: {
-    title: 'Careers | Verastro Infra',
+    title: 'Careers & Opportunities | Verastro Infra Jacksonville FL',
     description:
       'Careers at Verastro Infra. Commercial grounds care and property maintenance in Jacksonville, FL. No current openings at this time.',
     url: '/careers',
     images: [{ url: '/og-image.png', width: 500, height: 500, alt: 'Careers at Verastro Infra' }],
   },
   twitter: {
-    title: 'Careers | Verastro Infra',
+    card: 'summary_large_image',
+    title: 'Careers & Opportunities | Verastro Infra Jacksonville FL',
     description:
-      'Careers at Verastro Infra. Commercial grounds care and property maintenance in Jacksonville, FL. No current openings at this time.',
+      'Careers at Verastro Infra. Commercial grounds care and property maintenance in Jacksonville, FL.',
     images: ['/og-image.png'],
   },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Careers',
+      item: `${siteUrl}/careers`,
+    },
+  ],
 };
 
 export default function CareersPage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         image={visualImages.careersHero}
         alt={visualImages.careersHeroAlt}
         eyebrow="GROW WITH US"
-        title="Careers"
+        title="Careers at Verastro Infra"
         text={noOpeningsMessage}
       />
+
+
 
       {/* Prominent No Current Openings Notice */}
       <section className="bg-amber-50 border-y border-amber-200 py-6" aria-label="Hiring Status Banner">
@@ -62,7 +91,7 @@ export default function CareersPage() {
             </div>
 
             <h2 id="careers-status-heading" className="text-2xl md:text-3xl font-bold mb-4" style={{ color: 'var(--color-navy)' }}>
-              Careers at Verastro Infra
+              Current Recruitment Status
             </h2>
 
             <p className="text-base text-gray-700 leading-relaxed mb-6">
@@ -84,7 +113,7 @@ export default function CareersPage() {
                   General Company Inquiries
                 </h4>
                 <p className="text-xs text-gray-500">
-                  For grounds care quotes, service coordination, or commercial property maintenance inquiries, please contact our main office.
+                  For grounds care quotes, service inquiries, or commercial property maintenance inquiries, please contact our main office.
                 </p>
               </div>
               <Link
@@ -101,4 +130,3 @@ export default function CareersPage() {
     </PageLayout>
   );
 }
-

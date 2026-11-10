@@ -5,13 +5,15 @@ import LocationCard from '@/components/LocationCard';
 import { locations } from '@/data/locations';
 import { visualImages } from '@/data/heroSlides';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+
 export const metadata = {
-  title: 'Request a Quote | Verastro Infra',
+  title: 'Request a Grounds Care Quote | Verastro Infra',
   description:
-    'Request a quote for Florida landscaping, routine grounds care, one-time cleanup, or recurring property maintenance. Our team will contact you to discuss your request.',
+    'Request a quote for Florida landscaping, routine grounds maintenance, or property cleanup in Jacksonville, FL. Our team will contact you to discuss your scope.',
   alternates: { canonical: '/consultation' },
   openGraph: {
-    title: 'Request a Quote | Verastro Infra',
+    title: 'Request a Grounds Care Quote | Verastro Infra',
     description:
       'Share your Florida property details and maintenance requirements. Our team will contact you to discuss your request.',
     url: '/consultation',
@@ -25,16 +27,41 @@ export const metadata = {
     ],
   },
   twitter: {
-    title: 'Request a Quote | Verastro Infra',
+    card: 'summary_large_image',
+    title: 'Request a Grounds Care Quote | Verastro Infra',
     description:
-      'Request a quote for Florida landscaping and property maintenance.',
+      'Request a quote for Florida landscaping and property maintenance in Jacksonville, FL.',
     images: ['/og-image.png'],
   },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Request a Quote',
+      item: `${siteUrl}/consultation`,
+    },
+  ],
 };
 
 export default function ConsultationPage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         image={visualImages.consultation}
         alt={visualImages.consultationAlt}
@@ -42,6 +69,8 @@ export default function ConsultationPage() {
         title="Request a Quote"
         text="Tell us about your Florida property and service requirements. Our team will contact you to discuss your request."
       />
+
+
 
       <section className="section-padding bg-white">
         <div className="container-main grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">

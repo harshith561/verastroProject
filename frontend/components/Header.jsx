@@ -25,11 +25,18 @@ export default function Header() {
     setIsOpen(false);
   }
 
-  // Prevent body scroll when menu open
+  // Prevent body scroll when menu open, and support ESC key to close
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
     return () => {
       document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen]);
 
@@ -71,15 +78,27 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1" aria-label="Main navigation">
+          {/* Desktop nav — exactly 6 items */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2" aria-label="Main navigation">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              if (link.label === 'Request a Quote') {
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="ml-2 btn-primary text-sm px-3.5 xl:px-4 py-2 whitespace-nowrap"
+                    id="header-consultation-cta"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              }
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`nav-link whitespace-nowrap px-2 xl:px-3 py-1.5 rounded text-sm ${
+                  className={`nav-link whitespace-nowrap px-2.5 xl:px-3 py-1.5 rounded text-sm ${
                     isActive ? 'text-white font-semibold' : 'text-gray-300 hover:text-white'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
@@ -90,18 +109,16 @@ export default function Header() {
             })}
           </nav>
 
-          {/* CTA + Mobile toggle */}
-          <div className="flex items-center gap-3 shrink-0">
+          {/* Mobile hamburger toggle */}
+          <div className="flex items-center gap-3 shrink-0 lg:hidden">
             <Link
               href="/consultation"
-              className="hidden sm:inline-flex whitespace-nowrap btn-primary text-sm px-3 xl:px-4 py-2"
-              id="header-consultation-cta"
+              className="sm:inline-flex hidden whitespace-nowrap btn-primary text-xs px-3 py-1.5"
             >
               Request a Quote
             </Link>
-
             <button
-              className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors"
+              className="p-2 text-gray-300 hover:text-white transition-colors"
               onClick={() => setIsOpen(!isOpen)}
               aria-label={isOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={isOpen}
@@ -123,6 +140,19 @@ export default function Header() {
           <nav className="container-main py-4 flex flex-col gap-1" aria-label="Mobile navigation">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              if (link.label === 'Request a Quote') {
+                return (
+                  <div key={link.href} className="pt-3 border-t mt-2" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
+                    <Link
+                      href={link.href}
+                      className="btn-primary w-full justify-center"
+                      id="mobile-consultation-cta"
+                    >
+                      {link.label}
+                    </Link>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={link.href}
@@ -138,15 +168,6 @@ export default function Header() {
                 </Link>
               );
             })}
-            <div className="pt-3 border-t mt-2" style={{ borderColor: 'rgba(255,255,255,0.1)' }}>
-              <Link
-                href="/consultation"
-                className="btn-primary w-full justify-center"
-                id="mobile-consultation-cta"
-              >
-                Request a Quote
-              </Link>
-            </div>
           </nav>
         </div>
       )}

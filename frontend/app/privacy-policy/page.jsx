@@ -1,10 +1,46 @@
+import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+
 export const metadata = {
-  title: 'Privacy Policy | Verastro Infra',
+  title: 'Privacy Policy | Verastro Infra Florida Grounds Care',
   description:
-    'Privacy Policy for Verastro Infra, explaining how we collect, use, and protect your information for landscaping and property maintenance inquiries.',
+    'Privacy Policy for Verastro Infra. Learn how we handle customer contact details and property maintenance inquiries in compliance with privacy regulations.',
   alternates: { canonical: '/privacy-policy' },
+  openGraph: {
+    title: 'Privacy Policy | Verastro Infra Florida Grounds Care',
+    description:
+      'Privacy Policy for Verastro Infra explaining data handling and protection.',
+    url: '/privacy-policy',
+    images: [{ url: '/og-image.png', width: 500, height: 500, alt: 'Verastro Infra Privacy Policy' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Verastro Infra Florida Grounds Care',
+    description:
+      'Privacy Policy for Verastro Infra explaining data handling and protection.',
+    images: ['/og-image.png'],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Privacy Policy',
+      item: `${siteUrl}/privacy-policy`,
+    },
+  ],
 };
 
 const navigation = [
@@ -24,6 +60,10 @@ const navigation = [
 export default function PrivacyPolicyPage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Header */}
       <section className="-mt-16 pt-28 pb-12 md:pb-16" style={{ backgroundColor: 'var(--color-navy)' }}>
         <div className="container-main">
@@ -135,7 +175,7 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p className="mb-2">We may share information only as strictly needed with:</p>
             <ul className="list-disc pl-5 mb-4 space-y-1">
-              <li>Our operational field staff and service coordination team</li>
+              <li>Our operational field staff and customer support team</li>
               <li>Hosting and technical infrastructure providers (such as Vercel and secure email transport services) solely to process transmissions</li>
               <li>Our parent entity, Verastro Inc., for corporate administration</li>
               <li>Law enforcement or regulatory bodies if required by valid legal process</li>

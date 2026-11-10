@@ -39,9 +39,10 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-sm text-gray-400 mb-3 leading-relaxed">
+            <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+              Verastro Infra<br />
               A division of Verastro Inc.<br />
-              Landscaping, grounds care &amp; property maintenance.
+              Based in Jacksonville, Florida.
             </p>
 
             <div className="mb-4 text-xs text-gray-400 leading-relaxed">

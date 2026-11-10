@@ -6,18 +6,13 @@ import {
   Phone,
   Mail,
   Navigation,
-  CheckCircle2,
   Calendar,
-  Clock,
-  Sparkles,
-  ShieldCheck,
 } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import HeroSlideshow from '@/components/HeroSlideshow';
 import VisualSplit from '@/components/VisualSplit';
-import FullBleedVisual from '@/components/FullBleedVisual';
 import CTASection from '@/components/CTASection';
-import { mainServices, landscapingVisuals, deliveryProcess } from '@/data/services';
+import { homeServiceCards } from '@/data/services';
 import { locations } from '@/data/locations';
 import { visualImages } from '@/data/heroSlides';
 
@@ -26,14 +21,14 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
 export const metadata = {
   title: 'Florida Landscaping & Property Maintenance | Verastro Infra',
   description:
-    'Verastro Infra provides routine grounds maintenance, lawn mowing, edging, garden upkeep, leaf removal, and property care across Florida. Main Office in Jacksonville, FL.',
+    'Verastro Infra provides routine lawn care, grounds maintenance, and property upkeep in Jacksonville, FL. Request a dependable quote for your Florida property.',
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Florida Landscaping & Property Maintenance | Verastro Infra',
     description:
-      'Routine grounds care, lawn maintenance, garden upkeep, and property cleaning in Jacksonville, Florida. A division of Verastro Inc.',
+      'Verastro Infra provides routine lawn care, grounds maintenance, and property upkeep in Jacksonville, FL. A division of Verastro Inc.',
     url: '/',
     images: [
       {
@@ -45,9 +40,10 @@ export const metadata = {
     ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: 'Florida Landscaping & Property Maintenance | Verastro Infra',
     description:
-      'Routine grounds care, lawn maintenance, and property upkeep in Jacksonville, Florida.',
+      'Routine lawn care, grounds maintenance, and property upkeep in Jacksonville, FL.',
     images: ['/og-image.png'],
   },
 };
@@ -61,7 +57,7 @@ const localBusinessSchema = {
   telephone: '+1-904-302-9170',
   email: 'inquries@verastro.com',
   description:
-    'Florida landscaping, grounds care, and routine property maintenance company — a division of Verastro Inc.',
+    'Florida property upkeep and project support — a division of Verastro Inc.',
   address: {
     '@type': 'PostalAddress',
     streetAddress: '10151 Deerwood Park Blvd, Building 200, Suite 250',
@@ -75,15 +71,9 @@ const localBusinessSchema = {
     name: 'Florida',
   },
   serviceType: [
-    'Lawn Mowing',
-    'Lawn Edging',
-    'Manual Weeding',
-    'Leaf Removal',
-    'Garden Upkeep',
-    'Routine Grounds Cleanup',
-    'One-Time Cleanup',
-    'Recurring Maintenance',
-    'Service Coordination',
+    'Lawn & Grounds Maintenance',
+    'Property Cleanup & Leaf Removal',
+    'Garden & Shrub Care',
   ],
 };
 
@@ -105,79 +95,46 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
-      {/* Hero Slideshow */}
+      {/* Hero Section */}
       <div className="-mt-16">
         <HeroSlideshow />
       </div>
 
-      {/* Introductory Section */}
+      {/* Introduction Section */}
       <section className="bg-white" aria-labelledby="intro-heading">
         <VisualSplit
           image={visualImages.introLandscape}
           alt={visualImages.introLandscapeAlt}
-          eyebrow="Routine Grounds Care & Clear Communication"
-          title="Your Florida Landscaping & Maintenance Partner"
-          text="Verastro Infra is a Florida landscaping and property-maintenance company, operating as a division of Verastro Inc. We provide dependable grounds care, routine lawn maintenance, garden upkeep, and property cleaning tailored to residential and commercial properties in Jacksonville and surrounding areas. We emphasize clear service scopes, consistent service delivery, and prompt customer communication."
-          ctaLabel="More About Our Company"
+          eyebrow="Who We Are"
+          title="Verastro Infra, a Division of Verastro Inc."
+          text="Based in Jacksonville, Florida, Verastro Infra serves residential and commercial customers. Explore our services or contact our team to discuss your property or project requirements."
+          ctaLabel="About Verastro Infra"
           ctaHref="/about"
-        >
-          {/* Trust Pillars */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-6 border-t border-gray-100 mt-6">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center shrink-0 text-[#20B9AD]">
-                <CheckCircle2 size={16} />
-              </div>
-              <span className="text-xs font-semibold text-[#101A3A]">Clear Scopes</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center shrink-0 text-[#20B9AD]">
-                <Calendar size={16} />
-              </div>
-              <span className="text-xs font-semibold text-[#101A3A]">Reliable Visits</span>
-            </div>
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-teal-50 flex items-center justify-center shrink-0 text-[#20B9AD]">
-                <Clock size={16} />
-              </div>
-              <span className="text-xs font-semibold text-[#101A3A]">Direct Updates</span>
-            </div>
-          </div>
-        </VisualSplit>
+        />
       </section>
 
-      {/* Full-bleed visual break */}
-      <FullBleedVisual
-        image={visualImages.golfCourse}
-        alt={visualImages.golfCourseAlt}
-        eyebrow="Landscaping & Grounds Care"
-        title="Outdoor spaces maintained for lasting appeal."
-        text="Our grounds care focuses on dependable maintenance routines — regular mowing, crisp edging, manual weeding, and orderly property cleanups shaped around your schedule."
-        ctaLabel="Explore Services"
-        ctaHref="/services"
-      />
-
-      {/* Main Services Section */}
-      <section aria-labelledby="services-heading" className="bg-white py-16 md:py-24">
+      {/* Service Overview — Single consolidated section */}
+      <section aria-labelledby="services-heading" className="bg-white py-16 md:py-24 border-t border-gray-100">
         <div className="container-main mb-12 text-center lg:text-left">
           <h2
             id="services-heading"
             className="text-2xl md:text-4xl font-bold leading-tight mb-3 text-[#101A3A]"
           >
-            Landscaping &amp; Maintenance Services
+            Our Services
           </h2>
           <p className="text-sm md:text-base text-gray-600 max-w-2xl">
-            Routine grounds care, one-time property cleanups, and recurring maintenance programs across Florida with confirmed scopes of work.
+            Find the service that fits your property or project. Select a category to see what is included.
           </p>
         </div>
 
         <div className="container-main grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {mainServices.map((service) => (
+          {homeServiceCards.map((service) => (
             <Link
               key={service.id}
-              href="/services"
+              href={service.href}
               data-aos="fade-up"
               className="group relative block aspect-[4/3] rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-gray-100"
-              aria-label={`Explore ${service.title}`}
+              aria-label={`View Service: ${service.title}`}
             >
               <Image
                 src={service.image}
@@ -194,10 +151,10 @@ export default function HomePage() {
                   {service.title}
                 </h3>
                 <p className="text-xs md:text-sm text-gray-200 leading-relaxed line-clamp-2 mb-3">
-                  {service.shortDescription}
+                  {service.description}
                 </p>
                 <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#4CCFC1] group-hover:translate-x-1 transition-transform duration-300">
-                  Explore Service <ArrowRight size={14} />
+                  View Service <ArrowRight size={14} />
                 </span>
               </div>
             </Link>
@@ -205,103 +162,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How Services Are Delivered (4-Step Process) */}
-      <section className="py-16 md:py-20 bg-slate-50 border-y border-slate-100" aria-labelledby="delivery-heading">
-        <div className="container-main">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <p className="section-label">Service Process</p>
-            <h2 id="delivery-heading" className="section-title">
-              How Services Are Delivered
-            </h2>
-            <p className="text-sm text-gray-600 mt-2">
-              A straightforward, transparent workflow designed for clarity and dependable results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {deliveryProcess.map((item) => (
-              <div
-                key={item.step}
-                data-aos="fade-up"
-                className="bg-white p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow relative flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-10 h-10 rounded-full bg-[#101A3A] text-[#20B9AD] font-bold text-sm flex items-center justify-center mb-4">
-                    {item.step}
-                  </div>
-                  <h3 className="text-base font-bold text-[#101A3A] mb-2">{item.title}</h3>
-                  <p className="text-xs md:text-sm text-gray-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Routine Grounds Care Highlights */}
-      <section className="section-padding bg-white" aria-labelledby="landscaping-heading">
-        <div className="container-main mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-          <div>
-            <p className="section-label">Routine Property &amp; Grounds Care</p>
-            <h2 id="landscaping-heading" className="section-title">
-              Well-kept lawns. Orderly outdoor spaces.
-            </h2>
-          </div>
-          <Link href="/services" className="btn-outline shrink-0 self-start md:self-auto" id="home-services-link">
-            View All Services <ArrowRight size={14} />
-          </Link>
-        </div>
-
-        <div className="container-main grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {landscapingVisuals.map((item) => (
-            <article
-              key={item.title}
-              data-aos="fade-up"
-              className="group overflow-hidden rounded-lg bg-white border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.imageAlt}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 25vw"
-                  unoptimized
-                  className="object-cover img-zoom-hover"
-                />
-              </div>
-              <div className="p-5">
-                <h3 className="text-base font-bold mb-2 text-[#101A3A]">
-                  {item.title}
-                </h3>
-                <p className="text-xs md:text-sm text-gray-600 leading-relaxed">{item.description}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      {/* Main Office & Florida Service Coverage Showcase */}
+      {/* Location Section */}
       <section className="section-padding bg-slate-50 border-t border-slate-100" aria-labelledby="locations-heading">
         <div className="container-main">
-
           <div className="max-w-2xl mb-12">
             <p className="section-label">Where We Serve</p>
             <h2 id="locations-heading" className="section-title">
-              Based in Jacksonville, Florida.
+              Serving Jacksonville and Nearby Communities
             </h2>
             <p className="text-sm md:text-base text-gray-600 mt-2 leading-relaxed">
-              Serving residential and commercial properties across Jacksonville, Duval County, and surrounding Northeast Florida communities.
+              Our grounds-care service area includes Jacksonville, Duval County, St. Johns, and surrounding Northeast Florida communities. Contact us to confirm availability at your address.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-
             {/* Left: Featured Main Office Card (7 columns) */}
             <div data-aos="fade-up" className="lg:col-span-7 flex flex-col">
               <div className="relative rounded-xl overflow-hidden shadow-lg border border-gray-200/80 bg-[#101A3A] text-white flex-1 flex flex-col justify-between min-h-[360px]">
-                {/* Background Image with Gradient Overlay */}
                 <Image
                   src={mainOffice.image}
                   alt={mainOffice.imageAlt || 'Jacksonville Main Office'}
@@ -373,11 +250,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right: Coverage & Service Commitments (5 columns) */}
-            <div data-aos="fade-up" className="lg:col-span-5 flex flex-col justify-between gap-4">
-
+            {/* Right: Coverage Columns (5 columns) */}
+            <div data-aos="fade-up" className="lg:col-span-5 flex flex-col justify-center gap-4">
               {/* Coverage Card 1 */}
-              <div className="bg-white p-5 rounded-lg border border-gray-200/70 shadow-sm">
+              <div className="bg-white p-6 rounded-lg border border-gray-200/70 shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-teal-50 text-[#20B9AD] flex items-center justify-center shrink-0 mt-0.5">
                     <MapPin size={16} />
@@ -394,7 +270,7 @@ export default function HomePage() {
               </div>
 
               {/* Coverage Card 2 */}
-              <div className="bg-white p-5 rounded-lg border border-gray-200/70 shadow-sm">
+              <div className="bg-white p-6 rounded-lg border border-gray-200/70 shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="w-8 h-8 rounded-full bg-teal-50 text-[#20B9AD] flex items-center justify-center shrink-0 mt-0.5">
                     <Calendar size={16} />
@@ -409,56 +285,17 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-
-              {/* Coverage Card 3 */}
-              <div className="bg-white p-5 rounded-lg border border-gray-200/70 shadow-sm">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-full bg-teal-50 text-[#20B9AD] flex items-center justify-center shrink-0 mt-0.5">
-                    <ShieldCheck size={16} />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-[#101A3A] mb-1">
-                      Clear Scopes &amp; Responsive Support
-                    </h4>
-                    <p className="text-xs text-gray-600 leading-relaxed">
-                      Every service begins with confirmed parameters, transparent expectations, and active coordination from our Jacksonville team.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Callout Box with Action */}
-              <div className="bg-gradient-to-br from-[#101A3A] to-[#1E2E5A] text-white p-5 rounded-lg shadow-sm flex flex-col sm:flex-row items-center justify-between gap-3">
-                <div className="text-center sm:text-left">
-                  <div className="text-xs font-semibold text-[#4CCFC1] uppercase tracking-wider">
-                    Service Inquiry
-                  </div>
-                  <div className="text-sm font-bold text-white">
-                    Need grounds care in Florida?
-                  </div>
-                </div>
-                <Link
-                  href="/consultation"
-                  className="btn-primary text-xs py-2 px-3.5 whitespace-nowrap"
-                  id="home-coverage-quote-btn"
-                >
-                  Request a Quote
-                </Link>
-              </div>
-
             </div>
-
           </div>
-
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Home Closing CTA — Exactly one clear prompt */}
       <CTASection
         backgroundImage={visualImages.golfCourse}
         backgroundAlt=""
-        heading="Let's discuss your property maintenance needs."
-        subtext="Share your requirements with the Verastro Infra team."
+        heading="Tell Us What You Need"
+        subtext="Share your location and a brief description of the work. Our team will discuss availability and next steps."
         ctaLabel="Request a Quote"
         ctaHref="/consultation"
       />

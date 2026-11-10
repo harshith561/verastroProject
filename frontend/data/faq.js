@@ -1,38 +1,35 @@
-export const faqItems = [
+export const serviceFaqItems = [
   {
-    id: 'what-is-verastro-infra',
-    question: 'What is Verastro Infra?',
+    id: 'how-to-request-quote',
+    question: 'How do I request a quote?',
     answer:
-      'Verastro Infra is a division of Verastro Inc., focused on Florida landscaping, routine grounds care, and property maintenance. We provide dependable grounds upkeep for residential and commercial properties.',
+      'Use the Request a Quote button or contact our team by phone or email. Include the location, a description of the work, and your preferred timing. Photos or relevant documents can help us understand the request.',
   },
   {
-    id: 'where-located',
-    question: 'Where is Verastro Infra located?',
+    id: 'one-time-and-recurring',
+    question: 'Do you offer one-time and recurring maintenance?',
     answer:
-      'Our Main Office is located at 10151 Deerwood Park Blvd, Building 200, Suite 250, Jacksonville, FL 32256.',
+      'Yes. Grounds-care services can be arranged as a single visit or a recurring plan. The tasks, visit frequency, and pricing are agreed before work begins.',
   },
   {
-    id: 'how-request-quote',
-    question: 'How can I request a quote or discuss service?',
+    id: 'what-is-included',
+    question: 'What is included in my service?',
     answer:
-      'You can call us at (904) 302-9170, email inquries@verastro.com, or submit a request through our Request a Quote form. Our team will contact you to discuss your request.',
+      'Your quote or agreed service scope identifies the included work. Additional requests should be discussed with our team so any changes to pricing or scheduling can be confirmed.',
   },
   {
-    id: 'what-services-offered',
-    question: 'What services does Verastro Infra provide?',
+    id: 'how-is-service-scheduled',
+    question: 'How is service scheduled?',
     answer:
-      'We offer routine property and grounds maintenance including lawn mowing, lawn edging, manual weeding, leaf removal, garden upkeep, ordinary watering, one-time cleanups, recurring maintenance programs, and maintenance service coordination.',
+      'After the scope and quote are agreed, our team confirms scheduling and any access requirements with you.',
   },
   {
-    id: 'one-time-vs-recurring',
-    question: 'Do you offer both one-time and recurring maintenance?',
+    id: 'how-to-request-change',
+    question: 'How do I request a change or report a concern?',
     answer:
-      'Yes. We provide comprehensive one-time property cleanups as well as scheduled recurring maintenance programs (weekly, bi-weekly, or monthly) with confirmed scopes of work.',
-  },
-  {
-    id: 'how-services-scheduled',
-    question: 'How is service scheduled and confirmed?',
-    answer:
-      'Once you share your property details and service requirements, we confirm the exact scope of work, provide a clear quote, and coordinate a scheduled service visit with ongoing customer communication.',
+      'Contact our team by phone or email with your property address or project reference and a description of the request. We will review it and discuss the next steps.',
   },
 ];
+
+// Alias for backwards compatibility
+export const faqItems = serviceFaqItems;

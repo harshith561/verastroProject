@@ -1,15 +1,55 @@
+import Link from 'next/link';
 import PageLayout from '@/components/PageLayout';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+
 export const metadata = {
-  title: 'Terms of Use | Verastro Infra',
+  title: 'Terms of Use | Verastro Infra Florida Grounds Care',
   description:
-    'Terms of Use and Conditions for accessing the Verastro Infra website and property maintenance services.',
+    'Terms of Use and Conditions for accessing the Verastro Infra website and property maintenance services. Review our client terms and usage rules.',
   alternates: { canonical: '/terms-of-use' },
+  openGraph: {
+    title: 'Terms of Use | Verastro Infra Florida Grounds Care',
+    description:
+      'Terms of Use and conditions for accessing Verastro Infra property maintenance services.',
+    url: '/terms-of-use',
+    images: [{ url: '/og-image.png', width: 500, height: 500, alt: 'Verastro Infra Terms of Use' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms of Use | Verastro Infra Florida Grounds Care',
+    description:
+      'Terms of Use and conditions for accessing Verastro Infra property maintenance services.',
+    images: ['/og-image.png'],
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Terms of Use',
+      item: `${siteUrl}/terms-of-use`,
+    },
+  ],
 };
 
 export default function TermsOfUsePage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <section className="py-12 md:py-16 bg-white">
         <div className="container-main max-w-3xl prose prose-sm sm:prose-base prose-blue">
           <h1 className="text-3xl font-bold mb-8" style={{ color: 'var(--color-navy)' }}>

@@ -1,20 +1,10 @@
-import { Inter, Manrope } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import AosInit from '@/components/AosInit';
 
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
-const manrope = Manrope({
-  subsets: ['latin'],
-  variable: '--font-manrope',
-  display: 'swap',
-});
-
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 const isPreview =
   process.env.VERCEL_ENV === 'preview' ||
@@ -29,21 +19,17 @@ export const metadata = {
   description:
     'Verastro Infra is a Florida landscaping, grounds-care, and property-maintenance company. A division of Verastro Inc., based in Jacksonville, FL.',
   keywords: [
-    'landscaping',
-    'grounds care',
-    'property maintenance',
-    'lawn mowing',
-    'lawn edging',
-    'garden upkeep',
-    'leaf removal',
-    'Florida landscaping',
-    'Jacksonville grounds maintenance',
+    'Florida property maintenance',
+    'Jacksonville grounds care',
+    'lawn maintenance Jacksonville FL',
+    'commercial landscaping Florida',
     'Verastro Infra',
-    'Verastro Inc.',
+    'Verastro Inc',
   ],
   authors: [{ name: 'Verastro Infra' }],
   creator: 'Verastro Infra',
   publisher: 'Verastro Inc.',
+  verification: gscVerification ? { google: gscVerification } : undefined,
   alternates: {
     canonical: '/',
   },
@@ -134,10 +120,12 @@ const webSiteSchema = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${inter.variable} ${manrope.variable}`}>
-      <body className={inter.className}>
+    <html lang="en">
+      <body className="antialiased">
         <AosInit />
         {children}
+
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
@@ -146,6 +134,27 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
         />
+
+        {/* Google Analytics 4 (Only loaded when valid measurement ID is provided) */}
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}', {
+                  page_path: window.location.pathname,
+                  anonymize_ip: true,
+                });
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

@@ -1,13 +1,13 @@
-// Active public hero slides (3 approved slides; land-development and engineering hidden)
+// Active public hero slides for Verastro Infra
 export const heroSlides = [
   {
-    id: 'golf-landscaping',
-    eyebrow: 'Florida Property Care',
-    headline: 'Landscaping &\nProperty Maintenance',
+    id: 'property-care-projects',
+    eyebrow: 'Florida Property Care & Project Support',
+    headline: 'Care for Your Property.\nSupport for Your Projects.',
     supporting:
-      'Dedicated Florida grounds care, routine lawn maintenance, and dependable property upkeep tailored to your property requirements.',
-    primaryCta: { label: 'Explore Services', href: '/services' },
-    secondaryCta: { label: 'Request a Quote', href: '/consultation' },
+      'Explore Verastro Infra’s services for property upkeep and project needs. Tell us what you need, and we’ll discuss the scope and next steps.',
+    primaryCta: { label: 'Request a Quote', href: '/consultation' },
+    secondaryCta: { label: 'View Services', href: '/services' },
     image: '/images/HeroSlideshow/hero-golf.avif',
     imageAlt: 'Maintained turf and landscaped grounds in Florida at sunrise',
   },
@@ -16,9 +16,9 @@ export const heroSlides = [
     eyebrow: 'Routine Grounds Care',
     headline: 'Lawn Maintenance &\nProperty Upkeep',
     supporting:
-      'Routine lawn mowing, edging, weeding, leaf removal, and consistent grounds care to keep Florida properties clean and orderly.',
-    primaryCta: { label: 'Explore Services', href: '/services' },
-    secondaryCta: { label: 'Request a Quote', href: '/consultation' },
+      'Routine lawn mowing, edging, manual weeding, leaf removal, and consistent grounds care to keep Florida properties clean and orderly.',
+    primaryCta: { label: 'Request a Quote', href: '/consultation' },
+    secondaryCta: { label: 'View Services', href: '/services' },
     image: '/images/HeroSlideshow/hero2.jpg',
     imageAlt: 'Professionally maintained lawn and landscaped property grounds',
   },
@@ -29,7 +29,7 @@ export const heroSlides = [
     supporting:
       'Connect with Verastro Infra to discuss your maintenance requirements, schedule service, or request a clear quote from our team.',
     primaryCta: { label: 'Request a Quote', href: '/consultation' },
-    secondaryCta: { label: 'Contact Us', href: '/contact' },
+    secondaryCta: { label: 'View Services', href: '/services' },
     image: '/images/HeroSlideshow/hero5.jpg',
     imageAlt: 'Maintained contemporary property grounds and landscaped outdoor setting',
   },
@@ -65,7 +65,7 @@ export const visualImages = {
   aboutMessage: '/images/HeroSlideshow/aboutMessage.jpg',
   aboutMessageAlt: 'Maintained property grounds and architectural exterior',
   aboutApproach: '/images/HeroSlideshow/inspect.webp',
-  aboutApproachAlt: 'Grounds care scheduling and service coordination records',
+  aboutApproachAlt: 'Grounds care scheduling and service records',
   consultation: '/images/HeroSlideshow/hero-golf.avif',
   consultationAlt: 'Maintained grounds representing landscaping and property maintenance',
   contactHero: '/images/HeroSlideshow/contactHero.jpg',

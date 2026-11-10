@@ -2,35 +2,88 @@ import { Phone, Mail, Clock } from 'lucide-react';
 import PageLayout from '@/components/PageLayout';
 import PageHero from '@/components/PageHero';
 import VisualSplit from '@/components/VisualSplit';
-import LocationCard from '@/components/LocationCard';
 import GoogleMapEmbed from '@/components/GoogleMapEmbed';
 import CTASection from '@/components/CTASection';
-import { locations } from '@/data/locations';
 import { visualImages } from '@/data/heroSlides';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://verastroinfra.com';
+
 export const metadata = {
-  title: 'Contact Us | Verastro Infra',
+  title: 'Contact Verastro Infra | Jacksonville Main Office',
   description:
-    'Based in Jacksonville, Florida. Contact Verastro Infra for landscaping and property maintenance, and our team will respond with the next steps.',
+    'Contact Verastro Infra in Jacksonville, FL for grounds care and property maintenance. Call (904) 302-9170 or visit our Deerwood Park Blvd office.',
   alternates: { canonical: '/contact' },
   openGraph: {
-    title: 'Contact Us | Verastro Infra',
+    title: 'Contact Verastro Infra | Jacksonville Main Office',
     description:
       'Contact Verastro Infra for Florida landscaping and property maintenance. Main Office in Jacksonville, FL.',
     url: '/contact',
     images: [{ url: '/og-image.png', width: 500, height: 500, alt: 'Contact Verastro Infra' }],
   },
   twitter: {
-    title: 'Contact Us | Verastro Infra',
+    card: 'summary_large_image',
+    title: 'Contact Verastro Infra | Jacksonville Main Office',
     description:
       'Contact Verastro Infra for Florida landscaping and property maintenance solutions.',
     images: ['/og-image.png'],
   },
 };
 
+const contactSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Verastro Infra',
+  url: `${siteUrl}/contact`,
+  description:
+    'Contact details for Verastro Infra, a division of Verastro Inc., based in Jacksonville, FL.',
+  mainEntity: {
+    '@type': 'LocalBusiness',
+    name: 'Verastro Infra',
+    url: siteUrl,
+    telephone: '+1-904-302-9170',
+    email: 'inquries@verastro.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '10151 Deerwood Park Blvd, Building 200, Suite 250',
+      addressLocality: 'Jacksonville',
+      addressRegion: 'FL',
+      postalCode: '32256',
+      addressCountry: 'US',
+    },
+  },
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: siteUrl,
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Contact Us',
+      item: `${siteUrl}/contact`,
+    },
+  ],
+};
+
 export default function ContactPage() {
   return (
     <PageLayout>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+
       <PageHero
         image={visualImages.contactHero}
         alt={visualImages.contactHeroAlt}
@@ -38,6 +91,8 @@ export default function ContactPage() {
         title="Get in Touch"
         text="Based in Jacksonville, Florida. Contact us for landscaping and property maintenance, and our team will respond with the next steps."
       />
+
+
 
       <VisualSplit
         image={visualImages.introLandscape}
